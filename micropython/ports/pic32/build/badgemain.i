@@ -8815,10 +8815,10 @@ UINT CANTotalFilters(void);
 UINT CANTotalMasks(void);
 # 73 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h" 2 3
 # 3 "badgemain.c" 2
-# 1 "colors.h" 1
+# 1 "./include/colors.h" 1
 # 4 "badgemain.c" 2
-# 1 "assetList.h" 1
-# 11 "assetList.h"
+# 1 "./include/assetList.h" 1
+# 11 "./include/assetList.h"
 enum {
 
 
@@ -10368,9 +10368,13 @@ void UserInit(void)
     LATCbits.LATC0 = 0;
     LATCbits.LATC1 = 0;
     LATBbits.LATB3 = 0;
-# 101 "badgemain.c"
-}
 
+
+
+
+
+
+}
 
 void LCDprint(char *str,int len) {
    FbWriteString(str, len);
@@ -10381,43 +10385,27 @@ const char hextab[]={"0123456789ABCDEF"};
 
 static unsigned char debugBlink=1;
 
+# 1 "USB/usb_config.h" 1
+# 108 "badgemain.c" 2
+
 void ProcessIO(void)
 {
     unsigned char nread=0;
+    static unsigned char writeLOCK=0;
+    static unsigned char textBuffer[128], textBufPtr=0;
     int i;
-# 143 "badgemain.c"
+
+
+
+
+
     if (mchipUSBnotReady()) return;
 
-    nread = getsUSBUSART(USB_In_Buffer, 64);
+    if (writeLOCK == 0) {
+ nread = getsUSBUSART(USB_In_Buffer, 64 -1);
+    }
 
     if(nread > 0) {
- if ((USB_In_Buffer[0] == 'p') || (USB_In_Buffer[0] == 'P')) {
-  void clearscreen(unsigned short color);
-  if (USB_In_Buffer[0] == 'p') {
-     static unsigned char y=0;
-
-     FbClear();
-     FbBackgroundColor(0b0000000000000000);
-
-     FbMove(10, 20);
-     FbColor(0b1111111111111111);
-     FbWriteLine((unsigned char *)"0123456789");
-     y += 8;
-     if (y>128) y = 0;
-  }
-
-  USB_In_Buffer[0] = 0;
- }
-
- if ((USB_In_Buffer[0] == 'b') || (USB_In_Buffer[0] == 'B')) {
-  static unsigned char bright = 255;
-
-  if (USB_In_Buffer[0] == 'b') bright += 10;
-  if (USB_In_Buffer[0] == 'B') bright -= 10;
-
-  USB_In_Buffer[0] = 0;
- }
-
 
  if ((USB_In_Buffer[0] == 13) || (USB_In_Buffer[0] == 10)) {
   static int y=0;
@@ -10428,59 +10416,65 @@ void ProcessIO(void)
      FbMove(0, y);
   y += 10;
   if (y > 110) y = 0;
-
-  FbWriteLine("results");
+# 150 "badgemain.c"
+     FbMoveX(0);
+  FbWriteLine(textBuffer);
   FbMoveRelative(0, 10);
+  textBufPtr = 0;
 
      FbMoveX(0);
-  do_str("print('word ', list(x+1 for x in range(4)), end=' eol\\n')", MP_PARSE_SINGLE_INPUT);
-  FbMoveRelative(0, 10);
-
-     FbMoveX(0);
-  do_str("for i in range(4):\n  print(i)", MP_PARSE_FILE_INPUT);
-  FbMoveRelative(0, 10);
-
-     FbMoveX(0);
-  FbWriteLine("done");
+  do_str(textBuffer, MP_PARSE_FILE_INPUT);
 
   FbSwapBuffers();
 
-  USB_In_Buffer[0] = 0;
+
  }
 
- if (USB_In_Buffer[0] == '-') {
-  G_contrast1 -= 4;
+ if ((USB_In_Buffer[0] == '-') || (USB_In_Buffer[0] == '+')) {
+    if (USB_In_Buffer[0] == '-') G_contrast1 -= 4;
+    if (USB_In_Buffer[0] == '+') G_contrast1 += 4;
 
-  LCDReset();
 
-  USB_In_Buffer[0] = 0;
+    LCDReset();
+
+    USB_In_Buffer[0] = 0;
  }
 
- if ((USB_In_Buffer[0] == '=') || (USB_In_Buffer[0] == '+')) {
-  G_contrast1 += 4;
+ if (USB_In_Buffer[0] != 0) {
+    int i;
 
+    for (i=0; i<nread; i++) {
+  USB_Out_Buffer[i] = USB_In_Buffer[i];
+  textBuffer[textBufPtr++] = USB_In_Buffer[i];
 
-  LCDReset();
+  if (USB_Out_Buffer[i] == 13) USB_Out_Buffer[++i] = 10;
+    }
+    textBuffer[textBufPtr] = USB_Out_Buffer[i] = 0;
 
-  USB_In_Buffer[0] = 0;
+    USB_In_Buffer[0] = 0;
  }
 
-
- for (i=0; i<nread; i++,NextUSBOut++) {
-    USB_Out_Buffer[NextUSBOut] = USB_In_Buffer[i];
- }
  nread = 0;
     }
 
+    if (USBtransferReady()) {
+ int nextWrite;
 
-    if ((USBtransferReady()) && (NextUSBOut > 0)) {
- putUSBUSART(&USB_Out_Buffer[0], NextUSBOut);
- NextUSBOut = 0;
+ if (writeLOCK) {
+    USB_Out_Buffer[0] = 0;
+    writeLOCK = 0;
+ }
+
+ nextWrite = strlen(USB_Out_Buffer);
+ if (nextWrite != 0) {
+    putUSBUSART(USB_Out_Buffer, nextWrite);
+    writeLOCK = 1;
+ }
     }
-
+# 213 "badgemain.c"
     CDCTxService();
 }
-# 258 "badgemain.c"
+# 236 "badgemain.c"
 void BlinkUSBStatus(void)
 {
     static int led_count=0;

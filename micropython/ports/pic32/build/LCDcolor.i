@@ -8815,7 +8815,7 @@ UINT CANTotalFilters(void);
 UINT CANTotalMasks(void);
 # 73 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h" 2 3
 # 3 "LCDcolor.c" 2
-# 1 "S6B33.h" 1
+# 1 "./include/S6B33.h" 1
 
 
 
@@ -8829,7 +8829,7 @@ void S6B33_rect(int x, int y, int width, int height);
 
 void S6B33_pixel(unsigned short pixel);
 # 4 "LCDcolor.c" 2
-# 1 "LCDcolor.h" 1
+# 1 "./include/LCDcolor.h" 1
 
 
 
@@ -8839,7 +8839,7 @@ void LCDBars();
 
 extern unsigned short scan_bucket[];
 # 5 "LCDcolor.c" 2
-# 1 "assets.h" 1
+# 1 "./include/assets.h" 1
 
 
 void doAudio();
@@ -8857,8 +8857,8 @@ void nextMIDI_cb(unsigned char assetId, int frame) ;
 
 ;
 # 6 "LCDcolor.c" 2
-# 1 "assetList.h" 1
-# 11 "assetList.h"
+# 1 "./include/assetList.h" 1
+# 11 "./include/assetList.h"
 enum {
 
 

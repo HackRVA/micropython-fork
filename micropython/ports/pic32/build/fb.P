@@ -2,9 +2,9 @@ build/fb.o: fb.c \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdlib.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stddef.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/ansi.h \
- fb.h S6B33.h assetList.h colors.h
+ include/fb.h include/S6B33.h include/assetList.h include/colors.h
 fb.c :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdlib.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stddef.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/ansi.h :
- fb.h S6B33.h assetList.h colors.h :
+ include/fb.h include/S6B33.h include/assetList.h include/colors.h :

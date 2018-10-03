@@ -1,2 +1,4 @@
-build/assetList.o: assetList.c assetList.h assets.h colors.h font_2.xbm
-assetList.c assetList.h assets.h colors.h font_2.xbm :
+build/assetList.o: assetList.c include/assetList.h include/assets.h \
+ include/colors.h include/font8x8.xbm
+assetList.c include/assetList.h include/assets.h :
+ include/colors.h include/font8x8.xbm :

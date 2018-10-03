@@ -9532,10 +9532,10 @@ BOOL USBHALSetEpConfiguration ( BYTE ep_num, UINT16 max_pkt_size, UINT16 flags )
 BOOL USBHALInitialize ( unsigned long flags );
 # 131 "USB/usb.h" 2
 # 255 "USB/usb_device.c" 2
-# 1 "./HardwareProfile.h" 1
-# 46 "./HardwareProfile.h"
-# 1 "./HardwareProfile - PIC32MX460F512L PIM.h" 1
-# 47 "./HardwareProfile.h" 2
+# 1 "./include/HardwareProfile.h" 1
+# 46 "./include/HardwareProfile.h"
+# 1 "./include/HardwareProfile - PIC32MX460F512L PIM.h" 1
+# 47 "./include/HardwareProfile.h" 2
 # 256 "USB/usb_device.c" 2
 
 # 1 "USB/../USB/usb_device_local.h" 1

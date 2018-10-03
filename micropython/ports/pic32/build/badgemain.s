@@ -163,24 +163,6 @@ LCDprint:
 # End mchp_output_function_epilogue
 	.end	LCDprint
 	.size	LCDprint, .-LCDprint
-	.section	.rodata,code
-	.align	2
-.LC0:
-	.ascii	"0123456789\000"
-	.align	2
-.LC1:
-	.ascii	"results\000"
-	.align	2
-.LC2:
-	.ascii	"print('word ', list(x+1 for x in range(4)), end=' eol\\n"
-	.ascii	"')\000"
-	.align	2
-.LC3:
-	.ascii	"for i in range(4):\012  print(i)\000"
-	.align	2
-.LC4:
-	.ascii	"done\000"
-	.section	.text,code
 	.align	2
 	.globl	ProcessIO
 	.set	nomips16
@@ -200,243 +182,192 @@ ProcessIO:
 	jal	mchipUSBnotReady
 	sw	$16,20($sp)
 
-	bne	$2,$0,.L26
-	lw	$31,28($sp)
+	bne	$2,$0,.L3
+	lui	$2,%hi(writeLOCK.14288)
 
+	lbu	$2,%lo(writeLOCK.14288)($2)
+	bne	$2,$0,.L5
 	lui	$4,%hi(USB_In_Buffer)
+
 	addiu	$4,$4,%lo(USB_In_Buffer)
 	jal	getsUSBUSART
-	li	$5,64			# 0x40
+	li	$5,63			# 0x3f
 
-	andi	$16,$2,0x00ff
-	beq	$16,$0,.L5
+	andi	$17,$2,0x00ff
+	beq	$17,$0,.L5
 	lui	$2,%hi(USB_In_Buffer)
 
 	lb	$2,%lo(USB_In_Buffer)($2)
-	li	$3,112			# 0x70
+	li	$3,13			# 0xd
 	beq	$2,$3,.L6
-	li	$3,80			# 0x50
+	li	$3,10			# 0xa
 
-	bne	$2,$3,.L23
-	li	$3,98			# 0x62
-
-	j	.L24
+	bne	$2,$3,.L22
 	lui	$2,%hi(USB_In_Buffer)
 
 .L6:
-	jal	FbClear
-	nop
-
-	jal	FbBackgroundColor
-	move	$4,$0
-
-	li	$4,10			# 0xa
-	jal	FbMove
-	li	$5,20			# 0x14
-
 	jal	FbColor
 	li	$4,65535			# 0xffff
 
-	lui	$4,%hi(.LC0)
-	jal	FbWriteLine
-	addiu	$4,$4,%lo(.LC0)
-
-	lui	$3,%hi(y.14292)
-	lbu	$2,%lo(y.14292)($3)
-	addiu	$2,$2,8
-	andi	$2,$2,0x00ff
-	sb	$2,%lo(y.14292)($3)
-	sltu	$2,$2,129
-	beql	$2,$0,.L7
-	sb	$0,%lo(y.14292)($3)
-
-.L7:
-	lui	$2,%hi(USB_In_Buffer)
-.L24:
-	j	.L9
-	sb	$0,%lo(USB_In_Buffer)($2)
-
-.L23:
-	beql	$2,$3,.L10
-	lui	$2,%hi(bright.14303)
-
-	li	$3,66			# 0x42
-	beql	$2,$3,.L11
-	lui	$2,%hi(bright.14303)
-
-	j	.L25
-	lui	$2,%hi(USB_In_Buffer)
-
-.L10:
-	lbu	$3,%lo(bright.14303)($2)
-	addiu	$3,$3,10
-	j	.L12
-	sb	$3,%lo(bright.14303)($2)
-
-.L11:
-	lbu	$3,%lo(bright.14303)($2)
-	addiu	$3,$3,-10
-	sb	$3,%lo(bright.14303)($2)
-.L12:
-	lui	$2,%hi(USB_In_Buffer)
-	j	.L27
-	sb	$0,%lo(USB_In_Buffer)($2)
-
-.L9:
-	lui	$2,%hi(USB_In_Buffer)
-.L25:
-	lb	$2,%lo(USB_In_Buffer)($2)
-	li	$3,13			# 0xd
-	beq	$2,$3,.L14
-	li	$3,10			# 0xa
-
-	bne	$2,$3,.L27
-	lui	$2,%hi(USB_In_Buffer)
-
-.L14:
-	jal	FbColor
-	li	$4,65535			# 0xffff
-
-	lui	$17,%hi(y.14304)
+	lui	$16,%hi(y.14294)
 	move	$4,$0
 	jal	FbMove
-	lw	$5,%lo(y.14304)($17)
+	lw	$5,%lo(y.14294)($16)
 
-	lw	$2,%lo(y.14304)($17)
+	lw	$2,%lo(y.14294)($16)
 	addiu	$2,$2,10
-	sw	$2,%lo(y.14304)($17)
+	sw	$2,%lo(y.14294)($16)
 	slt	$2,$2,111
-	beql	$2,$0,.L15
-	sw	$0,%lo(y.14304)($17)
+	beql	$2,$0,.L8
+	sw	$0,%lo(y.14294)($16)
 
-.L15:
-	lui	$4,%hi(.LC1)
+.L8:
+	jal	FbMoveX
+	move	$4,$0
+
+	lui	$16,%hi(textBuffer.14289)
 	jal	FbWriteLine
-	addiu	$4,$4,%lo(.LC1)
+	addiu	$4,$16,%lo(textBuffer.14289)
 
 	move	$4,$0
 	jal	FbMoveRelative
 	li	$5,10			# 0xa
 
+	lui	$2,%hi(textBufPtr.14290)
+	sb	$0,%lo(textBufPtr.14290)($2)
 	jal	FbMoveX
 	move	$4,$0
 
-	lui	$4,%hi(.LC2)
-	addiu	$4,$4,%lo(.LC2)
-	jal	do_str
-	move	$5,$0
-
-	move	$4,$0
-	jal	FbMoveRelative
-	li	$5,10			# 0xa
-
-	jal	FbMoveX
-	move	$4,$0
-
-	lui	$4,%hi(.LC3)
-	addiu	$4,$4,%lo(.LC3)
+	addiu	$4,$16,%lo(textBuffer.14289)
 	jal	do_str
 	li	$5,1			# 0x1
-
-	move	$4,$0
-	jal	FbMoveRelative
-	li	$5,10			# 0xa
-
-	jal	FbMoveX
-	move	$4,$0
-
-	lui	$4,%hi(.LC4)
-	jal	FbWriteLine
-	addiu	$4,$4,%lo(.LC4)
 
 	jal	FbSwapBuffers
 	nop
 
 	lui	$2,%hi(USB_In_Buffer)
-	sb	$0,%lo(USB_In_Buffer)($2)
-	j	.L16
-	move	$2,$0
+.L22:
+	lb	$2,%lo(USB_In_Buffer)($2)
+	li	$3,45			# 0x2d
+	beq	$2,$3,.L9
+	li	$3,43			# 0x2b
 
-.L27:
-	lb	$3,%lo(USB_In_Buffer)($2)
-	li	$2,45			# 0x2d
-	bne	$3,$2,.L17
-	lui	$2,%hi(USB_In_Buffer)
+	bne	$2,$3,.L20
+	nop
 
+	j	.L21
+	lui	$2,%hi(G_contrast1)
+
+.L9:
 	lui	$2,%hi(G_contrast1)
 	lbu	$3,%lo(G_contrast1)($2)
 	addiu	$3,$3,-4
-	jal	LCDReset
+	j	.L12
 	sb	$3,%lo(G_contrast1)($2)
 
-	lui	$2,%hi(USB_In_Buffer)
-	j	.L18
-	sb	$0,%lo(USB_In_Buffer)($2)
-
-.L17:
-	lb	$2,%lo(USB_In_Buffer)($2)
-	li	$3,61			# 0x3d
-	beql	$2,$3,.L28
-	lui	$2,%hi(G_contrast1)
-
-.L16:
-	li	$3,43			# 0x2b
-	bne	$2,$3,.L18
-	lui	$2,%hi(G_contrast1)
-
-.L28:
+.L21:
 	lbu	$3,%lo(G_contrast1)($2)
 	addiu	$3,$3,4
-	jal	LCDReset
 	sb	$3,%lo(G_contrast1)($2)
+.L12:
+	jal	LCDReset
+	nop
 
 	lui	$2,%hi(USB_In_Buffer)
+	j	.L5
 	sb	$0,%lo(USB_In_Buffer)($2)
-.L18:
-	blez	$16,.L5
-	lui	$2,%hi(NextUSBOut)
 
-	lbu	$8,%lo(NextUSBOut)($2)
-	lui	$2,%hi(USB_In_Buffer)
-	addiu	$2,$2,%lo(USB_In_Buffer)
-	addu	$7,$2,$16
-	move	$3,$8
+.L20:
+	beq	$2,$0,.L5
+	nop
+
+	blez	$17,.L18
+	lui	$2,%hi(textBufPtr.14290)
+
+	lbu	$4,%lo(textBufPtr.14290)($2)
+	move	$2,$0
+	lui	$9,%hi(USB_In_Buffer)
+	addiu	$9,$9,%lo(USB_In_Buffer)
 	lui	$6,%hi(USB_Out_Buffer)
 	addiu	$6,$6,%lo(USB_Out_Buffer)
-.L20:
-	addu	$4,$3,$6
-	lbu	$5,0($2)
-	sb	$5,0($4)
-	addiu	$3,$3,1
-	addiu	$2,$2,1
-	bne	$2,$7,.L20
-	andi	$3,$3,0x00ff
+	lui	$8,%hi(textBuffer.14289)
+	addiu	$8,$8,%lo(textBuffer.14289)
+	li	$7,13			# 0xd
+	li	$10,10			# 0xa
+	addu	$3,$2,$9
+.L23:
+	lb	$3,0($3)
+	addu	$5,$2,$6
+	sb	$3,0($5)
+	addu	$5,$4,$8
+	sb	$3,0($5)
+	addiu	$4,$4,1
+	bne	$3,$7,.L14
+	andi	$4,$4,0x00ff
 
-	addu	$16,$16,$8
-	lui	$2,%hi(NextUSBOut)
-	sb	$16,%lo(NextUSBOut)($2)
+	addiu	$2,$2,1
+	addu	$3,$2,$6
+	sb	$10,0($3)
+.L14:
+	addiu	$2,$2,1
+	slt	$3,$2,$17
+	bne	$3,$0,.L23
+	addu	$3,$2,$9
+
+	lui	$3,%hi(textBufPtr.14290)
+	j	.L13
+	sb	$4,%lo(textBufPtr.14290)($3)
+
+.L18:
+	move	$2,$0
+.L13:
+	lui	$3,%hi(USB_Out_Buffer)
+	addiu	$3,$3,%lo(USB_Out_Buffer)
+	addu	$2,$2,$3
+	sb	$0,0($2)
+	lui	$2,%hi(textBufPtr.14290)
+	lbu	$3,%lo(textBufPtr.14290)($2)
+	lui	$2,%hi(textBuffer.14289)
+	addiu	$2,$2,%lo(textBuffer.14289)
+	addu	$2,$3,$2
+	sb	$0,0($2)
+	lui	$2,%hi(USB_In_Buffer)
+	sb	$0,%lo(USB_In_Buffer)($2)
 .L5:
 	jal	USBtransferReady
 	nop
 
-	beq	$2,$0,.L21
-	lui	$2,%hi(NextUSBOut)
+	beq	$2,$0,.L16
+	lui	$2,%hi(writeLOCK.14288)
 
-	lbu	$5,%lo(NextUSBOut)($2)
-	beq	$5,$0,.L21
+	lbu	$2,%lo(writeLOCK.14288)($2)
+	beq	$2,$0,.L24
 	lui	$4,%hi(USB_Out_Buffer)
 
-	jal	putUSBUSART
+	lui	$2,%hi(USB_Out_Buffer)
+	sb	$0,%lo(USB_Out_Buffer)($2)
+	lui	$2,%hi(writeLOCK.14288)
+	sb	$0,%lo(writeLOCK.14288)($2)
+.L24:
+	jal	strlen
 	addiu	$4,$4,%lo(USB_Out_Buffer)
 
-	lui	$2,%hi(NextUSBOut)
-	sb	$0,%lo(NextUSBOut)($2)
-.L21:
+	beq	$2,$0,.L16
+	lui	$4,%hi(USB_Out_Buffer)
+
+	addiu	$4,$4,%lo(USB_Out_Buffer)
+	jal	putUSBUSART
+	move	$5,$2
+
+	li	$3,1			# 0x1
+	lui	$2,%hi(writeLOCK.14288)
+	sb	$3,%lo(writeLOCK.14288)($2)
+.L16:
 	jal	CDCTxService
 	nop
 
+.L3:
 	lw	$31,28($sp)
-.L26:
 	lw	$17,24($sp)
 	lw	$16,20($sp)
 	j	$31
@@ -463,27 +394,27 @@ BlinkUSBStatus:
 # End mchp_output_function_prologue
 	addiu	$sp,$sp,-24
 	sw	$31,20($sp)
-	lui	$2,%hi(led_count.14329)
-	lw	$2,%lo(led_count.14329)($2)
-	bne	$2,$0,.L46
-	lui	$2,%hi(led_count.14329)
+	lui	$2,%hi(led_count.14322)
+	lw	$2,%lo(led_count.14322)($2)
+	bne	$2,$0,.L42
+	lui	$2,%hi(led_count.14322)
 
 	li	$3,65536			# 0x10000
 	ori	$3,$3,0x86a0
-	sw	$3,%lo(led_count.14329)($2)
-	lui	$2,%hi(led_count.14329)
-.L46:
-	lw	$3,%lo(led_count.14329)($2)
+	sw	$3,%lo(led_count.14322)($2)
+	lui	$2,%hi(led_count.14322)
+.L42:
+	lw	$3,%lo(led_count.14322)($2)
 	addiu	$3,$3,-1
 	jal	getUSBSuspendControl
-	sw	$3,%lo(led_count.14329)($2)
+	sw	$3,%lo(led_count.14322)($2)
 
 	li	$3,1			# 0x1
-	bne	$2,$3,.L31
-	lui	$2,%hi(led_count.14329)
+	bne	$2,$3,.L27
+	lui	$2,%hi(led_count.14322)
 
-	lw	$2,%lo(led_count.14329)($2)
-	bnel	$2,$0,.L47
+	lw	$2,%lo(led_count.14322)($2)
+	bnel	$2,$0,.L43
 	lw	$31,20($sp)
 
 	lui	$2,%hi(LATC)
@@ -494,14 +425,14 @@ BlinkUSBStatus:
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$4,1,1
 	sw	$3,%lo(LATC)($2)
-	j	.L43
+	j	.L39
 	lw	$31,20($sp)
 
-.L31:
+.L27:
 	jal	USBDeviceStateDETACHED
 	nop
 
-	beq	$2,$0,.L33
+	beq	$2,$0,.L29
 	lui	$2,%hi(LATC)
 
 	lw	$3,%lo(LATC)($2)
@@ -510,14 +441,14 @@ BlinkUSBStatus:
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$0,1,1
 	sw	$3,%lo(LATC)($2)
-	j	.L43
+	j	.L39
 	lw	$31,20($sp)
 
-.L33:
+.L29:
 	jal	USBDeviceStateATTACHED
 	nop
 
-	beq	$2,$0,.L34
+	beq	$2,$0,.L30
 	lui	$2,%hi(LATC)
 
 	lw	$3,%lo(LATC)($2)
@@ -527,14 +458,14 @@ BlinkUSBStatus:
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$4,1,1
 	sw	$3,%lo(LATC)($2)
-	j	.L43
+	j	.L39
 	lw	$31,20($sp)
 
-.L34:
+.L30:
 	jal	USBDeviceStatePOWERED
 	nop
 
-	beq	$2,$0,.L35
+	beq	$2,$0,.L31
 	lui	$2,%hi(LATC)
 
 	lw	$3,%lo(LATC)($2)
@@ -544,14 +475,14 @@ BlinkUSBStatus:
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$0,1,1
 	sw	$3,%lo(LATC)($2)
-	j	.L43
+	j	.L39
 	lw	$31,20($sp)
 
-.L35:
+.L31:
 	jal	USBDeviceStateDEFAULT
 	nop
 
-	beq	$2,$0,.L36
+	beq	$2,$0,.L32
 	lui	$2,%hi(LATC)
 
 	lw	$3,%lo(LATC)($2)
@@ -561,18 +492,18 @@ BlinkUSBStatus:
 	li	$4,1			# 0x1
 	ins	$3,$4,1,1
 	sw	$3,%lo(LATC)($2)
-	j	.L43
+	j	.L39
 	lw	$31,20($sp)
 
-.L36:
+.L32:
 	jal	USBDeviceStateADDRESS
 	nop
 
-	beq	$2,$0,.L37
-	lui	$2,%hi(led_count.14329)
+	beq	$2,$0,.L33
+	lui	$2,%hi(led_count.14322)
 
-	lw	$2,%lo(led_count.14329)($2)
-	bnel	$2,$0,.L47
+	lw	$2,%lo(led_count.14322)($2)
+	bnel	$2,$0,.L43
 	lw	$31,20($sp)
 
 	lui	$2,%hi(LATC)
@@ -585,76 +516,76 @@ BlinkUSBStatus:
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$0,1,1
 	sw	$3,%lo(LATC)($2)
-	j	.L43
+	j	.L39
 	lw	$31,20($sp)
 
-.L37:
+.L33:
 	jal	USBDeviceStateCONFIGURED
 	nop
 
-	beq	$2,$0,.L29
-	lui	$2,%hi(led_count.14329)
+	beq	$2,$0,.L25
+	lui	$2,%hi(led_count.14322)
 
-	lw	$2,%lo(led_count.14329)($2)
-	bne	$2,$0,.L29
+	lw	$2,%lo(led_count.14322)($2)
+	bne	$2,$0,.L25
 	lui	$2,%hi(LATC)
 
 	lw	$2,%lo(LATC)($2)
 	andi	$2,$2,0x1
-	beq	$2,$0,.L38
+	beq	$2,$0,.L34
 	lui	$2,%hi(LATC)
 
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$0,0,1
 	sw	$3,%lo(LATC)($2)
-	j	.L44
+	j	.L40
 	lui	$2,%hi(LATC)
 
-.L38:
+.L34:
 	lw	$3,%lo(LATC)($2)
 	li	$4,1			# 0x1
 	ins	$3,$4,0,1
 	sw	$3,%lo(LATC)($2)
 	lui	$2,%hi(LATC)
-.L44:
+.L40:
 	lw	$2,%lo(LATC)($2)
 	andi	$2,$2,0x2
-	beq	$2,$0,.L40
+	beq	$2,$0,.L36
 	lui	$2,%hi(LATC)
 
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$0,1,1
 	sw	$3,%lo(LATC)($2)
-	j	.L45
+	j	.L41
 	lui	$2,%hi(LATB)
 
-.L40:
+.L36:
 	lw	$3,%lo(LATC)($2)
 	li	$4,1			# 0x1
 	ins	$3,$4,1,1
 	sw	$3,%lo(LATC)($2)
 	lui	$2,%hi(LATB)
-.L45:
+.L41:
 	lw	$2,%lo(LATB)($2)
 	andi	$2,$2,0x8
-	beq	$2,$0,.L42
+	beq	$2,$0,.L38
 	lui	$2,%hi(LATB)
 
 	lw	$3,%lo(LATB)($2)
 	ins	$3,$0,3,1
 	sw	$3,%lo(LATB)($2)
-	j	.L43
+	j	.L39
 	lw	$31,20($sp)
 
-.L42:
+.L38:
 	lw	$3,%lo(LATB)($2)
 	li	$4,1			# 0x1
 	ins	$3,$4,3,1
 	sw	$3,%lo(LATB)($2)
-.L29:
+.L25:
 	lw	$31,20($sp)
+.L39:
 .L43:
-.L47:
 	j	$31
 	addiu	$sp,$sp,24
 
@@ -679,24 +610,27 @@ hextab:
 	.ascii	"0123456789ABCDEF\000"
 	.section	.bss,bss
 	.align	2
-	.type	led_count.14329, @object
-	.size	led_count.14329, 4
-led_count.14329:
+	.type	led_count.14322, @object
+	.size	led_count.14322, 4
+led_count.14322:
 	.space	4
 	.align	2
-	.type	y.14304, @object
-	.size	y.14304, 4
-y.14304:
+	.type	y.14294, @object
+	.size	y.14294, 4
+y.14294:
 	.space	4
-	.section	.data, data
-	.type	bright.14303, @object
-	.size	bright.14303, 1
-bright.14303:
-	.byte	-1
-	.section	.bss,bss
-	.type	y.14292, @object
-	.size	y.14292, 1
-y.14292:
+	.type	textBufPtr.14290, @object
+	.size	textBufPtr.14290, 1
+textBufPtr.14290:
+	.space	1
+	.align	2
+	.type	textBuffer.14289, @object
+	.size	textBuffer.14289, 128
+textBuffer.14289:
+	.space	128
+	.type	writeLOCK.14288, @object
+	.size	writeLOCK.14288, 1
+writeLOCK.14288:
 	.space	1
 	.ident	"GCC: (Microchip Technology) 4.5.2 MPLAB XC32 Compiler v1.34"
 # Begin MCHP vector dispatch table

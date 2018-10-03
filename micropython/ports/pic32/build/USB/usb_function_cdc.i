@@ -9676,10 +9676,10 @@ extern LINE_CODING line_coding;
 extern volatile CTRL_TRF_SETUP SetupPkt;
 extern const BYTE configDescriptor1[];
 # 107 "USB/usb_function_cdc.c" 2
-# 1 "./HardwareProfile.h" 1
-# 46 "./HardwareProfile.h"
-# 1 "./HardwareProfile - PIC32MX460F512L PIM.h" 1
-# 47 "./HardwareProfile.h" 2
+# 1 "./include/HardwareProfile.h" 1
+# 46 "./include/HardwareProfile.h"
+# 1 "./include/HardwareProfile - PIC32MX460F512L PIM.h" 1
+# 47 "./include/HardwareProfile.h" 2
 # 108 "USB/usb_function_cdc.c" 2
 # 187 "USB/usb_function_cdc.c"
 volatile unsigned char cdc_data_tx[64] ;

@@ -58,8 +58,8 @@ build/USB/usb_function_cdc.o: USB/usb_function_cdc.c USB/usb.h \
  USB/usb_config.h USB/usb_common.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/include-fixed/limits.h \
  USB/usb_ch9.h USB/usb_device.h USB/usb_hal.h USB/usb_hal_pic32.h \
- USB/usb_function_cdc.h HardwareProfile.h \
- HardwareProfile\ -\ PIC32MX460F512L\ PIM.h
+ USB/usb_function_cdc.h include/HardwareProfile.h \
+ include/HardwareProfile\ -\ PIC32MX460F512L\ PIM.h
 USB/usb_function_cdc.c USB/usb.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/GenericTypeDefs.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stddef.h :
@@ -120,5 +120,5 @@ USB/usb_function_cdc.c USB/usb.h :
  USB/usb_config.h USB/usb_common.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/include-fixed/limits.h :
  USB/usb_ch9.h USB/usb_device.h USB/usb_hal.h USB/usb_hal_pic32.h :
- USB/usb_function_cdc.h HardwareProfile.h :
- HardwareProfile\ -\ PIC32MX460F512L\ PIM.h :
+ USB/usb_function_cdc.h include/HardwareProfile.h :
+ include/HardwareProfile\ -\ PIC32MX460F512L\ PIM.h :

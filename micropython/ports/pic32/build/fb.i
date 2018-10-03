@@ -121,7 +121,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 # 2 "fb.c" 2
 
-# 1 "fb.h" 1
+# 1 "./include/fb.h" 1
 
 
 
@@ -186,7 +186,7 @@ void FbImage4bit(unsigned char assetId, unsigned char seqNum);
 void FbImage2bit(unsigned char assetId, unsigned char seqNum);
 void FbImage1bit(unsigned char assetId, unsigned char seqNum);
 # 4 "fb.c" 2
-# 1 "S6B33.h" 1
+# 1 "./include/S6B33.h" 1
 
 
 
@@ -200,8 +200,8 @@ void S6B33_rect(int x, int y, int width, int height);
 
 void S6B33_pixel(unsigned short pixel);
 # 5 "fb.c" 2
-# 1 "assetList.h" 1
-# 11 "assetList.h"
+# 1 "./include/assetList.h" 1
+# 11 "./include/assetList.h"
 enum {
 
 
@@ -233,7 +233,7 @@ struct asset {
 };
 extern const struct asset assetList[];
 # 6 "fb.c" 2
-# 1 "colors.h" 1
+# 1 "./include/colors.h" 1
 # 7 "fb.c" 2
 
 
@@ -609,54 +609,19 @@ void FbTransparentIndex(unsigned short color)
 {
     G_Fb.transIndex = color;
 }
-
+# 445 "fb.c"
 void FbCharacter(unsigned char charin)
 {
+    if ((charin < 32) | (charin > 126)) charin = 32;
 
-
-
-    if (charin >= 'a' && charin <= 'z')
- charin -= 97;
-    else {
- if (charin >= 'A' && charin <= 'Z')
-  charin -= 65;
- else {
-     if (charin >= '0' && charin <= '9')
-  charin -= 22;
-     else {
-  switch (charin) {
-  case '.':
-      charin = 36;
-      break;
-
-  case ':':
-      charin = 37;
-      break;
-
-  case '!':
-      charin = 38;
-      break;
-
-  case '-':
-      charin = 39;
-      break;
-
-  case '_':
-      charin = 40;
-      break;
-
-  default:
-      charin = 41;
-  }
-     }
- }
-    }
+    charin -= 32;
     FbImage1bit(G_Fb.font, charin);
 
 
 
     G_Fb.changed = 1;
 }
+
 
 void FbFilledRectangle(unsigned char width, unsigned char height)
 {

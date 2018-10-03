@@ -54,7 +54,7 @@ build/S6B33.o: S6B33.c \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/wdt.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/eth.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/CAN.h \
- S6B33.h LCDcolor.h
+ include/S6B33.h include/LCDcolor.h
 S6B33.c :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/adc10.h :
@@ -111,4 +111,4 @@ S6B33.c :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/wdt.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/eth.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/CAN.h :
- S6B33.h LCDcolor.h :
+ include/S6B33.h include/LCDcolor.h :

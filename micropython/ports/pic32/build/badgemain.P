@@ -54,7 +54,7 @@ build/badgemain.o: badgemain.c \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/wdt.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/eth.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/CAN.h \
- colors.h assetList.h ../../py/compile.h ../../py/lexer.h \
+ include/colors.h include/assetList.h ../../py/compile.h ../../py/lexer.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h \
@@ -66,7 +66,7 @@ build/badgemain.o: badgemain.c \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/include/stdbool.h \
  build/genhdr/qstrdefs.generated.h ../../py/reader.h ../../py/obj.h \
  ../../py/mpprint.h ../../py/runtime0.h ../../py/parse.h \
- ../../py/emitglue.h
+ ../../py/emitglue.h USB/usb_config.h
 badgemain.c :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/p32xxxx.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/xc.h :
@@ -123,7 +123,7 @@ badgemain.c :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/wdt.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/eth.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/CAN.h :
- colors.h assetList.h ../../py/compile.h ../../py/lexer.h :
+ include/colors.h include/assetList.h ../../py/compile.h ../../py/lexer.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h :
@@ -135,4 +135,4 @@ badgemain.c :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/include/stdbool.h :
  build/genhdr/qstrdefs.generated.h ../../py/reader.h ../../py/obj.h :
  ../../py/mpprint.h ../../py/runtime0.h ../../py/parse.h :
- ../../py/emitglue.h :
+ ../../py/emitglue.h USB/usb_config.h :

@@ -1,13 +1,11 @@
-# 1 "microchip.c"
+# 1 "assets.c"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "microchip.c"
-
-# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/p32xxxx.h" 1 3
-
-
-
-
+# 1 "assets.c"
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h" 1 3
+# 49 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h" 3
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/adc10.h" 1 3
+# 44 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/adc10.h" 3
 # 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/xc.h" 1 3
 # 38 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/xc.h" 3
        
@@ -5322,12 +5320,7 @@ static __inline__ void __attribute__((always_inline)) __pic32_free_coherent(void
   free ((ptr));
 }
 # 647 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/xc.h" 2 3
-# 6 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/p32xxxx.h" 2 3
-# 3 "microchip.c" 2
-# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h" 1 3
-# 49 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h" 3
-# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/adc10.h" 1 3
-# 45 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/adc10.h" 3
+# 45 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/adc10.h" 2 3
 # 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/int.h" 1 3
 # 59 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/int.h" 3
 # 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/sys/attribs.h" 1 3
@@ -5338,6 +5331,9 @@ static __inline__ void __attribute__((always_inline)) __pic32_free_coherent(void
 # 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/int_1xx_2xx.h" 1 3
 # 75 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/int_1xx_2xx.h" 3
 # 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/legacy/int_1xx_2xx_legacy.h" 1 3
+# 37 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/legacy/int_1xx_2xx_legacy.h" 3
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/p32xxxx.h" 1 3
+# 38 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/legacy/int_1xx_2xx_legacy.h" 2 3
 # 76 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/int_1xx_2xx.h" 2 3
 # 94 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/int_1xx_2xx.h" 3
 typedef enum
@@ -8815,1100 +8811,235 @@ UINT CANTotalFilters(void);
 # 3191 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/peripheral/CAN.h" 3
 UINT CANTotalMasks(void);
 # 73 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h" 2 3
-# 4 "microchip.c" 2
-# 1 "USB/usb.h" 1
-# 111 "USB/usb.h"
-# 1 "USB/../Common/Compiler.h" 1
-# 112 "USB/usb.h" 2
+# 2 "assets.c" 2
+# 1 "./include/assets.h" 1
 
-# 1 "USB/usb_config.h" 1
-# 114 "USB/usb.h" 2
 
-# 1 "USB/usb_common.h" 1
-# 86 "USB/usb_common.h"
-# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/include-fixed/limits.h" 1 3 4
-# 87 "USB/usb_common.h" 2
-# 170 "USB/usb_common.h"
-typedef union
+void doAudio();
+void drawAsset(unsigned char assetId);
+void drawLCD1(unsigned char assetId, int frame);
+void drawLCD2(unsigned char assetId, int frame);
+void drawLCD4(unsigned char assetId, int frame);
+void drawLCD8(unsigned char assetId, int frame);
+void setNote(unsigned short freq, unsigned short dur) ;
+void setBeep(unsigned short freq);
+
+void nextNote_cb(unsigned char assetId, int frame);
+void nextMIDI_cb(unsigned char assetId, int frame) ;
+
+
+;
+# 3 "assets.c" 2
+# 1 "./include/assetList.h" 1
+# 11 "./include/assetList.h"
+enum {
+
+
+
+
+    FONT,
+
+    LASTASSET,
+};
+
+enum {
+    AUDIO,
+    MIDI,
+    PICTURE1BIT,
+    PICTURE2BIT,
+    PICTURE4BIT,
+    PICTURE8BIT,
+};
+
+struct asset {
+    unsigned char assetId;
+    unsigned char type;
+    unsigned char seqNum;
+    unsigned short x;
+    unsigned short y;
+    const char *data_cmap;
+    const char *pixdata;
+    void (*datacb)(unsigned char, int);
+};
+extern const struct asset assetList[];
+# 4 "assets.c" 2
+# 16 "assets.c"
+unsigned char G_videoAssetId = 255;
+
+unsigned int G_videoFrame = 0;
+
+void drawAsset(unsigned char assetId)
 {
-    BYTE bitmap;
-    struct
-    {
-        BYTE ep_num: 4;
-        BYTE zero_pkt: 1;
-        BYTE dts: 1;
-        BYTE force_dts: 1;
-        BYTE direction: 1;
-    }field;
-
-} TRANSFER_FLAGS;
-# 244 "USB/usb_common.h"
-typedef enum
-{
-
-    EVENT_NONE = 0,
-
-    EVENT_DEVICE_STACK_BASE = 1,
-
-    EVENT_HOST_STACK_BASE = 100,
-
-
-    EVENT_HUB_ATTACH,
-
-
-    EVENT_STALL,
-
-
-    EVENT_VBUS_SES_REQUEST,
-
-
-
-
-    EVENT_VBUS_OVERCURRENT,
-
-
-
-
-
-    EVENT_VBUS_REQUEST_POWER,
-
-
-
-
-    EVENT_VBUS_RELEASE_POWER,
-# 285 "USB/usb_common.h"
-    EVENT_VBUS_POWER_AVAILABLE,
-
-
-
-    EVENT_UNSUPPORTED_DEVICE,
-
-
-
-    EVENT_CANNOT_ENUMERATE,
-
-
-
-    EVENT_CLIENT_INIT_ERROR,
-
-
-
-
-
-    EVENT_OUT_OF_MEMORY,
-
-
-    EVENT_UNSPECIFIED_ERROR,
-
-
-
-    EVENT_DETACH,
-
-
-
-
-    EVENT_TRANSFER,
-
-
-
-    EVENT_SOF,
-
-
-    EVENT_RESUME,
-
-
-
-    EVENT_SUSPEND,
-
-
-
-    EVENT_RESET,
-
-
-
-
-
-    EVENT_DATA_ISOC_READ,
-
-
-
-
-
-    EVENT_DATA_ISOC_WRITE,
-# 352 "USB/usb_common.h"
-    EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION,
-
-
-
-
-
-
-
-    EVENT_1MS,
-
-
-    EVENT_GENERIC_BASE = 400,
-
-    EVENT_MSD_BASE = 500,
-
-    EVENT_HID_BASE = 600,
-
-    EVENT_PRINTER_BASE = 700,
-
-    EVENT_CDC_BASE = 800,
-
-    EVENT_CHARGER_BASE = 900,
-
-    EVENT_AUDIO_BASE = 1000,
-
- EVENT_USER_BASE = 10000,
-
-
-
-
-    EVENT_BUS_ERROR = 2147483647
-
-} USB_EVENT;
-# 396 "USB/usb_common.h"
-typedef struct _transfer_event_data
-{
-    TRANSFER_FLAGS flags;
-    UINT32 size;
-    BYTE pid;
-
-} USB_TRANSFER_EVENT_DATA;
-# 413 "USB/usb_common.h"
-typedef struct _vbus_power_data
-{
-    BYTE port;
-    BYTE current;
-} USB_VBUS_POWER_EVENT_DATA;
-# 426 "USB/usb_common.h"
-typedef struct _override_client_driver_data
-{
-    WORD idVendor;
-    WORD idProduct;
-    BYTE bDeviceClass;
-    BYTE bDeviceSubClass;
-    BYTE bDeviceProtocol;
-} USB_OVERRIDE_CLIENT_DRIVER_EVENT_DATA;
-# 488 "USB/usb_common.h"
-typedef BOOL (*USB_EVENT_HANDLER) ( USB_EVENT event, void *data, unsigned int size );
-# 116 "USB/usb.h" 2
-# 1 "USB/usb_ch9.h" 1
-# 114 "USB/usb_ch9.h"
-typedef struct __attribute__ ((packed)) _USB_DEVICE_DESCRIPTOR
-{
-    BYTE bLength;
-    BYTE bDescriptorType;
-    WORD bcdUSB;
-    BYTE bDeviceClass;
-    BYTE bDeviceSubClass;
-    BYTE bDeviceProtocol;
-    BYTE bMaxPacketSize0;
-    WORD idVendor;
-    WORD idProduct;
-    WORD bcdDevice;
-    BYTE iManufacturer;
-    BYTE iProduct;
-    BYTE iSerialNumber;
-    BYTE bNumConfigurations;
-} USB_DEVICE_DESCRIPTOR;
-# 140 "USB/usb_ch9.h"
-typedef struct __attribute__ ((packed)) _USB_CONFIGURATION_DESCRIPTOR
-{
-    BYTE bLength;
-    BYTE bDescriptorType;
-    WORD wTotalLength;
-    BYTE bNumInterfaces;
-    BYTE bConfigurationValue;
-    BYTE iConfiguration;
-    BYTE bmAttributes;
-    BYTE bMaxPower;
-} USB_CONFIGURATION_DESCRIPTOR;
-# 165 "USB/usb_ch9.h"
-typedef struct __attribute__ ((packed)) _USB_INTERFACE_DESCRIPTOR
-{
-    BYTE bLength;
-    BYTE bDescriptorType;
-    BYTE bInterfaceNumber;
-    BYTE bAlternateSetting;
-    BYTE bNumEndpoints;
-    BYTE bInterfaceClass;
-    BYTE bInterfaceSubClass;
-    BYTE bInterfaceProtocol;
-    BYTE iInterface;
-} USB_INTERFACE_DESCRIPTOR;
-# 186 "USB/usb_ch9.h"
-typedef struct __attribute__ ((packed)) _USB_ENDPOINT_DESCRIPTOR
-{
-    BYTE bLength;
-    BYTE bDescriptorType;
-    BYTE bEndpointAddress;
-    BYTE bmAttributes;
-    WORD wMaxPacketSize;
-    BYTE bInterval;
-} USB_ENDPOINT_DESCRIPTOR;
-# 236 "USB/usb_ch9.h"
-typedef struct
-{
-    BYTE index;
-    BYTE type;
-    UINT16 language_id;
-
-} DESCRIPTOR_ID;
-# 251 "USB/usb_ch9.h"
-typedef struct __attribute__ ((packed)) _USB_OTG_DESCRIPTOR
-{
-    BYTE bLength;
-    BYTE bDescriptorType;
-    BYTE bmAttributes;
-} USB_OTG_DESCRIPTOR;
-# 275 "USB/usb_ch9.h"
-typedef struct __attribute__ ((packed)) _USB_STRING_DSC
-{
-    BYTE bLength;
-    BYTE bDescriptorType;
-
-} USB_STRING_DESCRIPTOR;
-# 294 "USB/usb_ch9.h"
-typedef struct __attribute__ ((packed)) _USB_DEVICE_QUALIFIER_DESCRIPTOR
-{
-    BYTE bLength;
-    BYTE bType;
-    WORD bcdUSB;
-    BYTE bDeviceClass;
-    BYTE bDeviceSubClass;
-    BYTE bDeviceProtocol;
-    BYTE bMaxPacketSize0;
-    BYTE bNumConfigurations;
-    BYTE bReserved;
-
-} USB_DEVICE_QUALIFIER_DESCRIPTOR;
-# 317 "USB/usb_ch9.h"
-typedef union __attribute__ ((packed))
-{
-
-    struct __attribute__ ((packed))
-    {
-        BYTE bmRequestType;
-        BYTE bRequest;
-        WORD wValue;
-        WORD wIndex;
-        WORD wLength;
-    };
-    struct __attribute__ ((packed))
-    {
-        unsigned :8;
-        unsigned :8;
-        WORD_VAL W_Value;
-        WORD_VAL W_Index;
-        WORD_VAL W_Length;
-    };
-    struct __attribute__ ((packed))
-    {
-        unsigned Recipient:5;
-        unsigned RequestType:2;
-        unsigned DataDir:1;
-        unsigned :8;
-        BYTE bFeature;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct __attribute__ ((packed))
-    {
-        union
-        {
-            BYTE bmRequestType;
-            struct
-            {
-                BYTE recipient: 5;
-                BYTE type: 2;
-                BYTE direction: 1;
-            };
-        }requestInfo;
-    };
-    struct __attribute__ ((packed))
-    {
-        unsigned :8;
-        unsigned :8;
-        BYTE bDscIndex;
-        BYTE bDescriptorType;
-        WORD wLangID;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct __attribute__ ((packed))
-    {
-        unsigned :8;
-        unsigned :8;
-        BYTE_VAL bDevADR;
-        BYTE bDevADRH;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct __attribute__ ((packed))
-    {
-        unsigned :8;
-        unsigned :8;
-        BYTE bConfigurationValue;
-        BYTE bCfgRSD;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct __attribute__ ((packed))
-    {
-        unsigned :8;
-        unsigned :8;
-        BYTE bAltID;
-        BYTE bAltID_H;
-        BYTE bIntfID;
-        BYTE bIntfID_H;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct __attribute__ ((packed))
-    {
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        BYTE bEPID;
-        BYTE bEPID_H;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct __attribute__ ((packed))
-    {
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned EPNum:4;
-        unsigned :3;
-        unsigned EPDir:1;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-    };
-
-
-
-} CTRL_TRF_SETUP, SETUP_PKT, *PSETUP_PKT;
-# 117 "USB/usb.h" 2
-
-
-# 1 "USB/usb_device.h" 1
-# 130 "USB/usb_device.h"
-typedef enum
-{
-
-
-
-    DETACHED_STATE
-                            = 0x00 ,
-
-
-    ATTACHED_STATE
-                            = 0x01 ,
-
-
-    POWERED_STATE
-                            = 0x02 ,
-
-
-    DEFAULT_STATE
-                            = 0x04 ,
-
-
-
-
-
-    ADR_PENDING_STATE
-                            = 0x08 ,
-
-
-    ADDRESS_STATE
-                            = 0x10 ,
-
-
-
-
-
-    CONFIGURED_STATE
-                            = 0x20
-} USB_DEVICE_STATE;
-
-
-
-typedef enum
-{
-
-    EVENT_CONFIGURED
-                            = EVENT_DEVICE_STACK_BASE ,
-
-
-    EVENT_SET_DESCRIPTOR,
-
-
-
-
-
-    EVENT_EP0_REQUEST,
-# 213 "USB/usb_device.h"
-    EVENT_ATTACH,
-
-
-
-
-    EVENT_TRANSFER_TERMINATED
-
-} USB_DEVICE_STACK_EVENTS;
-# 252 "USB/usb_device.h"
-void USBDeviceInit(void);
-# 357 "USB/usb_device.h"
-void USBDeviceTasks(void);
-# 409 "USB/usb_device.h"
-void USBEnableEndpoint(BYTE ep, BYTE options);
-# 502 "USB/usb_device.h"
-void* USBTransferOnePacket(BYTE ep,BYTE dir,BYTE* data,BYTE len);
-# 527 "USB/usb_device.h"
-void USBStallEndpoint(BYTE ep, BYTE dir);
-# 551 "USB/usb_device.h"
-void USBCancelIO(BYTE endpoint);
-# 648 "USB/usb_device.h"
-void USBDeviceDetach(void);
-# 693 "USB/usb_device.h"
-void USBDeviceAttach(void);
-# 732 "USB/usb_device.h"
-void USBCtrlEPAllowStatusStage(void);
-# 762 "USB/usb_device.h"
-void USBCtrlEPAllowDataStage(void);
-# 838 "USB/usb_device.h"
-void USBDeferOUTDataStage(void);
-extern volatile BOOL USBDeferOUTDataStagePackets;
-# 908 "USB/usb_device.h"
-void USBDeferStatusStage(void);
-extern volatile BOOL USBDeferStatusStagePacket;
-# 960 "USB/usb_device.h"
-BOOL USBOUTDataStageDeferred(void);
-# 1043 "USB/usb_device.h"
-void USBDeferINDataStage(void);
-extern volatile BOOL USBDeferINDataStagePackets;
-# 1097 "USB/usb_device.h"
-BOOL USBINDataStageDeferred(void);
-# 1167 "USB/usb_device.h"
-BOOL USBGetRemoteWakeupStatus(void);
-# 1224 "USB/usb_device.h"
-USB_DEVICE_STATE USBGetDeviceState(void);
-# 1280 "USB/usb_device.h"
-BOOL USBGetSuspendState(void);
-# 1315 "USB/usb_device.h"
-BOOL USBIsDeviceSuspended(void);
-# 1358 "USB/usb_device.h"
-BOOL USBIsBusSuspended(void);
-# 1384 "USB/usb_device.h"
-void USBSoftDetach(void);
-# 1422 "USB/usb_device.h"
-BOOL USBHandleBusy(void* handle);
-# 1456 "USB/usb_device.h"
-WORD USBHandleGetLength(void* handle);
-# 1488 "USB/usb_device.h"
-WORD USBHandleGetAddr(void*);
-# 1588 "USB/usb_device.h"
-void* USBGetNextHandle(BYTE ep_num, BYTE ep_dir);
-# 1621 "USB/usb_device.h"
-void USBEP0Transmit(BYTE options);
-# 1649 "USB/usb_device.h"
-void USBEP0SendRAMPtr(BYTE* src, WORD size, BYTE Options);
-# 1681 "USB/usb_device.h"
-void USBEP0SendROMPtr(BYTE* src, WORD size, BYTE Options);
-# 1709 "USB/usb_device.h"
-void USBEP0Receive(BYTE* dest, WORD size, void (*function));
-# 1744 "USB/usb_device.h"
-void* USBTxOnePacket(BYTE ep, BYTE* data, WORD len);
-# 1781 "USB/usb_device.h"
-void* USBRxOnePacket(BYTE ep, BYTE* data, WORD len);
-# 1813 "USB/usb_device.h"
-BOOL USB_APPLICATION_EVENT_HANDLER(BYTE address, USB_EVENT event, void *pdata, WORD size);
-# 1845 "USB/usb_device.h"
-void *USBDeviceCBGetDescriptor ( UINT16 *length,
-                                    UINT8 *ptr_type,
-                                    DESCRIPTOR_ID *id);
-# 1919 "USB/usb_device.h"
-typedef struct __attribute__ ((packed))
-{
-    union __attribute__ ((packed))
-    {
-
-
-        BYTE *bRam;
-        const BYTE *bRom;
-        WORD *wRam;
-        const WORD *wRom;
-    }pSrc;
-    union __attribute__ ((packed))
-    {
-        struct __attribute__ ((packed))
-        {
-
-            BYTE ctrl_trf_mem :1;
-            BYTE reserved :5;
-
-
-            BYTE includeZero :1;
-
-            BYTE busy :1;
-        }bits;
-        BYTE Val;
-    }info;
-    WORD_VAL __attribute__((aligned)) wCount;
-}IN_PIPE;
-
-extern volatile IN_PIPE inPipes[];
-
-typedef struct __attribute__ ((packed))
-{
-    union __attribute__ ((packed))
-    {
-
-
-        BYTE *bRam;
-        WORD *wRam;
-    }pDst;
-    union __attribute__ ((packed))
-    {
-        struct __attribute__ ((packed))
-        {
-            BYTE reserved :7;
-
-            BYTE busy :1;
-        }bits;
-        BYTE Val;
-    }info;
-    WORD_VAL wCount;
-    void (*pFunc)(void);
-}OUT_PIPE;
-# 1981 "USB/usb_device.h"
-extern volatile BOOL RemoteWakeup;
-extern volatile BOOL USBBusIsSuspended;
-extern volatile USB_DEVICE_STATE USBDeviceState;
-extern volatile BYTE USBActiveConfiguration;
-# 120 "USB/usb.h" 2
-# 130 "USB/usb.h"
-# 1 "USB/usb_hal.h" 1
-# 104 "USB/usb_hal.h"
-# 1 "USB/usb_hal_pic32.h" 1
-# 224 "USB/usb_hal_pic32.h"
-typedef union
-{
-    WORD UEP[16];
-} _UEP;
-
-
-
-typedef union _POINTER
-{
-    struct
-    {
-        BYTE bLow;
-        BYTE bHigh;
-
-    };
-    WORD _word;
-
-
-
-    BYTE* bRam;
-
-    WORD* wRam;
-
-
-    const BYTE* bRom;
-    const WORD* wRom;
-
-
-
-
-} POINTER;
-# 432 "USB/usb_hal_pic32.h"
-typedef union __attribute__ ((packed)) _BD_STAT
-{
-    struct __attribute__ ((packed)){
-        unsigned :2;
-        unsigned BSTALL :1;
-        unsigned DTSEN :1;
-        unsigned :2;
-        unsigned DTS :1;
-        unsigned UOWN :1;
-    };
-    struct __attribute__ ((packed)){
-        unsigned :2;
-        unsigned PID0 :1;
-        unsigned PID1 :1;
-        unsigned PID2 :1;
-        unsigned PID3 :1;
-
-    };
-    struct __attribute__ ((packed)){
-        unsigned :2;
-        unsigned PID :4;
-    };
-    WORD Val;
-} BD_STAT;
-
-
-typedef union __attribute__ ((packed))__BDT
-{
-    struct __attribute__ ((packed))
-    {
-        BD_STAT STAT;
-        WORD CNT:10;
-        DWORD ADR;
-    };
-    struct __attribute__ ((packed))
-    {
-        DWORD res :16;
-        DWORD count:10;
-    };
-    DWORD w[2];
-    WORD v[4];
-    QWORD Val;
-} BDT_ENTRY;
-
-
-typedef union __USTAT
-{
-    struct
-    {
-        unsigned char filler1 :2;
-        unsigned char ping_pong :1;
-        unsigned char direction :1;
-        unsigned char endpoint_number :4;
-    };
-    BYTE Val;
-} USTAT_FIELDS;
-# 498 "USB/usb_hal_pic32.h"
-     extern volatile BYTE USBActiveConfiguration;
-     extern volatile IN_PIPE inPipes[1];
-     extern volatile OUT_PIPE outPipes[1];
-
- extern volatile BDT_ENTRY* pBDTEntryOut[2 +1];
- extern volatile BDT_ENTRY* pBDTEntryIn[2 +1];
-# 105 "USB/usb_hal.h" 2
-# 152 "USB/usb_hal.h"
-void OTGCORE_SetDeviceAddr( BYTE addr );
-# 191 "USB/usb_hal.h"
-    void OTGCORE_ControlUsbResistors( BYTE flags );
-# 235 "USB/usb_hal.h"
-BOOL USBHALSessionIsValid( void );
-# 261 "USB/usb_hal.h"
-BOOL USBHALControlBusPower( BYTE cmd );
-# 302 "USB/usb_hal.h"
-unsigned long USBHALGetLastError( void );
-# 348 "USB/usb_hal.h"
-void USBHALHandleBusEvent ( void );
-# 389 "USB/usb_hal.h"
-BOOL OTGCORE_StallPipe( TRANSFER_FLAGS pipe );
-# 426 "USB/usb_hal.h"
-BOOL OTGCORE_UnstallPipe( TRANSFER_FLAGS pipe );
-# 460 "USB/usb_hal.h"
-UINT16 OTGCORE_GetStalledEndpoints ( void );
-# 497 "USB/usb_hal.h"
-BOOL USBHALFlushPipe( TRANSFER_FLAGS pipe );
-# 557 "USB/usb_hal.h"
-BOOL USBHALTransferData ( TRANSFER_FLAGS flags,
-                          void *buffer,
-                          unsigned int size );
-# 597 "USB/usb_hal.h"
-BOOL USBHALSetEpConfiguration ( BYTE ep_num, UINT16 max_pkt_size, UINT16 flags );
-# 647 "USB/usb_hal.h"
-BOOL USBHALInitialize ( unsigned long flags );
-# 131 "USB/usb.h" 2
-# 5 "microchip.c" 2
-# 1 "USB/usb_function_cdc.h" 1
-# 107 "USB/usb_function_cdc.h"
-# 1 "USB/usb.h" 1
-# 108 "USB/usb_function_cdc.h" 2
-# 617 "USB/usb_function_cdc.h"
-void CDCInitEP(void);
-# 643 "USB/usb_function_cdc.h"
-void USBCheckCDCRequest(void);
-# 661 "USB/usb_function_cdc.h"
-void CDCNotificationHandler(void);
-# 687 "USB/usb_function_cdc.h"
-BOOL USBCDCEventHandler(USB_EVENT event, void *pdata, WORD size);
-# 734 "USB/usb_function_cdc.h"
-BYTE getsUSBUSART(char *buffer, BYTE len);
-# 776 "USB/usb_function_cdc.h"
-void putUSBUSART(char *data, BYTE Length);
-# 817 "USB/usb_function_cdc.h"
-void putsUSBUSART(char *data);
-# 860 "USB/usb_function_cdc.h"
-void putrsUSBUSART(const const char *data);
-# 912 "USB/usb_function_cdc.h"
-void CDCTxService(void);
-
-
-
-
-
-
-
-typedef union _LINE_CODING
-{
-    struct
-    {
-        BYTE _byte[0x07];
-    };
-    struct
-    {
-        DWORD_VAL dwDTERate;
-        BYTE bCharFormat;
-        BYTE bParityType;
-        BYTE bDataBits;
-    };
-} LINE_CODING;
-
-typedef union _CONTROL_SIGNAL_BITMAP
-{
-    BYTE _byte;
-    struct
-    {
-        unsigned DTE_PRESENT:1;
-        unsigned CARRIER_CONTROL:1;
-    };
-} CONTROL_SIGNAL_BITMAP;
-
-
-
-
-
-typedef struct __attribute__((packed)) _USB_CDC_HEADER_FN_DSC
-{
-    BYTE bFNLength;
-    BYTE bDscType;
-    BYTE bDscSubType;
-    WORD bcdCDC;
-} USB_CDC_HEADER_FN_DSC;
-
-
-typedef struct __attribute__((packed)) _USB_CDC_ACM_FN_DSC
-{
-    BYTE bFNLength;
-    BYTE bDscType;
-    BYTE bDscSubType;
-    BYTE bmCapabilities;
-} USB_CDC_ACM_FN_DSC;
-
-
-typedef struct __attribute__((packed)) _USB_CDC_UNION_FN_DSC
-{
-    BYTE bFNLength;
-    BYTE bDscType;
-    BYTE bDscSubType;
-    BYTE bMasterIntf;
-    BYTE bSaveIntf0;
-} USB_CDC_UNION_FN_DSC;
-
-
-typedef struct __attribute__((packed)) _USB_CDC_CALL_MGT_FN_DSC
-{
-    BYTE bFNLength;
-    BYTE bDscType;
-    BYTE bDscSubType;
-    BYTE bmCapabilities;
-    BYTE bDataInterface;
-} USB_CDC_CALL_MGT_FN_DSC;
-
-typedef union __attribute__((packed)) _CDC_NOTICE
-{
-    LINE_CODING GetLineCoding;
-    LINE_CODING SetLineCoding;
-    unsigned char packet[10];
-} CDC_NOTICE, *PCDC_NOTICE;
-
-
-typedef union
-{
-    BYTE byte;
-    struct
-    {
-        BYTE DCD :1;
-        BYTE DSR :1;
-        BYTE BreakState :1;
-        BYTE RingDetect :1;
-        BYTE FramingError :1;
-        BYTE ParityError :1;
-        BYTE Overrun :1;
-        BYTE Reserved :1;
-    }bits;
-}BM_SERIAL_STATE;
-
-
-typedef struct
-{
-    BYTE bmRequestType;
-    BYTE bNotification;
-    UINT16 wValue;
-    UINT16 wIndex;
-    UINT16 wLength;
-    BM_SERIAL_STATE SerialState;
-    BYTE Reserved;
-}SERIAL_STATE_NOTIFICATION;
-
-
-
-extern BYTE cdc_rx_len;
-extern void* lastTransmission;
-
-extern BYTE cdc_trf_state;
-extern POINTER pCDCSrc;
-extern BYTE cdc_tx_len;
-extern BYTE cdc_mem_type;
-
-extern volatile CDC_NOTICE cdc_notice;
-extern LINE_CODING line_coding;
-
-extern volatile CTRL_TRF_SETUP SetupPkt;
-extern const BYTE configDescriptor1[];
-# 6 "microchip.c" 2
-# 1 "./include/HardwareProfile.h" 1
-# 46 "./include/HardwareProfile.h"
-# 1 "./include/HardwareProfile - PIC32MX460F512L PIM.h" 1
-# 47 "./include/HardwareProfile.h" 2
-# 7 "microchip.c" 2
-
-# 1 "USB/usb_config.h" 1
-# 9 "microchip.c" 2
-# 1 "USB/usb_device.h" 1
-# 10 "microchip.c" 2
-
-char USB_In_Buffer[64]={0};
-char USB_Out_Buffer[64]={0};
-
-static void InitializeSystem(void);
-void USBCBSendResume(void);
-
-
-void ProcessIO(void);
-void UserInit(void);
-
-int microchip_main(void)
-{
-    InitializeSystem();
-    USBDeviceAttach();
-
-    while(1) ProcessIO();
-
-    return 0;
+    G_videoAssetId = assetId;
+    assetList[assetId].datacb(assetId, G_videoFrame);
 }
 
-unsigned int USBbufferSizeIn()
+void drawLCD1(unsigned char assetId, int frame)
 {
-    return 64;
+    unsigned char i, j, p, r, g, b, pixbyte, *cmap, *pixdata;
+    unsigned short pixel ;
+
+
+    S6B33_rect(0, 0, assetList[assetId].y - 1, assetList[assetId].x - 1);
+
+    pixdata = &(assetList[assetId].pixdata[0]);
+    for (i=0; i < assetList[assetId].y; i++) {
+       for (j=0; j < assetList[assetId].x/8; j++ ) {
+            pixbyte = *pixdata++;
+
+            for (p=0; p<8; p++) {
+
+
+                cmap = &(assetList[assetId].data_cmap[(unsigned short)((pixbyte>>p) & 0x1) * 3]);
+                r = cmap[0];
+                g = cmap[1];
+                b = cmap[2];
+
+                pixel = ( ( ((r >> 3) & 0b11111) << 11 ) |
+                          ( ((g >> 3) & 0b11111) << 6 ) |
+                          ( ((b >> 3) & 0b11111) )) ;
+
+                S6B33_pixel(pixel);
+         }
+      }
+   }
 }
 
-unsigned int USBbufferSizeOut()
+void drawLCD2(unsigned char assetId, int frame)
 {
-    return 64;
+    unsigned char i, j, r, g, b, pixbyte, *cmap, *pixdata;
+    unsigned short pixel ;
+
+    S6B33_rect(0, 0, assetList[assetId].x - 1, assetList[assetId].y - 1);
+
+    pixdata = &(assetList[assetId].pixdata[0]);
+    for (i=0; i < assetList[assetId].y; i++) {
+       for (j=0; j < assetList[assetId].x/4; j++ ) {
+            pixbyte = *pixdata++;
+
+
+            cmap = &(assetList[assetId].data_cmap[(unsigned short)((pixbyte>>6) & 0x3) * 3]);
+            r = cmap[0];
+            g = cmap[1];
+            b = cmap[2];
+
+            pixel = ( ( ((r >> 3) & 0b11111) << 11 ) |
+                      ( ((g >> 3) & 0b11111) << 6 ) |
+                      ( ((b >> 3) & 0b11111) )) ;
+
+            S6B33_pixel(pixel);
+
+
+            cmap = &(assetList[assetId].data_cmap[(unsigned short)((pixbyte>>4) & 0x3) * 3]);
+            r = cmap[0];
+            g = cmap[1];
+            b = cmap[2];
+
+            pixel = ( ( ((r >> 3) & 0b11111) << 11 ) |
+                      ( ((g >> 3) & 0b11111) << 6 ) |
+                      ( ((b >> 3) & 0b11111) )) ;
+
+            S6B33_pixel(pixel);
+
+
+            cmap = &(assetList[assetId].data_cmap[(unsigned short)((pixbyte>>2) & 0x3) * 3]);
+            r = cmap[0];
+            g = cmap[1];
+            b = cmap[2];
+
+            pixel = ( ( ((r >> 3) & 0b11111) << 11 ) |
+                      ( ((g >> 3) & 0b11111) << 6 ) |
+                      ( ((b >> 3) & 0b11111) )) ;
+
+            S6B33_pixel(pixel);
+
+
+            cmap = &(assetList[assetId].data_cmap[(unsigned short)(pixbyte & 0x3) * 3]);
+            r = cmap[0];
+            g = cmap[1];
+            b = cmap[2];
+
+            pixel = ( ( ((r >> 3) & 0b11111) << 11 ) |
+                      ( ((g >> 3) & 0b11111) << 6 ) |
+                      ( ((b >> 3) & 0b11111) )) ;
+
+            S6B33_pixel(pixel);
+      }
+   }
 }
 
-volatile unsigned char USBtransferReady()
+void drawLCD4(unsigned char assetId, int frame)
 {
-    return ((cdc_trf_state == 0));
+    unsigned char i, j, r, g, b, pixbyte, *cmap, *pixdata;
+    unsigned short pixel ;
+
+    S6B33_rect(0, 0, assetList[assetId].x - 1, assetList[assetId].y - 1);
+
+    pixdata = &(assetList[assetId].pixdata[0]);
+    for (i=0; i < assetList[assetId].y; i++) {
+       for (j=0; j < assetList[assetId].x/2; j++ ) {
+            pixbyte = *pixdata++;
+
+
+            cmap = &(assetList[assetId].data_cmap[(unsigned short)(pixbyte>>4) * 3]);
+            r = cmap[0];
+            g = cmap[1];
+            b = cmap[2];
+
+            pixel = ( ( ((r >> 3) & 0b11111) << 11 ) |
+                      ( ((g >> 3) & 0b11111) << 6 ) |
+                      ( ((b >> 3) & 0b11111) )) ;
+
+            S6B33_pixel(pixel);
+
+
+            cmap = &(assetList[assetId].data_cmap[(unsigned short)(pixbyte & 0xF) * 3]);
+            r = cmap[0];
+            g = cmap[1];
+            b = cmap[2];
+
+            pixel = ( ( ((r >> 3) & 0b11111) << 11 ) |
+                      ( ((g >> 3) & 0b11111) << 6 ) |
+                      ( ((b >> 3) & 0b11111) )) ;
+
+            S6B33_pixel(pixel);
+      }
+   }
 }
 
-volatile int mchipUSBnotReady()
+void drawLCD8(unsigned char assetId, int frame)
 {
-    return ((USBDeviceState < CONFIGURED_STATE)||(U1PWRCbits.USUSPEND==1));
+    unsigned char i, j, r, g, b, pixbyte, *cmap;
+    unsigned short pixel;
+
+    S6B33_rect(0, 0, assetList[assetId].x - 1, assetList[assetId].y - 1);
+
+    for (i=0; i < assetList[assetId].y; i++) {
+       for (j=0; j < assetList[assetId].x; j++) {
+            pixbyte = assetList[assetId].pixdata[i * assetList[assetId].x + j];
+            cmap = &(assetList[assetId].data_cmap[(unsigned short)pixbyte * 3]);
+            r = cmap[0];
+            g = cmap[1];
+            b = cmap[2];
+
+            pixel = ( ( ((r >> 3) & 0b11111) << 11 ) |
+                      ( ((g >> 3) & 0b11111) << 6 ) |
+                      ( ((b >> 3) & 0b11111) )) ;
+
+            S6B33_pixel(pixel);
+      }
+   }
 }
 
-volatile unsigned char getUSBSuspendControl()
+unsigned short G_currentNote=0;
+unsigned short G_duration = 0;
+unsigned short G_duration_cnt = 0;
+unsigned short G_freq_cnt = 0;
+unsigned short G_freq = 0;
+
+unsigned short G_mute = 0;
+
+void playAsset(unsigned char assetId)
 {
-    return U1PWRCbits.USUSPEND;
-}
-
-volatile unsigned char USBDeviceStateDETACHED()
-{
- return (USBDeviceState == DETACHED_STATE);
-}
-
-volatile unsigned char USBDeviceStateATTACHED()
-{
-        return (USBDeviceState == ATTACHED_STATE);
-}
-
-volatile unsigned char USBDeviceStatePOWERED()
-{
-        return (USBDeviceState == POWERED_STATE);
-}
-
-volatile unsigned char USBDeviceStateDEFAULT()
-{
-        return (USBDeviceState == DEFAULT_STATE);
-}
-
-volatile unsigned char USBDeviceStateADDRESS()
-{
-        return (USBDeviceState == ADDRESS_STATE);
-}
-
-volatile unsigned char USBDeviceStateCONFIGURED()
-{
-        return (USBDeviceState == CONFIGURED_STATE);
-}
-# 95 "microchip.c"
-static void InitializeSystem(void)
-{
-    unsigned char i;
-
-    for (i=0; i<64; i++) USB_In_Buffer[i] = 0;
-    for (i=0; i<64; i++) USB_Out_Buffer[i] = 0;
-
-    SYSTEMConfig(40000000, 0x00000001 | 0x00000004);
-# 142 "microchip.c"
-    UserInit();
-
-    USBDeviceInit();
-
-}
-# 159 "microchip.c"
-void mySetLineCodingHandler(void)
-{
-
-    if(cdc_notice.GetLineCoding.dwDTERate.Val > 115200)
-    {
-# 179 "microchip.c"
-    }
-    else
-    {
-
-        {line_coding.dwDTERate.Val=cdc_notice.GetLineCoding.dwDTERate.Val;};
-
-    }
-}
-# 215 "microchip.c"
-void USBCBSuspend(void)
-{
-# 233 "microchip.c"
-}
-# 246 "microchip.c"
-void USBCBWakeFromSuspend(void)
-{
-# 258 "microchip.c"
-}
-# 267 "microchip.c"
-void USBCB_SOF_Handler(void)
-{
-
-
-}
-
-
-
-
-
-
-
-void USBCBErrorHandler(void)
-{
-# 299 "microchip.c"
-}
-# 319 "microchip.c"
-void USBCBCheckOtherReq(void)
-{
-    USBCheckCDCRequest();
-}
-# 333 "microchip.c"
-void USBCBStdSetDscHandler(void)
-{
-
-}
-# 348 "microchip.c"
-void USBCBInitEP(void)
-{
-
-    CDCInitEP();
-}
-# 432 "microchip.c"
-void USBCBSendResume(void)
-{
-    static WORD delay_count;
-# 445 "microchip.c"
-    if(RemoteWakeup == TRUE)
-    {
-
-
-        if(USBBusIsSuspended == TRUE)
-        {
-            {IEC1CLR = 0x00000008;};
-
-
-            USBCBWakeFromSuspend();
-            U1PWRCbits.USUSPEND = 0;
-            USBBusIsSuspended = FALSE;
-# 465 "microchip.c"
-            delay_count = 3600U;
-            do
-            {
-                delay_count--;
-            }while(delay_count);
-
-
-            U1CONbits.RESUME = 1;
-            delay_count = 1800U;
-            do
-            {
-                delay_count--;
-            }while(delay_count);
-            U1CONbits.RESUME = 0;
-
-            {IEC1SET = 0x00000008;};
-        }
-    }
-}
-# 522 "microchip.c"
-BOOL USER_USB_CALLBACK_EVENT_HANDLER(int event, void *pdata, WORD size)
-{
-    switch(event)
-    {
-        case EVENT_TRANSFER:
-
-            break;
-        case EVENT_SOF:
-            USBCB_SOF_Handler();
-            break;
-        case EVENT_SUSPEND:
-            USBCBSuspend();
-            break;
-        case EVENT_RESUME:
-            USBCBWakeFromSuspend();
-            break;
-        case EVENT_CONFIGURED:
-            USBCBInitEP();
-            break;
-        case EVENT_SET_DESCRIPTOR:
-            USBCBStdSetDscHandler();
-            break;
-        case EVENT_EP0_REQUEST:
-            USBCBCheckOtherReq();
-            break;
-        case EVENT_BUS_ERROR:
-            USBCBErrorHandler();
-            break;
-        case EVENT_TRANSFER_TERMINATED:
-# 559 "microchip.c"
-            break;
-        default:
-            break;
-    }
-    return TRUE;
+    assetList[assetId].datacb(assetId, 0);
 }
