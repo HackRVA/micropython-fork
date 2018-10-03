@@ -1,0 +1,42 @@
+build/py/sequence.o: ../../py/sequence.c \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/string.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/ansi.h \
+ ../../py/runtime.h ../../py/mpstate.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h \
+ ../../py/mpconfig.h mpconfigport.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h \
+ ../../py/mpthread.h ../../py/misc.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdbool.h \
+ ../../py/nlr.h /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/limits.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/sys/limits.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/assert.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/setjmp.h ../../py/obj.h \
+ ../../py/qstr.h build/genhdr/qstrdefs.generated.h ../../py/mpprint.h \
+ ../../py/runtime0.h ../../py/objlist.h ../../py/objexcept.h \
+ ../../py/objtuple.h ../../py/pystack.h
+../../py/sequence.c :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/string.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/ansi.h :
+ ../../py/runtime.h ../../py/mpstate.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h :
+ ../../py/mpconfig.h mpconfigport.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h :
+ ../../py/mpthread.h ../../py/misc.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdbool.h :
+ ../../py/nlr.h /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/limits.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/sys/limits.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/assert.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/setjmp.h ../../py/obj.h :
+ ../../py/qstr.h build/genhdr/qstrdefs.generated.h ../../py/mpprint.h :
+ ../../py/runtime0.h ../../py/objlist.h ../../py/objexcept.h :
+ ../../py/objtuple.h ../../py/pystack.h :

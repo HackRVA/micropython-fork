@@ -1,0 +1,34 @@
+build/py/emitcommon.o: ../../py/emitcommon.c \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/assert.h \
+ ../../py/emit.h ../../py/lexer.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h \
+ ../../py/mpconfig.h mpconfigport.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h \
+ ../../py/qstr.h ../../py/misc.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdbool.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/ansi.h \
+ build/genhdr/qstrdefs.generated.h ../../py/reader.h ../../py/obj.h \
+ ../../py/mpprint.h ../../py/runtime0.h ../../py/scope.h ../../py/parse.h \
+ ../../py/emitglue.h
+../../py/emitcommon.c :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/assert.h :
+ ../../py/emit.h ../../py/lexer.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h :
+ ../../py/mpconfig.h mpconfigport.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h :
+ ../../py/qstr.h ../../py/misc.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdbool.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/ansi.h :
+ build/genhdr/qstrdefs.generated.h ../../py/reader.h ../../py/obj.h :
+ ../../py/mpprint.h ../../py/runtime0.h ../../py/scope.h ../../py/parse.h :
+ ../../py/emitglue.h :

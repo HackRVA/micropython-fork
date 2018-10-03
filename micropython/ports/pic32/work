@@ -1,0 +1,13 @@
+make clean
+
+rm build/badge* build/LCD* build/USB/* build/microchip*
+rm build/usb*
+
+make V=1
+
+rm build/firmware* build/badge.o build/pic32config.o
+
+make V=1
+
+
+

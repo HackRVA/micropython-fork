@@ -1,0 +1,24 @@
+build/py/parsenumbase.o: ../../py/parsenumbase.c ../../py/mpconfig.h \
+ mpconfigport.h /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h \
+ ../../py/misc.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdbool.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h \
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/ansi.h \
+ ../../py/parsenumbase.h
+../../py/parsenumbase.c ../../py/mpconfig.h :
+ mpconfigport.h /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h :
+ ../../py/misc.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdbool.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h :
+ /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/ansi.h :
+ ../../py/parsenumbase.h :

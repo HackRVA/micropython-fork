@@ -1,0 +1,54 @@
+build/py/objnone.o: ../../py/objnone.c \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdlib.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machine/ieeefp.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/_ansi.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/newlib.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/_newlib_version.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/config.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/features.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/reent.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/_ansi.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_types.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machine/_types.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machine/_default_types.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/lock.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/cdefs.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machine/stdlib.h \
+ ../../py/obj.h ../../py/mpconfig.h mpconfigport.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/include/stdint.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdint.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_intsup.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_stdint.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/alloca.h \
+ ../../py/misc.h \
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/include/stdbool.h \
+ ../../py/qstr.h build/genhdr/qstrdefs.generated.h ../../py/mpprint.h \
+ ../../py/runtime0.h
+../../py/objnone.c :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdlib.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machine/ieeefp.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/_ansi.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/newlib.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/_newlib_version.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/config.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/features.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/reent.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/_ansi.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_types.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machine/_types.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machine/_default_types.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/lock.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/cdefs.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machine/stdlib.h :
+ ../../py/obj.h ../../py/mpconfig.h mpconfigport.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/include/stdint.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdint.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_intsup.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_stdint.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/alloca.h :
+ ../../py/misc.h :
+ /home/paul/dockershare/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/include/stdbool.h :
+ ../../py/qstr.h build/genhdr/qstrdefs.generated.h ../../py/mpprint.h :
+ ../../py/runtime0.h :
