@@ -36,6 +36,8 @@
 #include "py/runtime.h"
 #include "py/asmbase.h"
 
+#include "unistd.h"
+
 #if MICROPY_ENABLE_COMPILER
 
 // TODO need to mangle __attr names

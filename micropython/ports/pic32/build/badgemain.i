@@ -8989,7 +8989,9 @@ typedef __uint32_t mp_uint_t;
 typedef long mp_off_t;
 # 72 "./mpconfigport.h"
 # 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/alloca.h" 1 3
-# 72 "./mpconfigport.h" 2
+# 73 "./mpconfigport.h" 2
+
+extern const struct _mp_obj_module_t mp_module_pybadge;
 # 46 "../../py/mpconfig.h" 2
 # 32 "../../py/lexer.h" 2
 # 1 "../../py/qstr.h" 1
@@ -9155,6 +9157,9 @@ MP_QSTR__lt_genexpr_gt_,
 MP_QSTR__lt_string_gt_,
 MP_QSTR__lt_stdin_gt_,
 MP_QSTR_utf_hyphen_8,
+MP_QSTR_red,
+MP_QSTR_green,
+MP_QSTR_blue,
 MP_QSTR_ArithmeticError,
 MP_QSTR_AssertionError,
 MP_QSTR_AttributeError,
@@ -9242,6 +9247,7 @@ MP_QSTR_iterator,
 MP_QSTR_join,
 MP_QSTR_key,
 MP_QSTR_keys,
+MP_QSTR_lcd_python,
 MP_QSTR_len,
 MP_QSTR_list,
 MP_QSTR_little,
@@ -9264,6 +9270,7 @@ MP_QSTR_pop,
 MP_QSTR_popitem,
 MP_QSTR_pow,
 MP_QSTR_print,
+MP_QSTR_pybadge,
 MP_QSTR_range,
 MP_QSTR_remove,
 MP_QSTR_replace,

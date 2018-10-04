@@ -5,26 +5,26 @@
 # 27 "../../py/nlr.c"
 # 1 "../../py/mpstate.h" 1
 # 29 "../../py/mpstate.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 1
-# 46 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h" 1
-# 46 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h"
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 1 3
+# 42 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 3
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 1 3
+# 46 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
 typedef __signed char __int8_t;
 typedef unsigned char __uint8_t;
 typedef short int __int16_t;
 typedef unsigned short int __uint16_t;
 typedef int __int32_t;
 typedef unsigned int __uint32_t;
-# 60 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h"
+# 60 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
 __extension__
 typedef long long int __int64_t;
 
 __extension__
 typedef unsigned long long int __uint64_t;
-# 75 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h"
+# 75 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
 typedef int __intptr_t;
 typedef unsigned int __uintptr_t;
-# 47 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 2
+# 43 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
 
 
 typedef __int8_t int8_t;
@@ -76,8 +76,8 @@ typedef __uintptr_t uintptr_t;
 
 
 
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h" 1
-# 48 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h"
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 1 3
+# 48 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
 __extension__
 typedef __signed char int_least8_t;
 typedef unsigned char uint_least8_t;
@@ -87,7 +87,7 @@ typedef int int_least24_t;
 typedef unsigned int uint_least24_t;
 typedef int int_least32_t;
 typedef unsigned int uint_least32_t;
-# 65 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h"
+# 65 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
 __extension__
 typedef long long int int_least64_t;
 
@@ -104,28 +104,28 @@ typedef int int_fast24_t;
 typedef unsigned int uint_fast24_t;
 typedef int int_fast32_t;
 typedef unsigned int uint_fast32_t;
-# 89 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h"
+# 89 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
 __extension__
 typedef long long int int_fast64_t;
 
 __extension__
 typedef unsigned long long int uint_fast64_t;
-# 106 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h"
+# 106 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
 __extension__
 typedef long long int intmax_t;
 
 __extension__
 typedef unsigned long long int uintmax_t;
-# 99 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 2
+# 95 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
 
 
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h" 1
-# 102 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 2
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_limits.h" 1 3
+# 98 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
 
 
 
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h" 1
-# 106 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 2
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_const.h" 1 3
+# 102 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
 # 30 "../../py/mpstate.h" 2
 
 # 1 "../../py/mpconfig.h" 1
@@ -136,21 +136,23 @@ typedef __int32_t mp_int_t;
 typedef __uint32_t mp_uint_t;
 typedef long mp_off_t;
 # 72 "./mpconfigport.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h" 1
-# 72 "./mpconfigport.h" 2
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/alloca.h" 1 3
+# 73 "./mpconfigport.h" 2
+
+extern const struct _mp_obj_module_t mp_module_pybadge;
 # 46 "../../py/mpconfig.h" 2
 # 32 "../../py/mpstate.h" 2
 # 1 "../../py/mpthread.h" 1
 # 33 "../../py/mpstate.h" 2
 # 1 "../../py/misc.h" 1
 # 33 "../../py/misc.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdbool.h" 1
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/include/stdbool.h" 1 3 4
 # 34 "../../py/misc.h" 2
 
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h" 1
-# 79 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/ansi.h" 1
-# 80 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stddef.h" 2
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stddef.h" 1 3
+# 75 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stddef.h" 3
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/ansi.h" 1 3
+# 76 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stddef.h" 2 3
 
 
 typedef long unsigned int size_t;
@@ -263,18 +265,15 @@ extern mp_uint_t mp_verbose_flag;
 # 34 "../../py/mpstate.h" 2
 # 1 "../../py/nlr.h" 1
 # 32 "../../py/nlr.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/limits.h" 1
-# 171 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/limits.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/sys/limits.h" 1
-# 172 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/limits.h" 2
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/include-fixed/limits.h" 1 3 4
 # 33 "../../py/nlr.h" 2
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/assert.h" 1
-# 74 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/assert.h"
-extern void __assfail(const char *fmt,...) __attribute__ ((noreturn));
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/assert.h" 1 3
+# 35 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/assert.h" 3
+extern void __attribute__((noreturn)) _fassert(int, const char *, const char *, const char*);
 # 34 "../../py/nlr.h" 2
 # 68 "../../py/nlr.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/setjmp.h" 1
-# 98 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/setjmp.h"
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/setjmp.h" 1 3
+# 94 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/setjmp.h" 3
 typedef long long jmp_buf[24];
 typedef long long sigjmp_buf[24 + 1];
 
@@ -381,6 +380,9 @@ MP_QSTR__lt_genexpr_gt_,
 MP_QSTR__lt_string_gt_,
 MP_QSTR__lt_stdin_gt_,
 MP_QSTR_utf_hyphen_8,
+MP_QSTR_red,
+MP_QSTR_green,
+MP_QSTR_blue,
 MP_QSTR_ArithmeticError,
 MP_QSTR_AssertionError,
 MP_QSTR_AttributeError,
@@ -468,6 +470,7 @@ MP_QSTR_iterator,
 MP_QSTR_join,
 MP_QSTR_key,
 MP_QSTR_keys,
+MP_QSTR_lcd_python,
 MP_QSTR_len,
 MP_QSTR_list,
 MP_QSTR_little,
@@ -490,6 +493,7 @@ MP_QSTR_pop,
 MP_QSTR_popitem,
 MP_QSTR_pow,
 MP_QSTR_print,
+MP_QSTR_pybadge,
 MP_QSTR_range,
 MP_QSTR_remove,
 MP_QSTR_replace,

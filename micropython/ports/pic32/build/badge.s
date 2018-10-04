@@ -155,24 +155,18 @@ initPIC32:
 	.ent	redled
 	.type	redled, @function
 redled:
-	.frame	$sp,24,$31		# vars= 0, regs= 1/0, args= 16, gp= 0
-	.mask	0x80000000,-4
+	.frame	$sp,0,$31		# vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
 	.fmask	0x00000000,0
 	.set	noreorder
 	.set	nomacro
 # End mchp_output_function_prologue
-	addiu	$sp,$sp,-24
-	sw	$31,20($sp)
 	lui	$2,%hi(LATC)
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$4,0,1
 	sw	$3,%lo(LATC)($2)
-	jal	pause
-	nop
-
-	lw	$31,20($sp)
 	j	$31
-	addiu	$sp,$sp,24
+	nop
 
 	.set	macro
 	.set	reorder
@@ -187,24 +181,18 @@ redled:
 	.ent	greenled
 	.type	greenled, @function
 greenled:
-	.frame	$sp,24,$31		# vars= 0, regs= 1/0, args= 16, gp= 0
-	.mask	0x80000000,-4
+	.frame	$sp,0,$31		# vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
 	.fmask	0x00000000,0
 	.set	noreorder
 	.set	nomacro
 # End mchp_output_function_prologue
-	addiu	$sp,$sp,-24
-	sw	$31,20($sp)
 	lui	$2,%hi(LATB)
 	lw	$3,%lo(LATB)($2)
 	ins	$3,$4,3,1
 	sw	$3,%lo(LATB)($2)
-	jal	pause
-	nop
-
-	lw	$31,20($sp)
 	j	$31
-	addiu	$sp,$sp,24
+	nop
 
 	.set	macro
 	.set	reorder
@@ -219,24 +207,18 @@ greenled:
 	.ent	blueled
 	.type	blueled, @function
 blueled:
-	.frame	$sp,24,$31		# vars= 0, regs= 1/0, args= 16, gp= 0
-	.mask	0x80000000,-4
+	.frame	$sp,0,$31		# vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
 	.fmask	0x00000000,0
 	.set	noreorder
 	.set	nomacro
 # End mchp_output_function_prologue
-	addiu	$sp,$sp,-24
-	sw	$31,20($sp)
 	lui	$2,%hi(LATC)
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$4,1,1
 	sw	$3,%lo(LATC)($2)
-	jal	pause
-	nop
-
-	lw	$31,20($sp)
 	j	$31
-	addiu	$sp,$sp,24
+	nop
 
 	.set	macro
 	.set	reorder
@@ -251,14 +233,12 @@ blueled:
 	.ent	badgeled
 	.type	badgeled, @function
 badgeled:
-	.frame	$sp,24,$31		# vars= 0, regs= 1/0, args= 16, gp= 0
-	.mask	0x80000000,-4
+	.frame	$sp,0,$31		# vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
 	.fmask	0x00000000,0
 	.set	noreorder
 	.set	nomacro
 # End mchp_output_function_prologue
-	addiu	$sp,$sp,-24
-	sw	$31,20($sp)
 	sltu	$4,$0,$4
 	lui	$2,%hi(LATC)
 	lw	$3,%lo(LATC)($2)
@@ -273,12 +253,8 @@ badgeled:
 	lw	$3,%lo(LATC)($2)
 	ins	$3,$6,1,1
 	sw	$3,%lo(LATC)($2)
-	jal	pause
-	nop
-
-	lw	$31,20($sp)
 	j	$31
-	addiu	$sp,$sp,24
+	nop
 
 	.set	macro
 	.set	reorder

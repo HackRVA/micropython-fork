@@ -1,14 +1,16 @@
 build/py/emitnx64.o: ../../py/emitnx64.c ../../py/mpconfig.h \
- mpconfigport.h /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h \
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h \
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h \
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h \
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h \
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h
+ mpconfigport.h \
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h \
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h \
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h \
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_limits.h \
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_const.h \
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/alloca.h
 ../../py/emitnx64.c ../../py/mpconfig.h :
- mpconfigport.h /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h :
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h :
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h :
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h :
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h :
- /opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h :
+ mpconfigport.h :
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h :
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h :
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h :
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_limits.h :
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_const.h :
+ /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/alloca.h :

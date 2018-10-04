@@ -88,18 +88,12 @@ void UserInit(void)
     LATCbits.LATC1 = 0;      /* BLUE */
     LATBbits.LATB3 = 0;      /* GREEN */
 
-
     /* speaker pull down init */
 //    TRISAbits.TRISA9 = 0;	// piezo == output
 //    LATAbits.LATA9 = 0;      // piezo init off
 //    CNPUAbits.CNPUA9 = 0;    // RA9  pull up == off
 //    CNPDAbits.CNPDA9 = 0;    /* pulldown == off */
-
-//    timerInit();
-//    setupRTCC();
-
 }
-
 
 void LCDprint(char *str,int len) {
    FbWriteString(str, len);
@@ -110,69 +104,27 @@ const char hextab[]={"0123456789ABCDEF"};
 // controls USB heartbeat blink
 static unsigned char debugBlink=1;
 
+#include "USB/usb_config.h" // for CDC_DATA_IN_EP_SIZE
+
 void ProcessIO(void)
 {
     unsigned char nread=0;
+    static unsigned char writeLOCK=0;
+    static unsigned char textBuffer[128], textBufPtr=0;
     int i;
 
     //Blink the LEDs according to the USB device status
     //very handy if you lock up when trying to run off of battery
     //BlinkUSBStatus();
 
-#ifdef BLINKS
-    static int ledColor=0;
-
-    if (ledColor & 0b100000000000000000000000) 
-	LATCbits.LATC0 = 1; // red
-    else
-	LATCbits.LATC0 = 0; // red
-
-    if (ledColor & 0b000100000000000000000000) 
-	LATBbits.LATB3 = 1; // green
-    else
-	LATBbits.LATB3 = 0; // green
-
-    if (ledColor & 0b000000100000000000000000) 
-	LATCbits.LATC1 = 1; // blue
-    else
-	LATCbits.LATC1 = 0; // blue
-
-    ledColor++;
-#endif
-
     if (mchipUSBnotReady()) return;
 
-    nread = getsUSBUSART(USB_In_Buffer, 64);
+    if (writeLOCK == 0) {
+	nread = getsUSBUSART(USB_In_Buffer, CDC_DATA_IN_EP_SIZE-1);
+    }
 
     if(nread > 0) {
-	if ((USB_In_Buffer[0] == 'p') || (USB_In_Buffer[0] == 'P')) {
-		void clearscreen(unsigned short color);
-		if (USB_In_Buffer[0] == 'p') {
-		   static unsigned char y=0;
 
-		   FbClear();
-		   FbBackgroundColor(BLACK);
-		   //printchar(' ', 115,63,BLACK);
-		   FbMove(10,  20);
-		   FbColor(WHITE);
-		   FbWriteLine((unsigned char *)"0123456789");
-		   y += 8;
-		   if (y>128) y = 0;
-		}
-
-		USB_In_Buffer[0] = 0;
-	}
-
-	if ((USB_In_Buffer[0] == 'b') || (USB_In_Buffer[0] == 'B')) {
-		static unsigned char bright = 255;
-
-		if (USB_In_Buffer[0] == 'b') bright += 10; // let it wrap
-		if (USB_In_Buffer[0] == 'B') bright -= 10; // let it wrap
-
-		USB_In_Buffer[0] = 0;
-	}
-
-	// ENTER
 	if ((USB_In_Buffer[0] == 13) || (USB_In_Buffer[0] == 10)) {
 		static int y=0;
 
@@ -183,6 +135,7 @@ void ProcessIO(void)
 		y += 10;
 		if (y > 110) y = 0;
 
+/*
 		FbWriteLine("results");
 		FbMoveRelative(0, 10);
 
@@ -193,44 +146,69 @@ void ProcessIO(void)
    		FbMoveX(0);
 		do_str("for i in range(4):\n  print(i)", MP_PARSE_FILE_INPUT);
 		FbMoveRelative(0, 10);
+*/
+   		FbMoveX(0);
+		FbWriteLine(textBuffer);
+		FbMoveRelative(0, 10);
+		textBufPtr = 0;
 
    		FbMoveX(0);
-		FbWriteLine("done");
+		do_str(textBuffer, MP_PARSE_FILE_INPUT);
 
 		FbSwapBuffers();
 
-		USB_In_Buffer[0] = 0;
+		// USB_In_Buffer[0] = 0; // want to echo this
 	}
 
-	if (USB_In_Buffer[0] == '-') {
-		G_contrast1 -= 4;
+	if ((USB_In_Buffer[0] == '-') || (USB_In_Buffer[0] == '+')) {
+	   if (USB_In_Buffer[0] == '-') G_contrast1 -= 4;
+	   if (USB_In_Buffer[0] == '+') G_contrast1 += 4;
 
-		LCDReset();
+	   //S6B33_contrast(G_contrast1);
+	   LCDReset();
 
-		USB_In_Buffer[0] = 0;
+	   USB_In_Buffer[0] = 0;
 	}
 
-	if ((USB_In_Buffer[0] == '=') || (USB_In_Buffer[0] == '+')) {
-		G_contrast1 += 4;
+	if (USB_In_Buffer[0] != 0) {
+	   int i;
 
-		//S6B33_contrast(G_contrast1);
-		LCDReset();
+	   for (i=0; i<nread; i++) {
+		USB_Out_Buffer[i] = USB_In_Buffer[i];
+		textBuffer[textBufPtr++] = USB_In_Buffer[i]; // used for python
 
-		USB_In_Buffer[0] = 0;
+		if (USB_Out_Buffer[i] == 13) USB_Out_Buffer[++i] = 10;
+	   }
+	   textBuffer[textBufPtr] = USB_Out_Buffer[i] = 0; // null term just in case
+
+	   USB_In_Buffer[0] = 0;
 	}
 
-	/* echo command */
-	for (i=0; i<nread; i++,NextUSBOut++) {
-	   USB_Out_Buffer[NextUSBOut] = USB_In_Buffer[i];
-	}
 	nread = 0;
     }
 
+    if (USBtransferReady()) {
+	int nextWrite;
+
+	if (writeLOCK) {
+	   USB_Out_Buffer[0] = 0;
+	   writeLOCK = 0;
+	} 
+
+	nextWrite = strlen(USB_Out_Buffer);
+	if (nextWrite != 0) {
+	   putUSBUSART(USB_Out_Buffer, nextWrite);
+	   writeLOCK = 1; // dont touch until USB done
+	}
+    }
+
+#ifdef OLD
     // echo back to USB
     if ((USBtransferReady()) && (NextUSBOut > 0)) {
 	putUSBUSART(&USB_Out_Buffer[0], NextUSBOut);
 	NextUSBOut = 0;
     }
+#endif
 
     CDCTxService();
 }

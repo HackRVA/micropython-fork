@@ -48,28 +48,20 @@ void initPIC32() {
 void redled(int onoff)
 {
    LATCbits.LATC0 = onoff;
-
-   pause();
 }
 
 void greenled(int onoff)
 {
    LATBbits.LATB3 = onoff;
-
-   pause();
 }
 
 void blueled(int onoff)
 {
    LATCbits.LATC1 = onoff;
-
-   pause();
 }
 
 void badgeled(int red, int green, int blue) {
    LATCbits.LATC0 = !(red == 0);
    LATBbits.LATB3 = !(green == 0);
    LATCbits.LATC1 = !(blue == 0);
-
-   pause();
 }

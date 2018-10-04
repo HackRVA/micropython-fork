@@ -6,26 +6,26 @@
 # 1 "../../py/mpconfig.h" 1
 # 45 "../../py/mpconfig.h"
 # 1 "./mpconfigport.h" 1
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 1
-# 46 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h" 1
-# 46 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h"
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 1 3
+# 42 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 3
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 1 3
+# 46 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
 typedef __signed char __int8_t;
 typedef unsigned char __uint8_t;
 typedef short int __int16_t;
 typedef unsigned short int __uint16_t;
 typedef int __int32_t;
 typedef unsigned int __uint32_t;
-# 60 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h"
+# 60 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
 __extension__
 typedef long long int __int64_t;
 
 __extension__
 typedef unsigned long long int __uint64_t;
-# 75 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_types.h"
+# 75 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
 typedef int __intptr_t;
 typedef unsigned int __uintptr_t;
-# 47 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 2
+# 43 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
 
 
 typedef __int8_t int8_t;
@@ -77,8 +77,8 @@ typedef __uintptr_t uintptr_t;
 
 
 
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h" 1
-# 48 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h"
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 1 3
+# 48 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
 __extension__
 typedef __signed char int_least8_t;
 typedef unsigned char uint_least8_t;
@@ -88,7 +88,7 @@ typedef int int_least24_t;
 typedef unsigned int uint_least24_t;
 typedef int int_least32_t;
 typedef unsigned int uint_least32_t;
-# 65 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h"
+# 65 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
 __extension__
 typedef long long int int_least64_t;
 
@@ -105,36 +105,38 @@ typedef int int_fast24_t;
 typedef unsigned int uint_fast24_t;
 typedef int int_fast32_t;
 typedef unsigned int uint_fast32_t;
-# 89 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h"
+# 89 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
 __extension__
 typedef long long int int_fast64_t;
 
 __extension__
 typedef unsigned long long int uint_fast64_t;
-# 106 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_mwgwtypes.h"
+# 106 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
 __extension__
 typedef long long int intmax_t;
 
 __extension__
 typedef unsigned long long int uintmax_t;
-# 99 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 2
+# 95 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
 
 
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_limits.h" 1
-# 102 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 2
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_limits.h" 1 3
+# 98 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
 
 
 
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/machine/int_const.h" 1
-# 106 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/stdint.h" 2
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_const.h" 1 3
+# 102 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
 # 2 "./mpconfigport.h" 2
 # 59 "./mpconfigport.h"
 typedef __int32_t mp_int_t;
 typedef __uint32_t mp_uint_t;
 typedef long mp_off_t;
 # 72 "./mpconfigport.h"
-# 1 "/opt/microchip/xc32/v1.34/pic32mx/include/lega-c/alloca.h" 1
-# 72 "./mpconfigport.h" 2
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/alloca.h" 1 3
+# 73 "./mpconfigport.h" 2
+
+extern const struct _mp_obj_module_t mp_module_pybadge;
 # 46 "../../py/mpconfig.h" 2
 # 28 "<stdin>" 2
 
@@ -174,6 +176,9 @@ Q(utf-8)
 
 
 
+Q(red)
+Q(green)
+Q(blue)
 Q(ArithmeticError)
 
 Q(ArithmeticError)
@@ -622,6 +627,228 @@ Q(keys)
 
 Q(keys)
 
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
+Q(lcd_python)
+
 Q(len)
 
 Q(list)
@@ -679,6 +906,8 @@ Q(popitem)
 Q(pow)
 
 Q(print)
+
+Q(pybadge)
 
 Q(range)
 

@@ -70,3 +70,10 @@ typedef long mp_off_t;
 
 // We need to provide a declaration/definition of alloca()
 #include <alloca.h>
+
+extern const struct _mp_obj_module_t mp_module_pybadge;
+
+#define MICROPY_PORT_BUILTIN_MODULES \
+    { MP_OBJ_NEW_QSTR(MP_QSTR_pybadge), (mp_obj_t)&mp_module_pybadge }, 
+
+

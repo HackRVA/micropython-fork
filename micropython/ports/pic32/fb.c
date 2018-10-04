@@ -393,6 +393,7 @@ void FbTransparentIndex(unsigned short color)
     G_Fb.transIndex = color;
 }
 
+#ifdef SMALLFONT
 void FbCharacter(unsigned char charin)
 {
     /*
@@ -440,6 +441,19 @@ void FbCharacter(unsigned char charin)
     // FbMove(G_Fb.pos.x + assetList[G_Fb.font].x, G_Fb.pos.y);
     G_Fb.changed = 1;
 }
+#else
+void FbCharacter(unsigned char charin)
+{
+    if ((charin < 32) | (charin > 126)) charin = 32;
+
+    charin -= 32;
+    FbImage1bit(G_Fb.font, charin);
+
+    /* advance x pos, but not y */
+    // FbMove(G_Fb.pos.x + assetList[G_Fb.font].x, G_Fb.pos.y);
+    G_Fb.changed = 1;
+}
+#endif
 
 void FbFilledRectangle(unsigned char width, unsigned char height)
 {

@@ -27,6 +27,7 @@
 #define MICROPY_INCLUDED_PY_ASMXTENSA_H
 
 #include "py/asmbase.h"
+#include "unistd.h"
 
 // calling conventions:
 // up to 6 args in a2-a7

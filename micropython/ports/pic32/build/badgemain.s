@@ -183,9 +183,9 @@ ProcessIO:
 	sw	$16,20($sp)
 
 	bne	$2,$0,.L3
-	lui	$2,%hi(writeLOCK.14288)
+	lui	$2,%hi(writeLOCK.14294)
 
-	lbu	$2,%lo(writeLOCK.14288)($2)
+	lbu	$2,%lo(writeLOCK.14294)($2)
 	bne	$2,$0,.L5
 	lui	$4,%hi(USB_In_Buffer)
 
@@ -209,36 +209,36 @@ ProcessIO:
 	jal	FbColor
 	li	$4,65535			# 0xffff
 
-	lui	$16,%hi(y.14294)
+	lui	$16,%hi(y.14300)
 	move	$4,$0
 	jal	FbMove
-	lw	$5,%lo(y.14294)($16)
+	lw	$5,%lo(y.14300)($16)
 
-	lw	$2,%lo(y.14294)($16)
+	lw	$2,%lo(y.14300)($16)
 	addiu	$2,$2,10
-	sw	$2,%lo(y.14294)($16)
+	sw	$2,%lo(y.14300)($16)
 	slt	$2,$2,111
 	beql	$2,$0,.L8
-	sw	$0,%lo(y.14294)($16)
+	sw	$0,%lo(y.14300)($16)
 
 .L8:
 	jal	FbMoveX
 	move	$4,$0
 
-	lui	$16,%hi(textBuffer.14289)
+	lui	$16,%hi(textBuffer.14295)
 	jal	FbWriteLine
-	addiu	$4,$16,%lo(textBuffer.14289)
+	addiu	$4,$16,%lo(textBuffer.14295)
 
 	move	$4,$0
 	jal	FbMoveRelative
 	li	$5,10			# 0xa
 
-	lui	$2,%hi(textBufPtr.14290)
-	sb	$0,%lo(textBufPtr.14290)($2)
+	lui	$2,%hi(textBufPtr.14296)
+	sb	$0,%lo(textBufPtr.14296)($2)
 	jal	FbMoveX
 	move	$4,$0
 
-	addiu	$4,$16,%lo(textBuffer.14289)
+	addiu	$4,$16,%lo(textBuffer.14295)
 	jal	do_str
 	li	$5,1			# 0x1
 
@@ -282,16 +282,16 @@ ProcessIO:
 	nop
 
 	blez	$17,.L18
-	lui	$2,%hi(textBufPtr.14290)
+	lui	$2,%hi(textBufPtr.14296)
 
-	lbu	$4,%lo(textBufPtr.14290)($2)
+	lbu	$4,%lo(textBufPtr.14296)($2)
 	move	$2,$0
 	lui	$9,%hi(USB_In_Buffer)
 	addiu	$9,$9,%lo(USB_In_Buffer)
 	lui	$6,%hi(USB_Out_Buffer)
 	addiu	$6,$6,%lo(USB_Out_Buffer)
-	lui	$8,%hi(textBuffer.14289)
-	addiu	$8,$8,%lo(textBuffer.14289)
+	lui	$8,%hi(textBuffer.14295)
+	addiu	$8,$8,%lo(textBuffer.14295)
 	li	$7,13			# 0xd
 	li	$10,10			# 0xa
 	addu	$3,$2,$9
@@ -314,9 +314,9 @@ ProcessIO:
 	bne	$3,$0,.L23
 	addu	$3,$2,$9
 
-	lui	$3,%hi(textBufPtr.14290)
+	lui	$3,%hi(textBufPtr.14296)
 	j	.L13
-	sb	$4,%lo(textBufPtr.14290)($3)
+	sb	$4,%lo(textBufPtr.14296)($3)
 
 .L18:
 	move	$2,$0
@@ -325,10 +325,10 @@ ProcessIO:
 	addiu	$3,$3,%lo(USB_Out_Buffer)
 	addu	$2,$2,$3
 	sb	$0,0($2)
-	lui	$2,%hi(textBufPtr.14290)
-	lbu	$3,%lo(textBufPtr.14290)($2)
-	lui	$2,%hi(textBuffer.14289)
-	addiu	$2,$2,%lo(textBuffer.14289)
+	lui	$2,%hi(textBufPtr.14296)
+	lbu	$3,%lo(textBufPtr.14296)($2)
+	lui	$2,%hi(textBuffer.14295)
+	addiu	$2,$2,%lo(textBuffer.14295)
 	addu	$2,$3,$2
 	sb	$0,0($2)
 	lui	$2,%hi(USB_In_Buffer)
@@ -338,16 +338,16 @@ ProcessIO:
 	nop
 
 	beq	$2,$0,.L16
-	lui	$2,%hi(writeLOCK.14288)
+	lui	$2,%hi(writeLOCK.14294)
 
-	lbu	$2,%lo(writeLOCK.14288)($2)
+	lbu	$2,%lo(writeLOCK.14294)($2)
 	beq	$2,$0,.L24
 	lui	$4,%hi(USB_Out_Buffer)
 
 	lui	$2,%hi(USB_Out_Buffer)
 	sb	$0,%lo(USB_Out_Buffer)($2)
-	lui	$2,%hi(writeLOCK.14288)
-	sb	$0,%lo(writeLOCK.14288)($2)
+	lui	$2,%hi(writeLOCK.14294)
+	sb	$0,%lo(writeLOCK.14294)($2)
 .L24:
 	jal	strlen
 	addiu	$4,$4,%lo(USB_Out_Buffer)
@@ -360,8 +360,8 @@ ProcessIO:
 	move	$5,$2
 
 	li	$3,1			# 0x1
-	lui	$2,%hi(writeLOCK.14288)
-	sb	$3,%lo(writeLOCK.14288)($2)
+	lui	$2,%hi(writeLOCK.14294)
+	sb	$3,%lo(writeLOCK.14294)($2)
 .L16:
 	jal	CDCTxService
 	nop
@@ -394,26 +394,26 @@ BlinkUSBStatus:
 # End mchp_output_function_prologue
 	addiu	$sp,$sp,-24
 	sw	$31,20($sp)
-	lui	$2,%hi(led_count.14322)
-	lw	$2,%lo(led_count.14322)($2)
+	lui	$2,%hi(led_count.14328)
+	lw	$2,%lo(led_count.14328)($2)
 	bne	$2,$0,.L42
-	lui	$2,%hi(led_count.14322)
+	lui	$2,%hi(led_count.14328)
 
 	li	$3,65536			# 0x10000
 	ori	$3,$3,0x86a0
-	sw	$3,%lo(led_count.14322)($2)
-	lui	$2,%hi(led_count.14322)
+	sw	$3,%lo(led_count.14328)($2)
+	lui	$2,%hi(led_count.14328)
 .L42:
-	lw	$3,%lo(led_count.14322)($2)
+	lw	$3,%lo(led_count.14328)($2)
 	addiu	$3,$3,-1
 	jal	getUSBSuspendControl
-	sw	$3,%lo(led_count.14322)($2)
+	sw	$3,%lo(led_count.14328)($2)
 
 	li	$3,1			# 0x1
 	bne	$2,$3,.L27
-	lui	$2,%hi(led_count.14322)
+	lui	$2,%hi(led_count.14328)
 
-	lw	$2,%lo(led_count.14322)($2)
+	lw	$2,%lo(led_count.14328)($2)
 	bnel	$2,$0,.L43
 	lw	$31,20($sp)
 
@@ -500,9 +500,9 @@ BlinkUSBStatus:
 	nop
 
 	beq	$2,$0,.L33
-	lui	$2,%hi(led_count.14322)
+	lui	$2,%hi(led_count.14328)
 
-	lw	$2,%lo(led_count.14322)($2)
+	lw	$2,%lo(led_count.14328)($2)
 	bnel	$2,$0,.L43
 	lw	$31,20($sp)
 
@@ -524,9 +524,9 @@ BlinkUSBStatus:
 	nop
 
 	beq	$2,$0,.L25
-	lui	$2,%hi(led_count.14322)
+	lui	$2,%hi(led_count.14328)
 
-	lw	$2,%lo(led_count.14322)($2)
+	lw	$2,%lo(led_count.14328)($2)
 	bne	$2,$0,.L25
 	lui	$2,%hi(LATC)
 
@@ -610,27 +610,27 @@ hextab:
 	.ascii	"0123456789ABCDEF\000"
 	.section	.bss,bss
 	.align	2
-	.type	led_count.14322, @object
-	.size	led_count.14322, 4
-led_count.14322:
+	.type	led_count.14328, @object
+	.size	led_count.14328, 4
+led_count.14328:
 	.space	4
 	.align	2
-	.type	y.14294, @object
-	.size	y.14294, 4
-y.14294:
+	.type	y.14300, @object
+	.size	y.14300, 4
+y.14300:
 	.space	4
-	.type	textBufPtr.14290, @object
-	.size	textBufPtr.14290, 1
-textBufPtr.14290:
+	.type	textBufPtr.14296, @object
+	.size	textBufPtr.14296, 1
+textBufPtr.14296:
 	.space	1
 	.align	2
-	.type	textBuffer.14289, @object
-	.size	textBuffer.14289, 128
-textBuffer.14289:
+	.type	textBuffer.14295, @object
+	.size	textBuffer.14295, 128
+textBuffer.14295:
 	.space	128
-	.type	writeLOCK.14288, @object
-	.size	writeLOCK.14288, 1
-writeLOCK.14288:
+	.type	writeLOCK.14294, @object
+	.size	writeLOCK.14294, 1
+writeLOCK.14294:
 	.space	1
 	.ident	"GCC: (Microchip Technology) 4.5.2 MPLAB XC32 Compiler v1.34"
 # Begin MCHP vector dispatch table

@@ -7,5 +7,6 @@
 #define SEEK_CUR 1
 
 typedef int ssize_t;
+typedef unsigned int uint;
 
 #endif // MICROPY_INCLUDED_PIC16BIT_UNISTD_H
