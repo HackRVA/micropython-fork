@@ -1650,6 +1650,39 @@ FbLine:
 	.end	FbLine
 	.size	FbLine, .-FbLine
 	.align	2
+	.globl	FbLine1
+	.set	nomips16
+	.set	nomicromips
+	.ent	FbLine1
+	.type	FbLine1, @function
+FbLine1:
+	.frame	$sp,24,$31		# vars= 0, regs= 1/0, args= 16, gp= 0
+	.mask	0x80000000,-4
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# End mchp_output_function_prologue
+	addiu	$sp,$sp,-24
+	sw	$31,20($sp)
+	andi	$6,$4,0x00ff
+	andi	$7,$5,0x00ff
+	lui	$2,%hi(G_Fb)
+	addiu	$2,$2,%lo(G_Fb)
+	lbu	$4,4($2)
+	jal	FbLine
+	lbu	$5,5($2)
+
+	lw	$31,20($sp)
+	j	$31
+	addiu	$sp,$sp,24
+
+	.set	macro
+	.set	reorder
+# Begin mchp_output_function_epilogue
+# End mchp_output_function_epilogue
+	.end	FbLine1
+	.size	FbLine1, .-FbLine1
+	.align	2
 	.globl	FbWriteLine
 	.set	nomips16
 	.set	nomicromips
@@ -1676,7 +1709,7 @@ FbWriteLine:
 	lbu	$20,4($2)
 	lbu	$19,5($2)
 	lbu	$2,0($4)
-	beq	$2,$0,.L152
+	beq	$2,$0,.L153
 	move	$18,$4
 
 	move	$17,$4
@@ -1685,7 +1718,7 @@ FbWriteLine:
 	lui	$22,%hi(assetList)
 	addiu	$22,$22,%lo(assetList)
 	addiu	$2,$21,%lo(G_Fb)
-.L155:
+.L156:
 	lbu	$2,6($2)
 	sll	$3,$2,2
 	sll	$2,$2,4
@@ -1705,10 +1738,10 @@ FbWriteLine:
 	andi	$16,$16,0x00ff
 	addu	$17,$18,$16
 	lbu	$2,0($17)
-	bne	$2,$0,.L155
+	bne	$2,$0,.L156
 	addiu	$2,$21,%lo(G_Fb)
 
-.L152:
+.L153:
 	li	$3,1			# 0x1
 	lui	$2,%hi(G_Fb+16)
 	sh	$3,%lo(G_Fb+16)($2)
@@ -1756,7 +1789,7 @@ FbWriteString:
 	lui	$2,%hi(G_Fb)
 	addiu	$2,$2,%lo(G_Fb)
 	lbu	$19,4($2)
-	beq	$21,$0,.L157
+	beq	$21,$0,.L158
 	lbu	$18,5($2)
 
 	move	$17,$4
@@ -1764,7 +1797,7 @@ FbWriteString:
 	lui	$22,%hi(G_Fb)
 	lui	$23,%hi(assetList)
 	addiu	$23,$23,%lo(assetList)
-.L160:
+.L161:
 	andi	$3,$16,0x00ff
 	move	$20,$17
 	addiu	$16,$16,1
@@ -1776,21 +1809,21 @@ FbWriteString:
 	addu	$2,$2,$23
 	lbu	$4,0($17)
 	xori	$4,$4,0xa
-	beq	$4,$0,.L161
+	beq	$4,$0,.L162
 	lhu	$2,4($2)
 
 	mul	$5,$2,$16
 	addu	$4,$5,$19
 	slt	$4,$4,132
-	bnel	$4,$0,.L163
+	bnel	$4,$0,.L164
 	mul	$4,$3,$2
 
-.L161:
+.L162:
 	addiu	$18,$18,10
 	andi	$18,$18,0x00ff
 	move	$19,$0
 	mul	$4,$3,$2
-.L163:
+.L164:
 	addu	$2,$4,$19
 	andi	$4,$2,0x00ff
 	jal	FbMove
@@ -1801,10 +1834,10 @@ FbWriteString:
 
 	andi	$2,$16,0x00ff
 	sltu	$2,$2,$21
-	bne	$2,$0,.L160
+	bne	$2,$0,.L161
 	addiu	$17,$17,1
 
-.L157:
+.L158:
 	li	$3,1			# 0x1
 	lui	$2,%hi(G_Fb+16)
 	sh	$3,%lo(G_Fb+16)($2)
@@ -1916,7 +1949,7 @@ FbSwapBuffers:
 	sw	$16,16($sp)
 	lui	$2,%hi(G_Fb+16)
 	lhu	$2,%lo(G_Fb+16)($2)
-	beq	$2,$0,.L169
+	beq	$2,$0,.L170
 	lw	$31,28($sp)
 
 	move	$4,$0
@@ -1930,7 +1963,7 @@ FbSwapBuffers:
 	li	$17,34848			# 0x8820
 	addu	$17,$16,$17
 	lui	$18,%hi(G_Fb)
-.L167:
+.L168:
 	jal	S6B33_pixel
 	lhu	$4,0($16)
 
@@ -1938,7 +1971,7 @@ FbSwapBuffers:
 	lhu	$2,10($2)
 	sh	$2,0($16)
 	addiu	$16,$16,2
-	bne	$16,$17,.L167
+	bne	$16,$17,.L168
 	lui	$2,%hi(G_Fb)
 
 	addiu	$2,$2,%lo(G_Fb)
@@ -1946,7 +1979,7 @@ FbSwapBuffers:
 	sb	$0,4($2)
 	sb	$0,5($2)
 	lw	$31,28($sp)
-.L169:
+.L170:
 	lw	$18,24($sp)
 	lw	$17,20($sp)
 	lw	$16,16($sp)

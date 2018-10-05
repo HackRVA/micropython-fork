@@ -342,6 +342,7 @@ void LCDBars()
 }
 #endif
 
+#define NONSCAN
 #ifdef NONSCAN
 void LCDline(int x0, int y0, int x1, int y1, unsigned short color) {//do not use unless line is diagonal
   void LCDputPixel(unsigned char x, unsigned char y, unsigned short color);

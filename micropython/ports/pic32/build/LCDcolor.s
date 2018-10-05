@@ -905,6 +905,186 @@ LCDBars:
 # End mchp_output_function_epilogue
 	.end	LCDBars
 	.size	LCDBars, .-LCDBars
+	.align	2
+	.globl	LCDLogo
+	.set	nomips16
+	.set	nomicromips
+	.ent	LCDLogo
+	.type	LCDLogo, @function
+LCDLogo:
+	.frame	$sp,0,$31		# vars= 0, regs= 0/0, args= 0, gp= 0
+	.mask	0x00000000,0
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# End mchp_output_function_prologue
+	j	$31
+	nop
+
+	.set	macro
+	.set	reorder
+# Begin mchp_output_function_epilogue
+# End mchp_output_function_epilogue
+	.end	LCDLogo
+	.size	LCDLogo, .-LCDLogo
+	.align	2
+	.globl	LCDputPixel
+	.set	nomips16
+	.set	nomicromips
+	.ent	LCDputPixel
+	.type	LCDputPixel, @function
+LCDputPixel:
+	.frame	$sp,24,$31		# vars= 0, regs= 2/0, args= 16, gp= 0
+	.mask	0x80010000,-4
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# End mchp_output_function_prologue
+	addiu	$sp,$sp,-24
+	sw	$31,20($sp)
+	sw	$16,16($sp)
+	andi	$2,$4,0x00ff
+	andi	$16,$6,0xffff
+	andi	$4,$5,0x00ff
+	move	$5,$2
+	move	$6,$0
+	jal	S6B33_rect
+	move	$7,$0
+
+	jal	S6B33_pixel
+	move	$4,$16
+
+	lw	$31,20($sp)
+	lw	$16,16($sp)
+	j	$31
+	addiu	$sp,$sp,24
+
+	.set	macro
+	.set	reorder
+# Begin mchp_output_function_epilogue
+# End mchp_output_function_epilogue
+	.end	LCDputPixel
+	.size	LCDputPixel, .-LCDputPixel
+	.align	2
+	.globl	LCDline
+	.set	nomips16
+	.set	nomicromips
+	.ent	LCDline
+	.type	LCDline, @function
+LCDline:
+	.frame	$sp,64,$31		# vars= 8, regs= 10/0, args= 16, gp= 0
+	.mask	0xc0ff0000,-4
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# End mchp_output_function_prologue
+	addiu	$sp,$sp,-64
+	sw	$31,60($sp)
+	sw	$fp,56($sp)
+	sw	$23,52($sp)
+	sw	$22,48($sp)
+	sw	$21,44($sp)
+	sw	$20,40($sp)
+	sw	$19,36($sp)
+	sw	$18,32($sp)
+	sw	$17,28($sp)
+	sw	$16,24($sp)
+	move	$17,$4
+	move	$18,$5
+	move	$20,$6
+	sw	$7,76($sp)
+	subu	$23,$6,$4
+	sra	$2,$23,31
+	xor	$23,$2,$23
+	subu	$23,$23,$2
+	slt	$2,$4,$6
+	beq	$2,$0,.L120
+	lhu	$21,80($sp)
+
+	li	$2,1			# 0x1
+	j	.L111
+	sw	$2,16($sp)
+
+.L120:
+	li	$3,-1			# 0xffffffffffffffff
+	sw	$3,16($sp)
+.L111:
+	lw	$2,76($sp)
+	subu	$19,$2,$18
+	sra	$2,$19,31
+	xor	$19,$2,$19
+	subu	$19,$19,$2
+	lw	$3,76($sp)
+	slt	$2,$18,$3
+	beql	$2,$0,.L121
+	li	$fp,-1			# 0xffffffffffffffff
+
+	li	$fp,1			# 0x1
+.L121:
+	slt	$2,$19,$23
+	bnel	$2,$0,.L113
+	srl	$16,$23,31
+
+	subu	$2,$0,$19
+	srl	$16,$2,31
+	addu	$2,$16,$2
+	j	.L124
+	sra	$16,$2,1
+
+.L113:
+	addu	$16,$16,$23
+	sra	$16,$16,1
+.L124:
+	subu	$22,$0,$23
+.L125:
+	andi	$4,$17,0x00ff
+	andi	$5,$18,0x00ff
+	jal	LCDputPixel
+	move	$6,$21
+
+	bne	$17,$20,.L126
+	slt	$2,$22,$16
+
+	lw	$2,76($sp)
+	beq	$18,$2,.L110
+	slt	$2,$22,$16
+
+.L126:
+	beql	$2,$0,.L122
+	move	$2,$16
+
+	subu	$2,$16,$19
+	lw	$3,16($sp)
+	addu	$17,$17,$3
+.L122:
+	slt	$16,$16,$19
+	beql	$16,$0,.L125
+	move	$16,$2
+
+	addu	$16,$2,$23
+	j	.L125
+	addu	$18,$18,$fp
+
+.L110:
+	lw	$31,60($sp)
+	lw	$fp,56($sp)
+	lw	$23,52($sp)
+	lw	$22,48($sp)
+	lw	$21,44($sp)
+	lw	$20,40($sp)
+	lw	$19,36($sp)
+	lw	$18,32($sp)
+	lw	$17,28($sp)
+	lw	$16,24($sp)
+	j	$31
+	addiu	$sp,$sp,64
+
+	.set	macro
+	.set	reorder
+# Begin mchp_output_function_epilogue
+# End mchp_output_function_epilogue
+	.end	LCDline
+	.size	LCDline, .-LCDline
 	.ident	"GCC: (Microchip Technology) 4.5.2 MPLAB XC32 Compiler v1.34"
 # Begin MCHP vector dispatch table
 # End MCHP vector dispatch table

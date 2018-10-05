@@ -672,6 +672,11 @@ void FbVerticalLine(unsigned char x1, unsigned char y1, unsigned char x2, unsign
     G_Fb.changed = 1;
 }
 
+void FbLine1(unsigned char x1, unsigned char y1)
+{
+    FbLine(G_Fb.pos.x, G_Fb.pos.y, x1, y1);
+}
+
 void FbLine(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1)
 {
     int dx = abs(x1 - x0), sx = x0 < x1 ? 1 : -1;

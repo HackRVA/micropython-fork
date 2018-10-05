@@ -9213,3 +9213,31 @@ void LCDBars()
        }
 
 }
+# 347 "LCDcolor.c"
+void LCDline(int x0, int y0, int x1, int y1, unsigned short color) {
+  void LCDputPixel(unsigned char x, unsigned char y, unsigned short color);
+
+  int dx = abs(x1-x0), sx = x0<x1 ? 1 : -1;
+  int dy = abs(y1-y0), sy = y0<y1 ? 1 : -1;
+  int err = (dx>dy ? dx : -dy)/2, e2;
+
+  for(;;){
+    LCDputPixel(x0,y0, color);
+    if (x0==x1 && y0==y1) break;
+    e2 = err;
+    if (e2 > -dx) { err -= dy; x0 += sx; }
+    if (e2 < dy) { err += dx; y0 += sy; }
+  }
+}
+
+void LCDLogo(void) {
+}
+
+
+void LCDputPixel(unsigned char x,
+        unsigned char y,
+        unsigned short color)
+{
+    S6B33_rect(y, x, 0, 0);
+    S6B33_pixel(color);
+}
