@@ -121,7 +121,6 @@ void echoUSB(char *str,int len) {
 
 	lineOutBuffer[lineOutBufPtr++] = str[i];
    }
-   lineOutBufPtr += len;
    lineOutBuffer[lineOutBufPtr] = 0;
 }
 
@@ -148,33 +147,7 @@ void ProcessIO(void)
     }
 
     if(nread > 0) {
-
 	if ((USB_In_Buffer[0] == 13) || (USB_In_Buffer[0] == 10)) {
-/*
-		//FbColor(0b1111100000011111);
-		FbColor(0b1111111111111111);
-		static int y=0;
-
-   		FbMove(0, y);
-		y += 10;
-		if (y > 110) y = 0;
-
-		FbWriteLine("results");
-		FbMoveRelative(0, 10);
-
-   		FbMoveX(0);
-		do_str("print('word ', list(x+1 for x in range(4)), end=' eol\\n')", MP_PARSE_SINGLE_INPUT);
-		FbMoveRelative(0, 10);
-
-   		FbMoveX(0);
-		do_str("for i in range(4):\n  print(i)", MP_PARSE_FILE_INPUT);
-		FbMoveRelative(0, 10);
-
-   		FbMoveX(0);
-		FbWriteLine(textBuffer);
-		FbMoveRelative(0, 10);
-*/
-
 		textBufPtr = 0;
 
    		FbMoveX(0);
@@ -187,25 +160,39 @@ void ProcessIO(void)
 	}
 
 	if ((USB_In_Buffer[0] == '-') || (USB_In_Buffer[0] == '+')) {
+	   // for S6B33 G_contrast1
 	   if (USB_In_Buffer[0] == '-') G_contrast1 -= 4;
 	   if (USB_In_Buffer[0] == '+') G_contrast1 += 4;
 
-	   //S6B33_contrast(G_contrast1);
 	   LCDReset();
 
 	   USB_In_Buffer[0] = 0;
 	}
 
 	if (USB_In_Buffer[0] != 0) {
-	   int i;
+	   int i, outp=0;
 
-	   for (i=0; i<nread; i++) {
-		USB_Out_Buffer[i] = USB_In_Buffer[i];
-		textBuffer[textBufPtr++] = USB_In_Buffer[i]; // used for python
+	   for (i=0; i < nread; i++) {
+		if ((USB_In_Buffer[i] == 10) | (USB_In_Buffer[i] == 13)) {
+		   USB_Out_Buffer[outp++] = 13; // insert before the char
+		   USB_Out_Buffer[outp++] = 10; // insert before the char
 
-		if (USB_Out_Buffer[i] == 13) USB_Out_Buffer[++i] = 10;
+		   continue;
+		}
+
+		if ((USB_In_Buffer[i] == '') | (USB_In_Buffer[i] == '')) {
+		   if (textBufPtr > 0) textBufPtr--;
+
+		   USB_Out_Buffer[outp++] = '';
+		   USB_Out_Buffer[outp++] = ' ';
+		   USB_Out_Buffer[outp++] = '';
+		}
+		else {
+		   USB_Out_Buffer[outp++] = USB_In_Buffer[i];
+		   textBuffer[textBufPtr++] = USB_In_Buffer[i]; // used for python
+		}
 	   }
-	   textBuffer[textBufPtr] = USB_Out_Buffer[i] = 0; // null term just in case
+	   textBuffer[textBufPtr] = USB_Out_Buffer[outp++] = 0; // null term just in case
 
 	   USB_In_Buffer[0] = 0;
 	}

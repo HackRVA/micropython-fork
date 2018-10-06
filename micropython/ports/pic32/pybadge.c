@@ -130,7 +130,7 @@ STATIC mp_obj_t pybadge_FbClear() {
 }
 
 STATIC mp_obj_t pybadge_FbColor(mp_obj_t c) {
-    FbColor((unsigned char)mp_obj_get_int(c));
+    FbColor((unsigned short)mp_obj_get_int(c));
 
     return mp_const_none;
 }

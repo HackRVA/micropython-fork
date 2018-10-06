@@ -10425,7 +10425,6 @@ void echoUSB(char *str,int len) {
 
  lineOutBuffer[lineOutBufPtr++] = str[i];
    }
-   lineOutBufPtr += len;
    lineOutBuffer[lineOutBufPtr] = 0;
 }
 
@@ -10452,9 +10451,7 @@ void ProcessIO(void)
     }
 
     if(nread > 0) {
-
  if ((USB_In_Buffer[0] == 13) || (USB_In_Buffer[0] == 10)) {
-# 178 "badgemain.c"
   textBufPtr = 0;
 
      FbMoveX(0);
@@ -10467,9 +10464,9 @@ void ProcessIO(void)
  }
 
  if ((USB_In_Buffer[0] == '-') || (USB_In_Buffer[0] == '+')) {
+
     if (USB_In_Buffer[0] == '-') G_contrast1 -= 4;
     if (USB_In_Buffer[0] == '+') G_contrast1 += 4;
-
 
     LCDReset();
 
@@ -10477,15 +10474,29 @@ void ProcessIO(void)
  }
 
  if (USB_In_Buffer[0] != 0) {
-    int i;
+    int i, outp=0;
 
-    for (i=0; i<nread; i++) {
-  USB_Out_Buffer[i] = USB_In_Buffer[i];
-  textBuffer[textBufPtr++] = USB_In_Buffer[i];
+    for (i=0; i < nread; i++) {
+  if ((USB_In_Buffer[i] == 10) | (USB_In_Buffer[i] == 13)) {
+     USB_Out_Buffer[outp++] = 13;
+     USB_Out_Buffer[outp++] = 10;
 
-  if (USB_Out_Buffer[i] == 13) USB_Out_Buffer[++i] = 10;
+     continue;
+  }
+
+  if ((USB_In_Buffer[i] == '') | (USB_In_Buffer[i] == '')) {
+     if (textBufPtr > 0) textBufPtr--;
+
+     USB_Out_Buffer[outp++] = '';
+     USB_Out_Buffer[outp++] = ' ';
+     USB_Out_Buffer[outp++] = '';
+  }
+  else {
+     USB_Out_Buffer[outp++] = USB_In_Buffer[i];
+     textBuffer[textBufPtr++] = USB_In_Buffer[i];
+  }
     }
-    textBuffer[textBufPtr] = USB_Out_Buffer[i] = 0;
+    textBuffer[textBufPtr] = USB_Out_Buffer[outp++] = 0;
 
     USB_In_Buffer[0] = 0;
  }
@@ -10514,10 +10525,10 @@ void ProcessIO(void)
     writeLOCK = 1;
  }
     }
-# 246 "badgemain.c"
+# 233 "badgemain.c"
     CDCTxService();
 }
-# 269 "badgemain.c"
+# 256 "badgemain.c"
 void BlinkUSBStatus(void)
 {
     static int led_count=0;

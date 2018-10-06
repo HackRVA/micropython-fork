@@ -1,6 +1,6 @@
 - bootloader -> bootloader pins on pgm heaer
 - timer1_int
 - IR
-- readline editing
+X readline editing
 X echo to serial not lcd
 - Makefile
