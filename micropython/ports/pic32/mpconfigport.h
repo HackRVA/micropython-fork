@@ -62,7 +62,9 @@ typedef long mp_off_t;
 
 // dummy print
 //#define MP_PLAT_PRINT_STRN(str, len) (void)0
-#define MP_PLAT_PRINT_STRN(str, len) LCDprint(str,len)
+//#define MP_PLAT_PRINT_STRN(str, len) LCDprint(str,len)
+
+#define MP_PLAT_PRINT_STRN(str, len) echoUSB(str,len)
 
 // extra built in names to add to the global namespace
 #define MICROPY_PORT_BUILTINS \

@@ -9701,7 +9701,7 @@ void USBCBSendResume(void);
 void ProcessIO(void);
 void UserInit(void);
 
-int microchip_main(void)
+int main(void)
 {
     InitializeSystem();
     USBDeviceAttach();

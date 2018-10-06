@@ -507,6 +507,8 @@ void FbVerticalLine(unsigned char x1, unsigned char y1, unsigned char x2, unsign
 void FbLine1(unsigned char x1, unsigned char y1)
 {
     FbLine(G_Fb.pos.x, G_Fb.pos.y, x1, y1);
+    G_Fb.pos.x = x1;
+    G_Fb.pos.y = y1;
 }
 
 void FbLine(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1)

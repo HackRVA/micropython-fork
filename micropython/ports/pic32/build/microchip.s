@@ -4,12 +4,12 @@
 	.gnu_attribute 4, 3
 	.section	.text,code
 	.align	2
-	.globl	microchip_main
+	.globl	main
 	.set	nomips16
 	.set	nomicromips
-	.ent	microchip_main
-	.type	microchip_main, @function
-microchip_main:
+	.ent	main
+	.type	main, @function
+main:
 	.frame	$sp,24,$31		# vars= 0, regs= 1/0, args= 16, gp= 0
 	.mask	0x80000000,-4
 	.fmask	0x00000000,0
@@ -67,8 +67,8 @@ microchip_main:
 	.set	reorder
 # Begin mchp_output_function_epilogue
 # End mchp_output_function_epilogue
-	.end	microchip_main
-	.size	microchip_main, .-microchip_main
+	.end	main
+	.size	main, .-main
 	.align	2
 	.globl	USBbufferSizeIn
 	.set	nomips16

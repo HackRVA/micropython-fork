@@ -56,10 +56,19 @@ LIBS = /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a
 #LDFLAGS = --noinhibit-exec -T p32MX270F256D.ld -Map=$@.map --cref
 #LDFLAGS = _min_heap_size -Map=$@.map --cref
 #LDFLAGS = --defsym=_min_heap_size=28K --defsym=_min_stack_size=0x400 --gc-sections -Map="mymap.map" --report-mem --cref -s -T p32MX270F256D.ld
+
+# not bootloader
 LDFLAGS = -Wl,--defsym=_min_heap_size=25k,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,p32MX270F256D.ld
 
-SRC_C = main.c pybadge.c pic32config.c LCDcolor.c S6B33.c badgemain.c fb.c microchip.c assets.c assetList.c badge.c USB/usb_device.c  USB/usb_function_cdc.c usb_descriptors.c
-#SRC_C = main.c pic32config.c badge.c
+# bootloader
+#LDFLAGS = -Wl,--defsym=_min_heap_size=25k,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,app_32MX270F256D.ld
+
+# not bootloader
+SRC_C = mp_main.c pybadge.c pic32config.c LCDcolor.c S6B33.c badgemain.c fb.c microchip.c assets.c assetList.c badge.c USB/usb_device.c  USB/usb_function_cdc.c usb_descriptors.c
+
+#bootloader- no pic32config
+#SRC_C = mp_main.c pybadge.c LCDcolor.c S6B33.c badgemain.c fb.c microchip.c assets.c assetList.c badge.c USB/usb_device.c  USB/usb_function_cdc.c usb_descriptors.c
+
 
 
 SRC_S = 

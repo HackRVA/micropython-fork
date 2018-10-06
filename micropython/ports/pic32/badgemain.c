@@ -4,6 +4,8 @@
 #include "assetList.h"
 #include "py/compile.h"
 
+
+#include "USB/usb_config.h" // for buffer size/CDC_DATA_IN_EP_SIZE
 extern char USB_In_Buffer[];
 extern char USB_Out_Buffer[];
 
@@ -99,12 +101,34 @@ void LCDprint(char *str,int len) {
    FbWriteString(str, len);
 }
 
+/*
+  usb calls only happen 100-ish times a second
+  so buffer can get full before the usb call to drain
+*/
+static unsigned char lineOutBuffer[64], lineOutBufPtr=0;
+/*
+  callback to echo string from py stdout to USB
+*/
+void echoUSB(char *str,int len) {
+   int i;
+
+   // can use USB_Out_Buffer since it may be locked in a host xfer
+   if ((lineOutBufPtr + len) > CDC_DATA_IN_EP_SIZE) return;
+
+   for (i=0; i<len; i++) {
+	if (str[i] == '\n')
+	   lineOutBuffer[lineOutBufPtr++] = '\r';
+
+	lineOutBuffer[lineOutBufPtr++] = str[i];
+   }
+   lineOutBufPtr += len;
+   lineOutBuffer[lineOutBufPtr] = 0;
+}
+
 const char hextab[]={"0123456789ABCDEF"};
 
 // controls USB heartbeat blink
 static unsigned char debugBlink=1;
-
-#include "USB/usb_config.h" // for CDC_DATA_IN_EP_SIZE
 
 void ProcessIO(void)
 {
@@ -126,16 +150,15 @@ void ProcessIO(void)
     if(nread > 0) {
 
 	if ((USB_In_Buffer[0] == 13) || (USB_In_Buffer[0] == 10)) {
-		static int y=0;
-
+/*
 		//FbColor(0b1111100000011111);
 		FbColor(0b1111111111111111);
+		static int y=0;
 
    		FbMove(0, y);
 		y += 10;
 		if (y > 110) y = 0;
 
-/*
 		FbWriteLine("results");
 		FbMoveRelative(0, 10);
 
@@ -146,14 +169,17 @@ void ProcessIO(void)
    		FbMoveX(0);
 		do_str("for i in range(4):\n  print(i)", MP_PARSE_FILE_INPUT);
 		FbMoveRelative(0, 10);
-*/
+
    		FbMoveX(0);
 		FbWriteLine(textBuffer);
 		FbMoveRelative(0, 10);
+*/
+
 		textBufPtr = 0;
 
    		FbMoveX(0);
 		do_str(textBuffer, MP_PARSE_FILE_INPUT);
+		FbMoveRelative(0, 10);
 
 		FbSwapBuffers();
 
@@ -194,6 +220,13 @@ void ProcessIO(void)
 	   USB_Out_Buffer[0] = 0;
 	   writeLOCK = 0;
 	} 
+
+	// jam line buffer in now that usb is done
+	if (lineOutBufPtr != 0) {
+	   strncpy(USB_Out_Buffer, lineOutBuffer, lineOutBufPtr);
+	   USB_Out_Buffer[lineOutBufPtr] = 0;
+	   lineOutBufPtr = 0;
+	}
 
 	nextWrite = strlen(USB_Out_Buffer);
 	if (nextWrite != 0) {

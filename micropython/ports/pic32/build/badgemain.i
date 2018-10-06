@@ -8987,9 +8987,9 @@ typedef unsigned long long int uintmax_t;
 typedef __int32_t mp_int_t;
 typedef __uint32_t mp_uint_t;
 typedef long mp_off_t;
-# 72 "./mpconfigport.h"
+# 74 "./mpconfigport.h"
 # 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/alloca.h" 1 3
-# 73 "./mpconfigport.h" 2
+# 75 "./mpconfigport.h" 2
 
 extern const struct _mp_obj_module_t mp_module_pybadge;
 # 46 "../../py/mpconfig.h" 2
@@ -9263,7 +9263,6 @@ MP_QSTR_iterator,
 MP_QSTR_join,
 MP_QSTR_key,
 MP_QSTR_keys,
-MP_QSTR_lcd_python,
 MP_QSTR_len,
 MP_QSTR_list,
 MP_QSTR_little,
@@ -10317,6 +10316,9 @@ mp_obj_t mp_compile(mp_parse_tree_t *parse_tree, qstr source_file, c_uint emit_o
 mp_obj_t mp_parse_compile_execute(mp_lexer_t *lex, mp_parse_input_kind_t parse_input_kind, mp_obj_dict_t *globals, mp_obj_dict_t *locals);
 # 6 "badgemain.c" 2
 
+
+# 1 "USB/usb_config.h" 1
+# 9 "badgemain.c" 2
 extern char USB_In_Buffer[];
 extern char USB_Out_Buffer[];
 
@@ -10331,7 +10333,7 @@ volatile unsigned char USBDeviceStatePOWERED();
 volatile unsigned char USBDeviceStateDEFAULT();
 volatile unsigned char USBDeviceStateADDRESS();
 volatile unsigned char USBDeviceStateCONFIGURED();
-# 31 "badgemain.c"
+# 33 "badgemain.c"
 unsigned int USBbufferSizeIn();
 unsigned int USBbufferSizeOut();
 volatile int mchipUSBnotReady();
@@ -10403,13 +10405,34 @@ void LCDprint(char *str,int len) {
    FbWriteString(str, len);
 }
 
+
+
+
+
+static unsigned char lineOutBuffer[64], lineOutBufPtr=0;
+
+
+
+void echoUSB(char *str,int len) {
+   int i;
+
+
+   if ((lineOutBufPtr + len) > 64) return;
+
+   for (i=0; i<len; i++) {
+ if (str[i] == '\n')
+    lineOutBuffer[lineOutBufPtr++] = '\r';
+
+ lineOutBuffer[lineOutBufPtr++] = str[i];
+   }
+   lineOutBufPtr += len;
+   lineOutBuffer[lineOutBufPtr] = 0;
+}
+
 const char hextab[]={"0123456789ABCDEF"};
 
 
 static unsigned char debugBlink=1;
-
-# 1 "USB/usb_config.h" 1
-# 108 "badgemain.c" 2
 
 void ProcessIO(void)
 {
@@ -10431,22 +10454,12 @@ void ProcessIO(void)
     if(nread > 0) {
 
  if ((USB_In_Buffer[0] == 13) || (USB_In_Buffer[0] == 10)) {
-  static int y=0;
-
-
-  FbColor(0b1111111111111111);
-
-     FbMove(0, y);
-  y += 10;
-  if (y > 110) y = 0;
-# 150 "badgemain.c"
-     FbMoveX(0);
-  FbWriteLine(textBuffer);
-  FbMoveRelative(0, 10);
+# 178 "badgemain.c"
   textBufPtr = 0;
 
      FbMoveX(0);
   do_str(textBuffer, MP_PARSE_FILE_INPUT);
+  FbMoveRelative(0, 10);
 
   FbSwapBuffers();
 
@@ -10488,16 +10501,23 @@ void ProcessIO(void)
     writeLOCK = 0;
  }
 
+
+ if (lineOutBufPtr != 0) {
+    strncpy(USB_Out_Buffer, lineOutBuffer, lineOutBufPtr);
+    USB_Out_Buffer[lineOutBufPtr] = 0;
+    lineOutBufPtr = 0;
+ }
+
  nextWrite = strlen(USB_Out_Buffer);
  if (nextWrite != 0) {
     putUSBUSART(USB_Out_Buffer, nextWrite);
     writeLOCK = 1;
  }
     }
-# 213 "badgemain.c"
+# 246 "badgemain.c"
     CDCTxService();
 }
-# 236 "badgemain.c"
+# 269 "badgemain.c"
 void BlinkUSBStatus(void)
 {
     static int led_count=0;

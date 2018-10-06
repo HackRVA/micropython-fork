@@ -1656,25 +1656,35 @@ FbLine:
 	.ent	FbLine1
 	.type	FbLine1, @function
 FbLine1:
-	.frame	$sp,24,$31		# vars= 0, regs= 1/0, args= 16, gp= 0
-	.mask	0x80000000,-4
+	.frame	$sp,32,$31		# vars= 0, regs= 4/0, args= 16, gp= 0
+	.mask	0x80070000,-4
 	.fmask	0x00000000,0
 	.set	noreorder
 	.set	nomacro
 # End mchp_output_function_prologue
-	addiu	$sp,$sp,-24
-	sw	$31,20($sp)
-	andi	$6,$4,0x00ff
-	andi	$7,$5,0x00ff
-	lui	$2,%hi(G_Fb)
-	addiu	$2,$2,%lo(G_Fb)
-	lbu	$4,4($2)
+	addiu	$sp,$sp,-32
+	sw	$31,28($sp)
+	sw	$18,24($sp)
+	sw	$17,20($sp)
+	sw	$16,16($sp)
+	andi	$17,$4,0x00ff
+	andi	$18,$5,0x00ff
+	lui	$16,%hi(G_Fb)
+	addiu	$16,$16,%lo(G_Fb)
+	lbu	$4,4($16)
+	lbu	$5,5($16)
+	move	$6,$17
 	jal	FbLine
-	lbu	$5,5($2)
+	move	$7,$18
 
-	lw	$31,20($sp)
+	sb	$17,4($16)
+	sb	$18,5($16)
+	lw	$31,28($sp)
+	lw	$18,24($sp)
+	lw	$17,20($sp)
+	lw	$16,16($sp)
 	j	$31
-	addiu	$sp,$sp,24
+	addiu	$sp,$sp,32
 
 	.set	macro
 	.set	reorder

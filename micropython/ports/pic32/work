@@ -5,7 +5,7 @@ rm build/usb*
 
 make V=1
 
-rm build/firmware* build/badge.o build/pic32config.o
+rm build/badge.o build/pic32config.o
 
 rm build/firmware*
 make V=1
