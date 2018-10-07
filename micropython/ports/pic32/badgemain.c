@@ -156,7 +156,7 @@ void ProcessIO(void)
 		do_str(textBuffer, MP_PARSE_FILE_INPUT);
 		FbMoveRelative(0, 10);
 
-		FbSwapBuffers();
+		//FbSwapBuffers();
 
 		// USB_In_Buffer[0] = 0; // want to echo this
 	}

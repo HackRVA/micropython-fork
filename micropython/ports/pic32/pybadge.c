@@ -21,6 +21,7 @@ STATIC mp_obj_t pybadge_FbPoint(mp_obj_t x, mp_obj_t y) ;
 STATIC mp_obj_t pybadge_FbWriteLine(mp_obj_t string) ;
 STATIC mp_obj_t pybadge_FbWriteString(mp_obj_t string, mp_obj_t len) ;
 STATIC mp_obj_t pybadge_FbSwapBuffers() ;
+STATIC mp_obj_t pybadge_FbPushBuffer() ;
 STATIC mp_obj_t pybadge_FbLine(mp_obj_t x1, mp_obj_t y1) ;
 STATIC mp_obj_t pybadge_LCDBars() ;
 STATIC mp_obj_t pybadge_LCDcolor(mp_obj_t c) ;
@@ -44,6 +45,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_2(pybadge_FbPoint_obj, pybadge_FbPoint);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_FbWriteLine_obj, pybadge_FbWriteLine);
 STATIC MP_DEFINE_CONST_FUN_OBJ_2(pybadge_FbWriteString_obj, pybadge_FbWriteString);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(pybadge_FbSwapBuffers_obj, pybadge_FbSwapBuffers);
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(pybadge_FbPushBuffer_obj, pybadge_FbPushBuffer);
 STATIC MP_DEFINE_CONST_FUN_OBJ_2(pybadge_FbLine_obj, pybadge_FbLine);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(pybadge_LCDBars_obj, pybadge_LCDBars);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_LCDcolor_obj, pybadge_LCDcolor);
@@ -69,6 +71,7 @@ STATIC const mp_map_elem_t pybadge_globals_table[] = {
     { MP_OBJ_NEW_QSTR(MP_QSTR_FbWriteLine), (mp_obj_t)&(pybadge_FbWriteLine_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_FbWriteString), (mp_obj_t)&(pybadge_FbWriteString_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_FbSwapBuffers), (mp_obj_t)&(pybadge_FbSwapBuffers_obj) },
+    { MP_OBJ_NEW_QSTR(MP_QSTR_FbPushBuffer), (mp_obj_t)&(pybadge_FbPushBuffer_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_FbLine), (mp_obj_t)&(pybadge_FbLine_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_LCDBars), (mp_obj_t)&(pybadge_LCDBars_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_LCDcolor), &(pybadge_LCDcolor_obj) },
@@ -184,6 +187,12 @@ STATIC mp_obj_t pybadge_FbWriteString(mp_obj_t string, mp_obj_t len) {
 
 STATIC mp_obj_t pybadge_FbSwapBuffers() {
     FbSwapBuffers();
+
+    return mp_const_none;
+}
+
+STATIC mp_obj_t pybadge_FbPushBuffer() {
+    FbPushBuffer();
 
     return mp_const_none;
 }

@@ -9174,6 +9174,7 @@ MP_QSTR_FbPoint,
 MP_QSTR_FbWriteLine,
 MP_QSTR_FbWriteString,
 MP_QSTR_FbSwapBuffers,
+MP_QSTR_FbPushBuffer,
 MP_QSTR_FbLine,
 MP_QSTR_LCDBars,
 MP_QSTR_LCDcolor,
@@ -10462,7 +10463,7 @@ void ProcessIO(void)
   do_str(textBuffer, MP_PARSE_FILE_INPUT);
   FbMoveRelative(0, 10);
 
-  FbSwapBuffers();
+
 
 
  }

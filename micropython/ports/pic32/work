@@ -8,6 +8,9 @@ make V=1
 rm build/badge.o build/pic32config.o
 
 rm build/firmware*
+
+rm build/assets.o build/fb.o build/badgemain.o
+
 make V=1
 
 
