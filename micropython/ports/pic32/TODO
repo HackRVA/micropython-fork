@@ -1,7 +1,10 @@
-- bootloader -> bootloader pins on pgm heaer
-- paste lots of text without weirdness
+- USB: fix paste lots of text without weirdness
+- test IR
+- test audio
+- make this work with bootloader (use pins on pgm header for "bootload" button)
 
 X IR
+X audio
 X timer1_int
 X readline editing
 X echo to serial not lcd

@@ -1,11 +1,15 @@
 -----------
 
-most of the code is from badge2018
-except- reverted to non-harmony plib pin access
+use prog.sh to pickit3 program without opening mplab
 
 -----------
-ir is untest but should work
-audio is untest but should work
+
+most of the code is from badge2018
+	except- reverted to non-harmony plib pin access
+
+-----------
+
+font is new, has all chars upper/lower and special
 
 -----------
 
