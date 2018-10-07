@@ -1,5 +1,14 @@
 -----------
 
+most of the code is from badge2018
+except- reverted to non-harmony plib pin access
+
+-----------
+ir is untest but should work
+audio is untest but should work
+
+-----------
+
 Note- USB serial typed commands don't echo to LCD
 you have to write them and swap/push buffers
 
