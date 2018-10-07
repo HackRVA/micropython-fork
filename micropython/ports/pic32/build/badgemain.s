@@ -274,20 +274,13 @@ ProcessIO:
 	lui	$2,%hi(USB_In_Buffer)
 
 .L13:
-	lui	$2,%hi(textBufPtr.14326)
-	sb	$0,%lo(textBufPtr.14326)($2)
-	jal	FbMoveX
-	move	$4,$0
-
 	lui	$4,%hi(textBuffer.14325)
 	addiu	$4,$4,%lo(textBuffer.14325)
 	jal	do_str
 	li	$5,1			# 0x1
 
-	move	$4,$0
-	jal	FbMoveRelative
-	li	$5,10			# 0xa
-
+	lui	$2,%hi(textBufPtr.14326)
+	sb	$0,%lo(textBufPtr.14326)($2)
 	lui	$2,%hi(USB_In_Buffer)
 .L36:
 	lb	$2,%lo(USB_In_Buffer)($2)
@@ -488,26 +481,26 @@ BlinkUSBStatus:
 # End mchp_output_function_prologue
 	addiu	$sp,$sp,-24
 	sw	$31,20($sp)
-	lui	$2,%hi(led_count.14351)
-	lw	$2,%lo(led_count.14351)($2)
+	lui	$2,%hi(led_count.14347)
+	lw	$2,%lo(led_count.14347)($2)
 	bne	$2,$0,.L59
-	lui	$2,%hi(led_count.14351)
+	lui	$2,%hi(led_count.14347)
 
 	li	$3,65536			# 0x10000
 	ori	$3,$3,0x86a0
-	sw	$3,%lo(led_count.14351)($2)
-	lui	$2,%hi(led_count.14351)
+	sw	$3,%lo(led_count.14347)($2)
+	lui	$2,%hi(led_count.14347)
 .L59:
-	lw	$3,%lo(led_count.14351)($2)
+	lw	$3,%lo(led_count.14347)($2)
 	addiu	$3,$3,-1
 	jal	getUSBSuspendControl
-	sw	$3,%lo(led_count.14351)($2)
+	sw	$3,%lo(led_count.14347)($2)
 
 	li	$3,1			# 0x1
 	bne	$2,$3,.L44
-	lui	$2,%hi(led_count.14351)
+	lui	$2,%hi(led_count.14347)
 
-	lw	$2,%lo(led_count.14351)($2)
+	lw	$2,%lo(led_count.14347)($2)
 	bnel	$2,$0,.L60
 	lw	$31,20($sp)
 
@@ -594,9 +587,9 @@ BlinkUSBStatus:
 	nop
 
 	beq	$2,$0,.L50
-	lui	$2,%hi(led_count.14351)
+	lui	$2,%hi(led_count.14347)
 
-	lw	$2,%lo(led_count.14351)($2)
+	lw	$2,%lo(led_count.14347)($2)
 	bnel	$2,$0,.L60
 	lw	$31,20($sp)
 
@@ -618,9 +611,9 @@ BlinkUSBStatus:
 	nop
 
 	beq	$2,$0,.L42
-	lui	$2,%hi(led_count.14351)
+	lui	$2,%hi(led_count.14347)
 
-	lw	$2,%lo(led_count.14351)($2)
+	lw	$2,%lo(led_count.14347)($2)
 	bne	$2,$0,.L42
 	lui	$2,%hi(LATC)
 
@@ -704,9 +697,9 @@ hextab:
 	.ascii	"0123456789ABCDEF\000"
 	.section	.bss,bss
 	.align	2
-	.type	led_count.14351, @object
-	.size	led_count.14351, 4
-led_count.14351:
+	.type	led_count.14347, @object
+	.size	led_count.14347, 4
+led_count.14347:
 	.space	4
 	.type	lineOutBufPtr, @object
 	.size	lineOutBufPtr, 1

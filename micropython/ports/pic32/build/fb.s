@@ -2043,12 +2043,9 @@ FbPushBuffer:
 
 	addiu	$17,$17,2
 	bne	$17,$16,.L171
-	lui	$2,%hi(G_Fb)
+	lui	$2,%hi(G_Fb+16)
 
-	addiu	$2,$2,%lo(G_Fb)
-	sh	$0,16($2)
-	sb	$0,4($2)
-	sb	$0,5($2)
+	sh	$0,%lo(G_Fb+16)($2)
 	lw	$31,28($sp)
 .L173:
 	lw	$17,24($sp)

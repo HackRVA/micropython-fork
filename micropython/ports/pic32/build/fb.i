@@ -788,8 +788,8 @@ void FbPushBuffer()
     }
     G_Fb.changed = 0;
 
-    G_Fb.pos.x = 0;
-    G_Fb.pos.y = 0;
+
+
 }
 
 

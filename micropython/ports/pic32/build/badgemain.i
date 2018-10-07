@@ -10457,11 +10457,11 @@ void ProcessIO(void)
 
     if(nread > 0) {
  if ((USB_In_Buffer[0] == 13) || (USB_In_Buffer[0] == 10)) {
+
+
+  do_str(textBuffer, MP_PARSE_FILE_INPUT);
   textBufPtr = 0;
 
-     FbMoveX(0);
-  do_str(textBuffer, MP_PARSE_FILE_INPUT);
-  FbMoveRelative(0, 10);
 
 
 
