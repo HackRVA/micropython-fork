@@ -8842,20 +8842,62 @@ extern unsigned short scan_bucket[];
 # 1 "./include/assets.h" 1
 
 
-void doAudio();
+
+
+
+
+
+void haltPlayback(void);
+
+
+
+
+
+void playAsset(unsigned char assetId);
+
+
+
+
+
 void drawAsset(unsigned char assetId);
+
+
+
+
+
 void drawLCD1(unsigned char assetId, int frame);
+
+
+
+
+
 void drawLCD2(unsigned char assetId, int frame);
+
+
+
+
+
 void drawLCD4(unsigned char assetId, int frame);
+
+
+
+
+
 void drawLCD8(unsigned char assetId, int frame);
-void setNote(unsigned short freq, unsigned short dur) ;
-void setBeep(unsigned short freq);
-
-void nextNote_cb(unsigned char assetId, int frame);
-void nextMIDI_cb(unsigned char assetId, int frame) ;
 
 
-;
+
+void doAudio();
+
+
+
+
+
+void setNote(unsigned short freq, unsigned short dur);
+
+void nextNote(void);
+
+void endNote(void);
 # 6 "LCDcolor.c" 2
 # 1 "./include/assetList.h" 1
 # 11 "./include/assetList.h"

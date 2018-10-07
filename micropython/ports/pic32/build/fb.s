@@ -1377,18 +1377,21 @@ FbPoint:
 	addiu	$sp,$sp,-24
 	sw	$31,20($sp)
 	sw	$16,16($sp)
-	andi	$4,$4,0x00ff
-	sltu	$2,$4,132
+	andi	$2,$5,0x00ff
+	sltu	$2,$2,132
 	bne	$2,$0,.L118
+	andi	$4,$4,0x00ff
+
+	li	$5,-125			# 0xffffffffffffff83
+.L118:
+	move	$2,$4
+	sltu	$4,$4,132
+	bne	$4,$0,.L119
 	andi	$5,$5,0x00ff
 
-	li	$4,132			# 0x84
-.L118:
-	sltu	$2,$5,132
-	beql	$2,$0,.L119
-	li	$5,132			# 0x84
-
+	li	$2,-125			# 0xffffffffffffff83
 .L119:
+	andi	$4,$2,0x00ff
 	sll	$3,$5,2
 	sll	$2,$5,7
 	addu	$2,$3,$2
@@ -1442,21 +1445,21 @@ FbHorizontalLine:
 	move	$4,$16
 
 	sltu	$2,$16,$17
-	beq	$2,$0,.L126
+	beq	$2,$0,.L124
 	li	$3,1			# 0x1
 
 	move	$4,$16
-.L127:
+.L125:
 	jal	FbPoint
 	move	$5,$18
 
 	addiu	$16,$16,1
 	andi	$16,$16,0x00ff
-	bne	$16,$17,.L127
+	bne	$16,$17,.L125
 	move	$4,$16
 
 	li	$3,1			# 0x1
-.L126:
+.L124:
 	lui	$2,%hi(G_Fb+16)
 	sh	$3,%lo(G_Fb+16)($2)
 	lw	$31,28($sp)
@@ -1498,21 +1501,21 @@ FbVerticalLine:
 	move	$5,$16
 
 	sltu	$2,$16,$17
-	beq	$2,$0,.L132
+	beq	$2,$0,.L130
 	li	$3,1			# 0x1
 
 	move	$4,$18
-.L133:
+.L131:
 	jal	FbPoint
 	move	$5,$16
 
 	addiu	$16,$16,1
 	andi	$16,$16,0x00ff
-	bne	$16,$17,.L133
+	bne	$16,$17,.L131
 	move	$4,$18
 
 	li	$3,1			# 0x1
-.L132:
+.L130:
 	lui	$2,%hi(G_Fb+16)
 	sh	$3,%lo(G_Fb+16)($2)
 	lw	$31,28($sp)
@@ -1561,15 +1564,15 @@ FbLine:
 	xor	$22,$2,$22
 	subu	$22,$22,$2
 	sltu	$2,$17,$20
-	beq	$2,$0,.L144
+	beq	$2,$0,.L142
 	sw	$7,16($sp)
 
-	j	.L135
+	j	.L133
 	li	$fp,1			# 0x1
 
-.L144:
+.L142:
 	li	$fp,-1			# 0xffffffffffffffff
-.L135:
+.L133:
 	lw	$2,16($sp)
 	subu	$19,$2,$18
 	sra	$2,$19,31
@@ -1577,56 +1580,56 @@ FbLine:
 	subu	$19,$19,$2
 	lw	$3,16($sp)
 	sltu	$2,$18,$3
-	beql	$2,$0,.L145
+	beql	$2,$0,.L143
 	li	$23,-1			# 0xffffffffffffffff
 
 	li	$23,1			# 0x1
-.L145:
+.L143:
 	slt	$2,$19,$22
-	bnel	$2,$0,.L137
+	bnel	$2,$0,.L135
 	srl	$16,$22,31
 
 	subu	$2,$0,$19
 	srl	$16,$2,31
 	addu	$2,$16,$2
-	j	.L148
+	j	.L146
 	sra	$16,$2,1
 
-.L137:
+.L135:
 	addu	$16,$16,$22
 	sra	$16,$16,1
-.L148:
+.L146:
 	subu	$21,$0,$22
-.L149:
+.L147:
 	move	$4,$17
 	jal	FbPoint
 	move	$5,$18
 
-	bne	$17,$20,.L150
+	bne	$17,$20,.L148
 	slt	$2,$21,$16
 
 	lw	$2,16($sp)
-	beq	$18,$2,.L141
+	beq	$18,$2,.L139
 	slt	$2,$21,$16
 
-.L150:
-	beql	$2,$0,.L146
+.L148:
+	beql	$2,$0,.L144
 	move	$2,$16
 
 	subu	$2,$16,$19
 	addu	$17,$17,$fp
 	andi	$17,$17,0x00ff
-.L146:
+.L144:
 	slt	$16,$16,$19
-	beql	$16,$0,.L149
+	beql	$16,$0,.L147
 	move	$16,$2
 
 	addu	$16,$2,$22
 	addu	$18,$18,$23
-	j	.L149
+	j	.L147
 	andi	$18,$18,0x00ff
 
-.L141:
+.L139:
 	li	$3,1			# 0x1
 	lui	$2,%hi(G_Fb+16)
 	sh	$3,%lo(G_Fb+16)($2)
@@ -1719,7 +1722,7 @@ FbWriteLine:
 	lbu	$20,4($2)
 	lbu	$19,5($2)
 	lbu	$2,0($4)
-	beq	$2,$0,.L153
+	beq	$2,$0,.L151
 	move	$18,$4
 
 	move	$17,$4
@@ -1728,7 +1731,7 @@ FbWriteLine:
 	lui	$22,%hi(assetList)
 	addiu	$22,$22,%lo(assetList)
 	addiu	$2,$21,%lo(G_Fb)
-.L156:
+.L154:
 	lbu	$2,6($2)
 	sll	$3,$2,2
 	sll	$2,$2,4
@@ -1748,10 +1751,10 @@ FbWriteLine:
 	andi	$16,$16,0x00ff
 	addu	$17,$18,$16
 	lbu	$2,0($17)
-	bne	$2,$0,.L156
+	bne	$2,$0,.L154
 	addiu	$2,$21,%lo(G_Fb)
 
-.L153:
+.L151:
 	li	$3,1			# 0x1
 	lui	$2,%hi(G_Fb+16)
 	sh	$3,%lo(G_Fb+16)($2)
@@ -1799,7 +1802,7 @@ FbWriteString:
 	lui	$2,%hi(G_Fb)
 	addiu	$2,$2,%lo(G_Fb)
 	lbu	$19,4($2)
-	beq	$21,$0,.L158
+	beq	$21,$0,.L156
 	lbu	$18,5($2)
 
 	move	$17,$4
@@ -1807,7 +1810,7 @@ FbWriteString:
 	lui	$22,%hi(G_Fb)
 	lui	$23,%hi(assetList)
 	addiu	$23,$23,%lo(assetList)
-.L161:
+.L159:
 	andi	$3,$16,0x00ff
 	move	$20,$17
 	addiu	$16,$16,1
@@ -1819,21 +1822,21 @@ FbWriteString:
 	addu	$2,$2,$23
 	lbu	$4,0($17)
 	xori	$4,$4,0xa
-	beq	$4,$0,.L162
+	beq	$4,$0,.L160
 	lhu	$2,4($2)
 
 	mul	$5,$2,$16
 	addu	$4,$5,$19
 	slt	$4,$4,132
-	bnel	$4,$0,.L164
+	bnel	$4,$0,.L162
 	mul	$4,$3,$2
 
-.L162:
+.L160:
 	addiu	$18,$18,10
 	andi	$18,$18,0x00ff
 	move	$19,$0
 	mul	$4,$3,$2
-.L164:
+.L162:
 	addu	$2,$4,$19
 	andi	$4,$2,0x00ff
 	jal	FbMove
@@ -1844,10 +1847,10 @@ FbWriteString:
 
 	andi	$2,$16,0x00ff
 	sltu	$2,$2,$21
-	bne	$2,$0,.L161
+	bne	$2,$0,.L159
 	addiu	$17,$17,1
 
-.L158:
+.L156:
 	li	$3,1			# 0x1
 	lui	$2,%hi(G_Fb+16)
 	sh	$3,%lo(G_Fb+16)($2)
@@ -1959,7 +1962,7 @@ FbSwapBuffers:
 	sw	$16,16($sp)
 	lui	$2,%hi(G_Fb+16)
 	lhu	$2,%lo(G_Fb+16)($2)
-	beq	$2,$0,.L170
+	beq	$2,$0,.L168
 	lw	$31,28($sp)
 
 	move	$4,$0
@@ -1973,7 +1976,7 @@ FbSwapBuffers:
 	li	$17,34848			# 0x8820
 	addu	$17,$16,$17
 	lui	$18,%hi(G_Fb)
-.L168:
+.L166:
 	jal	S6B33_pixel
 	lhu	$4,0($16)
 
@@ -1981,7 +1984,7 @@ FbSwapBuffers:
 	lhu	$2,10($2)
 	sh	$2,0($16)
 	addiu	$16,$16,2
-	bne	$16,$17,.L168
+	bne	$16,$17,.L166
 	lui	$2,%hi(G_Fb)
 
 	addiu	$2,$2,%lo(G_Fb)
@@ -1989,7 +1992,7 @@ FbSwapBuffers:
 	sb	$0,4($2)
 	sb	$0,5($2)
 	lw	$31,28($sp)
-.L170:
+.L168:
 	lw	$18,24($sp)
 	lw	$17,20($sp)
 	lw	$16,16($sp)
@@ -2002,6 +2005,344 @@ FbSwapBuffers:
 # End mchp_output_function_epilogue
 	.end	FbSwapBuffers
 	.size	FbSwapBuffers, .-FbSwapBuffers
+	.align	2
+	.globl	FbPushBuffer
+	.set	nomips16
+	.set	nomicromips
+	.ent	FbPushBuffer
+	.type	FbPushBuffer, @function
+FbPushBuffer:
+	.frame	$sp,32,$31		# vars= 0, regs= 3/0, args= 16, gp= 0
+	.mask	0x80030000,-4
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# End mchp_output_function_prologue
+	addiu	$sp,$sp,-32
+	sw	$31,28($sp)
+	sw	$17,24($sp)
+	sw	$16,20($sp)
+	lui	$2,%hi(G_Fb+16)
+	lhu	$2,%lo(G_Fb+16)($2)
+	beq	$2,$0,.L173
+	lw	$31,28($sp)
+
+	move	$4,$0
+	move	$5,$0
+	li	$6,131			# 0x83
+	jal	S6B33_rect
+	li	$7,131			# 0x83
+
+	lui	$17,%hi(LCDbuffer)
+	addiu	$17,$17,%lo(LCDbuffer)
+	li	$16,34848			# 0x8820
+	addu	$16,$17,$16
+.L171:
+	jal	S6B33_pixel
+	lhu	$4,0($17)
+
+	addiu	$17,$17,2
+	bne	$17,$16,.L171
+	lui	$2,%hi(G_Fb)
+
+	addiu	$2,$2,%lo(G_Fb)
+	sh	$0,16($2)
+	sb	$0,4($2)
+	sb	$0,5($2)
+	lw	$31,28($sp)
+.L173:
+	lw	$17,24($sp)
+	lw	$16,20($sp)
+	j	$31
+	addiu	$sp,$sp,32
+
+	.set	macro
+	.set	reorder
+# Begin mchp_output_function_epilogue
+# End mchp_output_function_epilogue
+	.end	FbPushBuffer
+	.size	FbPushBuffer, .-FbPushBuffer
+	.align	2
+	.globl	FbPushRegion
+	.set	nomips16
+	.set	nomicromips
+	.ent	FbPushRegion
+	.type	FbPushRegion, @function
+FbPushRegion:
+	.frame	$sp,56,$31		# vars= 0, regs= 9/0, args= 16, gp= 0
+	.mask	0x80ff0000,-4
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# End mchp_output_function_prologue
+	addiu	$sp,$sp,-56
+	sw	$31,52($sp)
+	sw	$23,48($sp)
+	sw	$22,44($sp)
+	sw	$21,40($sp)
+	sw	$20,36($sp)
+	sw	$19,32($sp)
+	sw	$18,28($sp)
+	sw	$17,24($sp)
+	sw	$16,20($sp)
+	move	$19,$4
+	move	$20,$5
+	move	$21,$6
+	lui	$2,%hi(G_Fb+16)
+	lhu	$2,%lo(G_Fb+16)($2)
+	beq	$2,$0,.L174
+	move	$22,$7
+
+	jal	S6B33_rect
+	addu	$22,$22,$20
+
+	addiu	$3,$20,-1
+	addiu	$2,$22,-1
+	sltu	$2,$3,$2
+	beq	$2,$0,.L176
+	addiu	$19,$19,-132
+
+	li	$2,132			# 0x84
+	mul	$3,$20,$2
+	addu	$19,$3,$19
+	lui	$23,%hi(LCDbuffer)
+	addiu	$23,$23,%lo(LCDbuffer)
+.L179:
+	addu	$18,$19,$21
+	sltu	$2,$19,$18
+	beql	$2,$0,.L182
+	addiu	$20,$20,1
+
+	sll	$16,$19,1
+	addu	$16,$23,$16
+	move	$17,$19
+.L178:
+	jal	S6B33_pixel
+	lhu	$4,0($16)
+
+	addiu	$17,$17,1
+	bne	$17,$18,.L178
+	addiu	$16,$16,2
+
+	addiu	$20,$20,1
+.L182:
+	bne	$20,$22,.L179
+	addiu	$19,$19,132
+
+.L176:
+	lui	$2,%hi(G_Fb)
+	addiu	$2,$2,%lo(G_Fb)
+	sh	$0,16($2)
+	sb	$0,4($2)
+	sb	$0,5($2)
+.L174:
+	lw	$31,52($sp)
+	lw	$23,48($sp)
+	lw	$22,44($sp)
+	lw	$21,40($sp)
+	lw	$20,36($sp)
+	lw	$19,32($sp)
+	lw	$18,28($sp)
+	lw	$17,24($sp)
+	lw	$16,20($sp)
+	j	$31
+	addiu	$sp,$sp,56
+
+	.set	macro
+	.set	reorder
+# Begin mchp_output_function_epilogue
+# End mchp_output_function_epilogue
+	.end	FbPushRegion
+	.size	FbPushRegion, .-FbPushRegion
+	.align	2
+	.globl	FbDrawVectors
+	.set	nomips16
+	.set	nomicromips
+	.ent	FbDrawVectors
+	.type	FbDrawVectors, @function
+FbDrawVectors:
+	.frame	$sp,56,$31		# vars= 0, regs= 10/0, args= 16, gp= 0
+	.mask	0xc0ff0000,-4
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# End mchp_output_function_prologue
+	addiu	$sp,$sp,-56
+	sw	$31,52($sp)
+	sw	$fp,48($sp)
+	sw	$23,44($sp)
+	sw	$22,40($sp)
+	sw	$21,36($sp)
+	sw	$20,32($sp)
+	sw	$19,28($sp)
+	sw	$18,24($sp)
+	sw	$17,20($sp)
+	sw	$16,16($sp)
+	move	$17,$4
+	andi	$21,$5,0x00ff
+	seh	$22,$6
+	seh	$23,$7
+	addiu	$19,$21,-1
+	blez	$19,.L184
+	lbu	$fp,72($sp)
+
+	move	$16,$0
+	andi	$18,$22,0xffff
+	andi	$20,$23,0xffff
+	sll	$2,$16,2
+.L190:
+	addu	$2,$17,$2
+	lhu	$4,0($2)
+	addu	$4,$18,$4
+	andi	$4,$4,0xffff
+	lh	$5,2($2)
+	addiu	$2,$16,1
+	sll	$2,$2,2
+	addu	$2,$17,$2
+	lh	$6,0($2)
+	lh	$7,2($2)
+	addiu	$2,$4,-1
+	andi	$2,$2,0xffff
+	sltu	$2,$2,131
+	beql	$2,$0,.L189
+	addiu	$16,$16,1
+
+	addu	$6,$18,$6
+	seh	$6,$6
+	blez	$6,.L185
+	slt	$2,$6,132
+
+	beql	$2,$0,.L189
+	addiu	$16,$16,1
+
+	addu	$5,$20,$5
+	seh	$5,$5
+	blez	$5,.L185
+	slt	$2,$5,132
+
+	beql	$2,$0,.L189
+	addiu	$16,$16,1
+
+	addu	$7,$20,$7
+	seh	$7,$7
+	blez	$7,.L185
+	slt	$2,$7,132
+
+	beql	$2,$0,.L189
+	addiu	$16,$16,1
+
+	andi	$4,$4,0x00ff
+	andi	$5,$5,0x00ff
+	andi	$6,$6,0x00ff
+	jal	FbLine
+	andi	$7,$7,0x00ff
+
+.L185:
+	addiu	$16,$16,1
+.L189:
+	andi	$16,$16,0x00ff
+	slt	$2,$16,$19
+	bne	$2,$0,.L190
+	sll	$2,$16,2
+
+.L184:
+	beq	$fp,$0,.L183
+	addiu	$21,$21,-1
+
+	sll	$21,$21,2
+	addu	$21,$17,$21
+	andi	$22,$22,0xffff
+	lhu	$4,0($21)
+	addu	$4,$22,$4
+	andi	$4,$4,0xffff
+	lh	$5,2($21)
+	lh	$6,0($17)
+	sltu	$2,$4,133
+	beq	$2,$0,.L183
+	lh	$3,2($17)
+
+	addu	$6,$22,$6
+	seh	$6,$6
+	bltz	$6,.L183
+	slt	$2,$6,133
+
+	beq	$2,$0,.L183
+	andi	$23,$23,0xffff
+
+	addu	$5,$23,$5
+	seh	$5,$5
+	bltz	$5,.L183
+	slt	$2,$5,133
+
+	beq	$2,$0,.L183
+	addu	$23,$23,$3
+
+	seh	$7,$23
+	bltz	$7,.L183
+	slt	$2,$7,133
+
+	beq	$2,$0,.L191
+	lw	$31,52($sp)
+
+	andi	$4,$4,0x00ff
+	andi	$5,$5,0x00ff
+	andi	$6,$6,0x00ff
+	jal	FbLine
+	andi	$7,$7,0x00ff
+
+.L183:
+	lw	$31,52($sp)
+.L191:
+	lw	$fp,48($sp)
+	lw	$23,44($sp)
+	lw	$22,40($sp)
+	lw	$21,36($sp)
+	lw	$20,32($sp)
+	lw	$19,28($sp)
+	lw	$18,24($sp)
+	lw	$17,20($sp)
+	lw	$16,16($sp)
+	j	$31
+	addiu	$sp,$sp,56
+
+	.set	macro
+	.set	reorder
+# Begin mchp_output_function_epilogue
+# End mchp_output_function_epilogue
+	.end	FbDrawVectors
+	.size	FbDrawVectors, .-FbDrawVectors
+	.align	2
+	.globl	FbPolygonFromPoints
+	.set	nomips16
+	.set	nomicromips
+	.ent	FbPolygonFromPoints
+	.type	FbPolygonFromPoints, @function
+FbPolygonFromPoints:
+	.frame	$sp,32,$31		# vars= 0, regs= 1/0, args= 24, gp= 0
+	.mask	0x80000000,-4
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# End mchp_output_function_prologue
+	addiu	$sp,$sp,-32
+	sw	$31,28($sp)
+	li	$2,1			# 0x1
+	sw	$2,16($sp)
+	andi	$5,$5,0x00ff
+	seh	$6,$6
+	jal	FbDrawVectors
+	seh	$7,$7
+
+	lw	$31,28($sp)
+	j	$31
+	addiu	$sp,$sp,32
+
+	.set	macro
+	.set	reorder
+# Begin mchp_output_function_epilogue
+# End mchp_output_function_epilogue
+	.end	FbPolygonFromPoints
+	.size	FbPolygonFromPoints, .-FbPolygonFromPoints
 
 	.comm	G_Fb,20,4
 

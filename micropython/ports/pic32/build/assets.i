@@ -8812,24 +8812,68 @@ UINT CANTotalFilters(void);
 UINT CANTotalMasks(void);
 # 73 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/plib.h" 2 3
 # 2 "assets.c" 2
+
 # 1 "./include/assets.h" 1
 
 
-void doAudio();
+
+
+
+
+
+void haltPlayback(void);
+
+
+
+
+
+void playAsset(unsigned char assetId);
+
+
+
+
+
 void drawAsset(unsigned char assetId);
+
+
+
+
+
 void drawLCD1(unsigned char assetId, int frame);
+
+
+
+
+
 void drawLCD2(unsigned char assetId, int frame);
+
+
+
+
+
 void drawLCD4(unsigned char assetId, int frame);
+
+
+
+
+
 void drawLCD8(unsigned char assetId, int frame);
-void setNote(unsigned short freq, unsigned short dur) ;
-void setBeep(unsigned short freq);
-
-void nextNote_cb(unsigned char assetId, int frame);
-void nextMIDI_cb(unsigned char assetId, int frame) ;
 
 
-;
-# 3 "assets.c" 2
+
+void doAudio();
+
+
+
+
+
+void setNote(unsigned short freq, unsigned short dur);
+
+void nextNote(void);
+
+void endNote(void);
+# 4 "assets.c" 2
+
 # 1 "./include/assetList.h" 1
 # 11 "./include/assetList.h"
 enum {
@@ -8862,8 +8906,166 @@ struct asset {
     void (*datacb)(unsigned char, int);
 };
 extern const struct asset assetList[];
-# 4 "assets.c" 2
-# 16 "assets.c"
+# 6 "assets.c" 2
+# 1 "./include/timer1_int.h" 1
+
+
+void red(unsigned char onPWM) ;
+void green(unsigned char onPWM) ;
+void blue(unsigned char onPWM) ;
+void led(unsigned char r, unsigned char g, unsigned char b);
+void backlight(unsigned char bright) ;
+void led_input_hack(unsigned char OnOff) ;
+void no_LED_PWM(unsigned char onOff) ;
+
+void timerInit();
+# 7 "assets.c" 2
+# 1 "./include/audio.h" 1
+# 8 "assets.c" 2
+# 1 "./include/wavetable.h" 1
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 1 3
+# 42 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 3
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 1 3
+# 46 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
+typedef __signed char __int8_t;
+typedef unsigned char __uint8_t;
+typedef short int __int16_t;
+typedef unsigned short int __uint16_t;
+typedef int __int32_t;
+typedef unsigned int __uint32_t;
+# 60 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
+__extension__
+typedef long long int __int64_t;
+
+__extension__
+typedef unsigned long long int __uint64_t;
+# 75 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_types.h" 3
+typedef int __intptr_t;
+typedef unsigned int __uintptr_t;
+# 43 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
+
+
+typedef __int8_t int8_t;
+
+
+
+
+typedef __uint8_t uint8_t;
+
+
+
+
+typedef __int16_t int16_t;
+
+
+
+
+typedef __uint16_t uint16_t;
+
+
+
+
+typedef __int32_t int32_t;
+
+
+
+
+typedef __uint32_t uint32_t;
+
+
+
+
+typedef __int64_t int64_t;
+
+
+
+
+typedef __uint64_t uint64_t;
+
+
+
+
+typedef __intptr_t intptr_t;
+
+
+
+
+typedef __uintptr_t uintptr_t;
+
+
+
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 1 3
+# 48 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
+__extension__
+typedef __signed char int_least8_t;
+typedef unsigned char uint_least8_t;
+typedef short int int_least16_t;
+typedef unsigned short int uint_least16_t;
+typedef int int_least24_t;
+typedef unsigned int uint_least24_t;
+typedef int int_least32_t;
+typedef unsigned int uint_least32_t;
+# 65 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
+__extension__
+typedef long long int int_least64_t;
+
+__extension__
+typedef unsigned long long int uint_least64_t;
+
+
+
+typedef int int_fast8_t;
+typedef unsigned int uint_fast8_t;
+typedef int int_fast16_t;
+typedef unsigned int uint_fast16_t;
+typedef int int_fast24_t;
+typedef unsigned int uint_fast24_t;
+typedef int int_fast32_t;
+typedef unsigned int uint_fast32_t;
+# 89 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
+__extension__
+typedef long long int int_fast64_t;
+
+__extension__
+typedef unsigned long long int uint_fast64_t;
+# 106 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_mwgwtypes.h" 3
+__extension__
+typedef long long int intmax_t;
+
+__extension__
+typedef unsigned long long int uintmax_t;
+# 95 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
+
+
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_limits.h" 1 3
+# 98 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
+
+
+
+# 1 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/machine/int_const.h" 1 3
+# 102 "/opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdint.h" 2 3
+# 2 "./include/wavetable.h" 2
+
+static char wave_table[16] = {
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0
+};
+# 9 "assets.c" 2
+# 21 "assets.c"
 unsigned char G_videoAssetId = 255;
 
 unsigned int G_videoFrame = 0;
@@ -8876,7 +9078,8 @@ void drawAsset(unsigned char assetId)
 
 void drawLCD1(unsigned char assetId, int frame)
 {
-    unsigned char i, j, p, r, g, b, pixbyte, *cmap, *pixdata;
+    unsigned char i, j, p, r, g, b, pixbyte;
+    const unsigned char *cmap, *pixdata;
     unsigned short pixel ;
 
 
@@ -8907,7 +9110,8 @@ void drawLCD1(unsigned char assetId, int frame)
 
 void drawLCD2(unsigned char assetId, int frame)
 {
-    unsigned char i, j, r, g, b, pixbyte, *cmap, *pixdata;
+    unsigned char i, j, r, g, b, pixbyte;
+    const unsigned char *cmap, *pixdata;
     unsigned short pixel ;
 
     S6B33_rect(0, 0, assetList[assetId].x - 1, assetList[assetId].y - 1);
@@ -8970,7 +9174,8 @@ void drawLCD2(unsigned char assetId, int frame)
 
 void drawLCD4(unsigned char assetId, int frame)
 {
-    unsigned char i, j, r, g, b, pixbyte, *cmap, *pixdata;
+    unsigned char i, j, r, g, b, pixbyte;
+    const unsigned char *cmap, *pixdata;
     unsigned short pixel ;
 
     S6B33_rect(0, 0, assetList[assetId].x - 1, assetList[assetId].y - 1);
@@ -9009,7 +9214,8 @@ void drawLCD4(unsigned char assetId, int frame)
 
 void drawLCD8(unsigned char assetId, int frame)
 {
-    unsigned char i, j, r, g, b, pixbyte, *cmap;
+    unsigned char i, j, r, g, b, pixbyte;
+    const unsigned char *cmap;
     unsigned short pixel;
 
     S6B33_rect(0, 0, assetList[assetId].x - 1, assetList[assetId].y - 1);
@@ -9031,15 +9237,137 @@ void drawLCD8(unsigned char assetId, int frame)
    }
 }
 
-unsigned short G_currentNote=0;
-unsigned short G_duration = 0;
-unsigned short G_duration_cnt = 0;
-unsigned short G_freq_cnt = 0;
-unsigned short G_freq = 0;
+volatile unsigned char G_audioAssetId = 255;
 
-unsigned short G_mute = 0;
+volatile char G_playing = 0;
+
+
+volatile int G_samples_per_step = 0;
+
+
+volatile int G_samples_cnt = 0;
+
+
+volatile short G_note_num = 0;
+
+
+volatile short G_duration = 0;
+
+
+volatile char G_duration_cnt = 0;
+
+
+volatile float G_wavehop[2] = {0.0, 0.0};
+
+
+volatile float G_wavepos[2] = {0.0, 0.0};
+
+volatile unsigned short G_mute = 0;
 
 void playAsset(unsigned char assetId)
 {
-    assetList[assetId].datacb(assetId, 0);
+    haltPlayback();
+    G_audioAssetId = assetId;
+    nextNote();
+}
+
+void haltPlayback(void)
+{
+    G_audioAssetId = 255;
+    endNote();
+    G_playing = 0;
+    G_samples_cnt = 0;
+    G_note_num = 0;
+    G_duration_cnt = 0;
+    int channel;
+    for (channel = 0; channel < 2; channel++)
+        G_wavepos[2] = 0.0;
+}
+
+void setNote(unsigned short freq, unsigned short dur)
+{
+    G_wavehop[0] = (float) sizeof(wave_table) / (float) freq;
+
+    G_samples_per_step = 4750;
+    G_duration = dur / G_samples_per_step;
+    G_playing = 1;
+
+    int i;
+    for (i = 1; i < 2; i++)
+        G_wavehop[i] = 0;
+}
+
+void endNote(void)
+{
+    LATAbits.LATA9 = 0;
+    LATAbits.LATA4 = 0;
+    G_playing = 0;
+}
+
+
+void doAudio(void)
+{
+    if (G_mute || !G_playing)
+        return;
+
+    signed char sample = 0;
+    int channel;
+    for (channel = 0; channel < 2; channel++) {
+
+        if (!G_wavehop[channel])
+            continue;
+
+        sample += wave_table[(int) G_wavepos[channel]];
+        G_wavepos[channel] += G_wavehop[channel];
+        if ((int) G_wavepos[channel] >= (int) sizeof(wave_table)) {
+            G_wavepos[channel] -= sizeof(wave_table);
+        }
+    }
+
+    LATAbits.LATA9 = (sample > 0);
+    LATAbits.LATA4 = (sample < 0);
+
+    G_samples_cnt++;
+
+
+    if (G_samples_cnt >= G_samples_per_step) {
+        G_samples_cnt = 0;
+        G_duration_cnt++;
+
+
+        if (G_duration_cnt >= G_duration) {
+            G_duration_cnt = 0;
+
+            if (G_audioAssetId != 255)
+                nextNote();
+            else {
+                endNote();
+            }
+        }
+    }
+}
+
+
+void nextNote(void)
+{
+
+    if (G_note_num >= assetList[G_audioAssetId].seqNum) {
+
+        G_note_num = 0;
+# 325 "assets.c"
+    }
+
+    G_playing = 1;
+
+    char *line = &assetList[G_audioAssetId].pixdata[G_note_num * (2 * sizeof(float) + 1)];
+
+
+    int channel;
+    for (channel = 0; channel < 2; channel++)
+        memcpy(&G_wavehop[channel], &line[channel * sizeof(float)], sizeof(float));
+
+    G_duration = line[(2 * sizeof(float) + 1) - 1];
+    G_note_num++;
+
+    G_samples_per_step = assetList[G_audioAssetId].x;
 }
