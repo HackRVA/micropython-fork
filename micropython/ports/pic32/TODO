@@ -1,6 +1,8 @@
 - bootloader -> bootloader pins on pgm heaer
-- timer1_int
-- IR
+- paste lots of text without weirdness
+
+X IR
+X timer1_int
 X readline editing
 X echo to serial not lcd
-- Makefile
+X Makefile

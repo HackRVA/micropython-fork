@@ -1,0 +1,32 @@
+-----------
+
+Note- USB serial typed commands don't echo to LCD
+you have to write them and swap/push buffers
+
+pasting long or multiple lines appears to overwrite 
+something or swamp to usb buffer
+
+-----------
+
+to add c code *
+
+add command to qstrdefsport.h
+
+add command code to pybadge.c in 4 places-
+    STATIC mp_obj_t pybadge_LCDBars() ;
+
+    STATIC MP_DEFINE_CONST_FUN_OBJ_0(pybadge_LCDBars_obj, pybadge_LCDBars);
+
+    { MP_OBJ_NEW_QSTR(MP_QSTR_LCDBars), (mp_obj_t)&(pybadge_LCDBars_obj) },
+
+    STATIC mp_obj_t pybadge_LCDBars() {
+    	LCDBars();
+	
+    	return mp_const_none;
+    }
+
+add any support .c to Makefile in SRC_BADGE_C
+
+add optional example to test.py
+
+-----------
