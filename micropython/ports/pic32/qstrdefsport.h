@@ -2,6 +2,8 @@
 Q(red)
 Q(green)
 Q(blue)
+Q(flare)
+Q(backlight)
 Q(FbMoveX)
 Q(FbMoveY)
 Q(FbMove)

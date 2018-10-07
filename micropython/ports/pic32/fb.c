@@ -476,8 +476,8 @@ void FbFilledRectangle(unsigned char width, unsigned char height)
 
 void FbPoint(unsigned char x, unsigned char y)
 {
-    if (x >= LCD_XSIZE) x = LCD_XSIZE;
-    if (y >= LCD_YSIZE) y = LCD_YSIZE;
+    if (x >= LCD_XSIZE) x = LCD_XSIZE-1;
+    if (y >= LCD_YSIZE) y = LCD_YSIZE-1;
 
     BUFFER(y * LCD_XSIZE + x) = G_Fb.color;
 
@@ -602,3 +602,102 @@ void FbSwapBuffers()
     G_Fb.pos.x = 0;
     G_Fb.pos.y = 0;
 }
+
+// Move buffer to screen without clearing the buffer
+// - Useful for making incremental changes to a consistent scene
+void FbPushBuffer()
+{
+    unsigned int i;
+
+    //debug("FbWriteLine");
+
+    if (G_Fb.changed == 0) return;
+
+    S6B33_rect(0, 0, LCD_XSIZE-1, LCD_YSIZE-1);
+    for (i=0; i<(LCD_XSIZE * LCD_YSIZE); i++) {
+        S6B33_pixel(BUFFER(i));
+	//BUFFER(i) = G_Fb.BGcolor; /* clear buffer as we go */
+    }
+    G_Fb.changed = 0;
+
+    G_Fb.pos.x = 0;
+    G_Fb.pos.y = 0;
+}
+
+//doesn't work
+void FbPushRegion(unsigned int x, unsigned int y, 
+        unsigned int width,unsigned int height)
+{
+    unsigned int i, j;
+
+    //debug("FbWriteLine");
+
+    if (G_Fb.changed == 0) return;
+
+    S6B33_rect(x, y, width, height);
+    for(i=y-1;i < (y+height-1);i++) // for each row
+    {
+        for(j=(LCD_XSIZE * i) + x; 
+                j < ((LCD_XSIZE * i) + x + width); 
+                j++)
+            S6B33_pixel(BUFFER(j));
+        
+    }
+    G_Fb.changed = 0;
+
+    G_Fb.pos.x = 0;
+    G_Fb.pos.y = 0;
+}
+
+void FbDrawVectors(short points[][2],
+                   unsigned char n_points,
+                   short center_x,
+                   short center_y,
+                   unsigned char connect_last_to_first)
+{
+    unsigned char n = 0;
+    short x0, y0, x1, y1;
+    for(n=0; n < (n_points-1); n++)
+    {
+        x0 = points[n][0] + center_x;
+        y0 = points[n][1] + center_y;
+        x1 = points[n+1][0] + center_x;
+        y1 = points[n+1][1] + center_y;
+        // Don't bother with the line if
+        // either point is out of bounds
+        if(!(
+                (x0 < 1) || (x0 > 131)
+                || (x1 < 1) || (x1 > 131)
+                || (y0 < 1) || (y0 > 131)
+                || (y1 < 1) || (y1 > 131)
+        ))
+            FbLine((unsigned char)x0, (unsigned char)y0,
+                   (unsigned char)x1, (unsigned char)y1);
+    }
+
+    if(connect_last_to_first){
+        x0 = points[n_points-1][0] + center_x;
+        y0 = points[n_points-1][1] + center_y;
+        x1 = points[0][0] + center_x;
+        y1 = points[0][1] + center_y;
+
+        if(!(
+                (x0 < 0) || (x0 > 132)
+                || (x1 < 0) || (x1 > 132)
+                || (y0 < 0) || (y0 > 132)
+                || (y1 < 0) || (y1 > 132)
+        ))
+            FbLine((unsigned char)x0, (unsigned char)y0,
+                   (unsigned char)x1, (unsigned char)y1);
+    }
+}
+
+void FbPolygonFromPoints(short points[][2],
+                         unsigned char n_points,
+                         short center_x,
+                         short center_y)
+{
+
+    FbDrawVectors(points, n_points, center_x, center_y, 1);
+}
+

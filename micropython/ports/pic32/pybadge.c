@@ -4,9 +4,11 @@
 #include "py/binary.h"
 //#include "portmodules.h"
 
-STATIC mp_obj_t pybadge_red(mp_obj_t red) ;
-STATIC mp_obj_t pybadge_green(mp_obj_t green) ;
-STATIC mp_obj_t pybadge_blue(mp_obj_t blue) ;
+STATIC mp_obj_t pybadge_red(mp_obj_t r) ;
+STATIC mp_obj_t pybadge_green(mp_obj_t g) ;
+STATIC mp_obj_t pybadge_blue(mp_obj_t b) ;
+STATIC mp_obj_t pybadge_flare(mp_obj_t b) ;
+STATIC mp_obj_t pybadge_backlight(mp_obj_t b) ;
 STATIC mp_obj_t pybadge_FbMoveX(mp_obj_t x) ;
 STATIC mp_obj_t pybadge_FbMoveY(mp_obj_t y) ;
 STATIC mp_obj_t pybadge_FbMove(mp_obj_t x,mp_obj_t y) ;
@@ -28,6 +30,8 @@ STATIC mp_obj_t pybadge_LCDputPixel(mp_obj_t x, mp_obj_t y, mp_obj_t col) ;
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_red_obj, pybadge_red);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_green_obj, pybadge_green);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_blue_obj, pybadge_blue);
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_flare_obj, pybadge_flare);
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_backlight_obj, pybadge_backlight);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_FbMoveX_obj, pybadge_FbMoveX);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_FbMoveY_obj, pybadge_FbMoveY);
 STATIC MP_DEFINE_CONST_FUN_OBJ_2(pybadge_FbMove_obj, pybadge_FbMove);
@@ -51,6 +55,8 @@ STATIC const mp_map_elem_t pybadge_globals_table[] = {
     { MP_OBJ_NEW_QSTR(MP_QSTR_red), (mp_obj_t)&(pybadge_red_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_green), (mp_obj_t)&(pybadge_green_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_blue), (mp_obj_t)&(pybadge_blue_obj) },
+    { MP_OBJ_NEW_QSTR(MP_QSTR_flare), (mp_obj_t)&(pybadge_flare_obj) },
+    { MP_OBJ_NEW_QSTR(MP_QSTR_backlight), (mp_obj_t)&(pybadge_backlight_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_FbMoveX), (mp_obj_t)&(pybadge_FbMoveX_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_FbMoveY), (mp_obj_t)&(pybadge_FbMoveY_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_FbMove), (mp_obj_t)&(pybadge_FbMove_obj) },
@@ -80,24 +86,35 @@ const mp_obj_module_t mp_module_pybadge = {
 };
 
 
-STATIC mp_obj_t pybadge_red(mp_obj_t red) {
-    redled(mp_obj_get_int(red));
+STATIC mp_obj_t pybadge_red(mp_obj_t r) {
+    red((unsigned char)mp_obj_get_int(r));
 
     return mp_const_none;
 }
 
-STATIC mp_obj_t pybadge_green(mp_obj_t green) {
-    greenled(mp_obj_get_int(green));
+STATIC mp_obj_t pybadge_green(mp_obj_t g) {
+    green((unsigned char)mp_obj_get_int(g));
 
     return mp_const_none;
 }
 
-STATIC mp_obj_t pybadge_blue(mp_obj_t blue) {
-    blueled(mp_obj_get_int(blue));
+STATIC mp_obj_t pybadge_blue(mp_obj_t b) {
+    blue((unsigned char)mp_obj_get_int(b));
 
     return mp_const_none;
 }
 
+STATIC mp_obj_t pybadge_flare(mp_obj_t f) {
+    flare_leds((unsigned char)mp_obj_get_int(f));
+
+    return mp_const_none;
+}
+
+STATIC mp_obj_t pybadge_backlight(mp_obj_t bright) {
+    backlight((unsigned char)mp_obj_get_int(bright));
+
+    return mp_const_none;
+}
 
 STATIC mp_obj_t pybadge_FbMoveX(mp_obj_t x) {
     FbMoveX((unsigned char)mp_obj_get_int(x));

@@ -1,2 +1,0 @@
-build/pic32config.o: pic32config.c
-pic32config.c :

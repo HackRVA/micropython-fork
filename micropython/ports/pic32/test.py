@@ -6,8 +6,16 @@ for i in range(4):
 
 import pybadge
 p=pybadge
+p.red(10)
+p.backlight(200)
+
 p.FbColor(0b1111111111111111)
-p.FbWriteLine('testing')
+p.FbWriteLine('ABCDEFGH')
+p.FbMoveRelative(0,10)
+p.FbWriteLine('IJKLMNOP')
+p.FbMoveRelative(0,10)
+p.FbWriteLine('QRSTUVWX')
+p.FbWriteLine('YZabcdef')
 
 
 

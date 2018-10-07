@@ -90,6 +90,8 @@ void UserInit(void)
     LATCbits.LATC1 = 0;      /* BLUE */
     LATBbits.LATB3 = 0;      /* GREEN */
 
+    timerInit();
+
     /* speaker pull down init */
 //    TRISAbits.TRISA9 = 0;	// piezo == output
 //    LATAbits.LATA9 = 0;      // piezo init off
