@@ -126,8 +126,6 @@ void echoUSB(char *str,int len) {
    lineOutBuffer[lineOutBufPtr] = 0;
 }
 
-const char hextab[]={"0123456789ABCDEF"};
-
 // controls USB heartbeat blink
 static unsigned char debugBlink=1;
 
@@ -136,6 +134,7 @@ void ProcessIO(void)
     unsigned char nread=0;
     static unsigned char writeLOCK=0;
     static unsigned char textBuffer[128], textBufPtr=0;
+    static int doMicroPython = 0;
     int i;
 
     //Blink the LEDs according to the USB device status
@@ -149,6 +148,7 @@ void ProcessIO(void)
     }
 
     if(nread > 0) {
+#ifdef MOVED
 	if ((USB_In_Buffer[0] == 13) || (USB_In_Buffer[0] == 10)) {
 
    		//FbMoveX(0);
@@ -160,7 +160,9 @@ void ProcessIO(void)
 
 		// USB_In_Buffer[0] = 0; // want to echo this
 	}
+#endif
 
+	// LCD contrast
 	if ((USB_In_Buffer[0] == '-') || (USB_In_Buffer[0] == '+')) {
 	   // for S6B33 G_contrast1
 	   if (USB_In_Buffer[0] == '-') G_contrast1 -= 4;
@@ -175,13 +177,6 @@ void ProcessIO(void)
 	   int i, outp=0;
 
 	   for (i=0; i < nread; i++) {
-		if ((USB_In_Buffer[i] == 10) | (USB_In_Buffer[i] == 13)) {
-		   USB_Out_Buffer[outp++] = 13; // insert before the char
-		   USB_Out_Buffer[outp++] = 10; // insert before the char
-
-		   continue;
-		}
-
 		if ((USB_In_Buffer[i] == '') | (USB_In_Buffer[i] == '')) {
 		   if (textBufPtr > 0) textBufPtr--;
 
@@ -190,17 +185,28 @@ void ProcessIO(void)
 		   USB_Out_Buffer[outp++] = '';
 		}
 		else {
-		   USB_Out_Buffer[outp++] = USB_In_Buffer[i];
 		   textBuffer[textBufPtr++] = USB_In_Buffer[i]; // used for python
+		   textBuffer[textBufPtr] = 0; 
+
+		   if ((USB_In_Buffer[i] == 10) | (USB_In_Buffer[i] == 13)) {
+			USB_Out_Buffer[outp++] = 10; // insert before the char
+			USB_Out_Buffer[outp++] = 13; // insert before the char
+
+			doMicroPython = 1;
+			continue;
+		   }
+		   else
+		      USB_Out_Buffer[outp++] = USB_In_Buffer[i];
 		}
 	   }
-	   textBuffer[textBufPtr] = USB_Out_Buffer[outp++] = 0; // null term just in case
 
+	   USB_Out_Buffer[outp] = 0; // null in case
 	   USB_In_Buffer[0] = 0;
 	}
 
 	nread = 0;
     }
+
 
     if (USBtransferReady()) {
 	int nextWrite;
@@ -223,6 +229,19 @@ void ProcessIO(void)
 	   writeLOCK = 1; // dont touch until USB done
 	}
     }
+
+    // do this after USB input, output processed
+    if (doMicroPython) {
+	static unsigned char mp_buffer[128];
+
+	strncpy(mp_buffer, textBuffer, textBufPtr+1);
+
+	do_str(mp_buffer, MP_PARSE_FILE_INPUT);
+	textBufPtr = 0;
+
+	doMicroPython = 0;
+    }
+
 
 #ifdef OLD
     // echo back to USB
