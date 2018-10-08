@@ -4,27 +4,27 @@
 import pybadge
 p=pybadge
 p.red(10)
-p.backlight(200)
+p.blue(40)
+p.backlight(255)
 
 p.FbClear()
 
 p.FbColor(0b1111111111111111)
 
-p.FbMove(10,10)
+p.FbMove(64,32)
+p.FbLine(64,64)
+p.FbLine(32,64)
+p.FbLine(32,32)
+p.FbLine(64,32)
+p.FbPushBuffer()
 
+p.FbMoveX(0)
 p.FbMoveRelative(0,10)
 p.FbWriteLine('ABCDEFGH')
 p.FbPushBuffer()
 
-p.FbMove(32,32)
-p.FbLine(64,32)
-p.FbLine(64,64)
-p.FbLine(32,64)
-p.FbLine(32,32)
-p.FbPushBuffer()
-
 p.FbMoveRelative(-10,10)
-p.FbWriteLine('IJKLMNOP')
+p.FbWriteLine('ijklmnop')
 p.FbPushBuffer()
 
 p.FbMoveRelative(-30,10)

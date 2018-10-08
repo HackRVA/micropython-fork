@@ -7,7 +7,8 @@ def readFile(filename):
 	port = "/dev/ttyACM0"
 	lines = []
 
-	ser = serial.Serial(port, 57600, timeout=0)
+	#ser = serial.Serial(port, 57600, timeout=0)
+	ser = serial.Serial(port, 115200, timeout=0)
 
 	with open(filename, 'r') as f:
 		lineno = 0
@@ -23,17 +24,10 @@ def readFile(filename):
 #				ser.flush()
 #				print 'sent', lineno, line
 
-			data = ser.read(9999)
-			if len(data) > 0:
-				print '						recv:', data
-
-			data = ser.read(9999)
-			if len(data) > 0:
-				print '						recv:', data
-
-			data = ser.read(9999)
-			if len(data) > 0:
-				print '						recv:', data
+			for r in range(6):
+				data = ser.read(9999)
+				if len(data) > 0:
+					print '						recv:', data
 
 
 	ser.close()

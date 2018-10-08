@@ -198,6 +198,7 @@ Q(FbLine)
 Q(LCDBars)
 Q(LCDcolor)
 Q(LCDputPixel)
+Q(button)
 Q(ArithmeticError)
 
 Q(ArithmeticError)

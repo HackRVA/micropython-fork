@@ -13,11 +13,13 @@ font is new, has all chars upper/lower and special
 
 -----------
 
-Note- USB serial typed commands don't echo to LCD
-you have to write them and swap/push buffers
+use sendbadge.py
 
-pasting long or multiple lines appears to overwrite 
-something or swamp to usb buffer
+   Note- USB serial typed commands don't echo to LCD
+   you have to write them and swap/push buffers
+
+   pasting long or multiple lines appears to overwrite 
+   something or swamp to usb buffer
 
 -----------
 

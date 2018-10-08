@@ -28,7 +28,7 @@ CFLAGS = $(INC) -std=c99 -x c -c -mprocessor=32MX270F256D -O1 -fno-schedule-insn
 
 # ********************
 # for plib
-BADGE_CFLAGS = $(INC) -x c -c -mprocessor=32MX270F256D -O1 -save-temps=obj -w -G0 -rs
+BADGE_CFLAGS = $(INC) -x c -c -mprocessor=32MX270F256D -O1 -w
 # ********************
 
 
@@ -36,10 +36,10 @@ LIBS = /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a
 SRC_S = 
 
 # not bootloader
-LDFLAGS = -Wl,--defsym=_min_heap_size=25k,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,p32MX270F256D.ld
+LDFLAGS = -Wl,--defsym=_min_heap_size=25000,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,p32MX270F256D.ld
 
 # bootloader
-#LDFLAGS = -Wl,--defsym=_min_heap_size=25k,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,app_32MX270F256D.ld
+#LDFLAGS = -Wl,--defsym=_min_heap_size=25000,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,app_32MX270F256D.ld
 
 # not bootloader
 SRC_BADGE_C = mp_main.c pybadge.c pic32config.c LCDcolor.c S6B33.c \
@@ -67,7 +67,7 @@ $(USBOBJ): $(SRC_USB_C)
 	mkdir -p $(BUILD)/USB
 	$(CROSS_COMPILE)gcc $(BADGE_CFLAGS) -o $@ USB/$(subst .o,.c,$(notdir $@))
 
-$(BUILD)/firmware.elf: $(OBJ) $(BDGOBJ) $(USBOBJ)
+$(BUILD)/firmware.elf:  $(OBJ) $(BDGOBJ) $(USBOBJ) 
 	$(ECHO) "LINK $@"
 	$(Q)$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
 	$(Q)$(SIZE) $@

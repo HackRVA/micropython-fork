@@ -28,6 +28,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include  "unistd.h"
+
 #include "py/gc.h"
 #include "py/runtime.h"
 

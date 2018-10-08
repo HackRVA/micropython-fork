@@ -71,7 +71,6 @@ void UserInit(void)
     LCDReset();
     LATCbits.LATC1 = 1;      /* BLUE */
 
-    mp_init(); // init micropython
 
     FbInit();
     FbClear();
@@ -81,6 +80,10 @@ void UserInit(void)
     LATCbits.LATC9 = 1;      /* backlight on. you will see nothing if it is off */
        
     
+    /* button init */
+    // TRISCbits.TRISC4 = 1; // 2018 button == input
+    // CNPUCbits.CNPUC4 = 1; // 2018 pullup == on
+
     /* button init */
     TRISCbits.TRISC3 = 1; // button == input
     CNPUCbits.CNPUC3 = 1; // pullup == on
@@ -92,6 +95,14 @@ void UserInit(void)
 
     timerInit();
 
+
+//    int heap_size = 25000; 
+//    char *heap = malloc(heap_size);
+//    gc_init(heap, heap + heap_size);
+
+    mp_init(); // init micropython
+
+
     /* speaker pull down init */
 //    TRISAbits.TRISA9 = 0;	// piezo == output
 //    LATAbits.LATA9 = 0;      // piezo init off
@@ -101,6 +112,14 @@ void UserInit(void)
 
 void LCDprint(char *str,int len) {
    FbWriteString(str, len);
+}
+
+int button(int year)
+{
+    if (year == 2018)
+       return((int)PORTCbits.RC4); // 2018
+    else
+       return((int)PORTCbits.RC3);
 }
 
 /*
@@ -216,7 +235,7 @@ void ProcessIO(void)
 	   writeLOCK = 0;
 	} 
 
-	// jam line buffer in now that usb is done
+	// jam python line buffer into buffer since usb is done
 	if (lineOutBufPtr != 0) {
 	   strncpy(USB_Out_Buffer, lineOutBuffer, lineOutBufPtr);
 	   USB_Out_Buffer[lineOutBufPtr] = 0;
@@ -238,6 +257,8 @@ void ProcessIO(void)
 
 	do_str(mp_buffer, MP_PARSE_FILE_INPUT);
 	textBufPtr = 0;
+
+	//gc_sweep_all(); // garbage collect
 
 	doMicroPython = 0;
     }

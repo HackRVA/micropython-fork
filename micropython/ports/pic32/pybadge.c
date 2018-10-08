@@ -26,6 +26,7 @@ STATIC mp_obj_t pybadge_FbLine(mp_obj_t x1, mp_obj_t y1) ;
 STATIC mp_obj_t pybadge_LCDBars() ;
 STATIC mp_obj_t pybadge_LCDcolor(mp_obj_t c) ;
 STATIC mp_obj_t pybadge_LCDputPixel(mp_obj_t x, mp_obj_t y, mp_obj_t col) ;
+STATIC mp_obj_t pybadge_button() ;
 
 
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_red_obj, pybadge_red);
@@ -50,6 +51,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_2(pybadge_FbLine_obj, pybadge_FbLine);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(pybadge_LCDBars_obj, pybadge_LCDBars);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_LCDcolor_obj, pybadge_LCDcolor);
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(pybadge_LCDputPixel_obj, pybadge_LCDputPixel);
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_button_obj, pybadge_button);
 
 
 STATIC const mp_map_elem_t pybadge_globals_table[] = {
@@ -76,6 +78,7 @@ STATIC const mp_map_elem_t pybadge_globals_table[] = {
     { MP_OBJ_NEW_QSTR(MP_QSTR_LCDBars), (mp_obj_t)&(pybadge_LCDBars_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_LCDcolor), &(pybadge_LCDcolor_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_LCDputPixel), &(pybadge_LCDputPixel_obj) },
+    { MP_OBJ_NEW_QSTR(MP_QSTR_button), &(pybadge_button_obj) },
 };
 
 STATIC MP_DEFINE_CONST_DICT (
@@ -132,7 +135,7 @@ STATIC mp_obj_t pybadge_FbMoveY(mp_obj_t y) {
 }
 
 STATIC mp_obj_t pybadge_FbMove(mp_obj_t x, mp_obj_t y) {
-    FbMove((unsigned char)x, (unsigned char)y);
+    FbMove((unsigned char)mp_obj_get_int(x), (unsigned char)mp_obj_get_int(y));
 
     return mp_const_none;
 }
@@ -227,6 +230,10 @@ STATIC mp_obj_t pybadge_LCDputPixel(mp_obj_t x, mp_obj_t y, mp_obj_t col) {
     return mp_const_none;
 }
 
+STATIC mp_obj_t pybadge_button(mp_obj_t badgeYear) {
+    int year = mp_obj_get_int(badgeYear);
+    return MP_OBJ_NEW_SMALL_INT(button(year));
+}
 
 
 /*
