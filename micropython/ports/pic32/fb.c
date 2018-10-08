@@ -74,8 +74,8 @@ void FbClear()
 
     S6B33_rect(0, 0, LCD_XSIZE-1, LCD_YSIZE-1);
 
-    G_Fb.pos.x = 0;
-    G_Fb.pos.y = 0;
+//    G_Fb.pos.x = 0;
+//    G_Fb.pos.y = 0;
     G_Fb.changed = 0;
 
     for (i=0; i<(LCD_XSIZE * LCD_YSIZE); i++) {

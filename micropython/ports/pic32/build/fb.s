@@ -203,11 +203,8 @@ FbClear:
 	jal	S6B33_rect
 	li	$7,131			# 0x83
 
-	lui	$2,%hi(G_Fb)
-	addiu	$2,$2,%lo(G_Fb)
-	sb	$0,4($2)
-	sb	$0,5($2)
-	sh	$0,16($2)
+	lui	$2,%hi(G_Fb+16)
+	sh	$0,%lo(G_Fb+16)($2)
 	lui	$16,%hi(LCDbuffer)
 	addiu	$16,$16,%lo(LCDbuffer)
 	li	$17,34848			# 0x8820

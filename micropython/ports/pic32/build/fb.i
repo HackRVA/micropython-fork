@@ -291,8 +291,8 @@ void FbClear()
 
     S6B33_rect(0, 0, 132 -1, 132 -1);
 
-    G_Fb.pos.x = 0;
-    G_Fb.pos.y = 0;
+
+
     G_Fb.changed = 0;
 
     for (i=0; i<(132 * 132); i++) {
