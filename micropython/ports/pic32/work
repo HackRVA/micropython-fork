@@ -10,6 +10,9 @@ rm build/badge.o build/pic32config.o
 rm build/firmware*
 
 rm build/assets.o build/fb.o build/badgemain.o
+ 
+rm  build/USB/*
+
 
 make V=1
 

@@ -199,6 +199,7 @@ Q(LCDBars)
 Q(LCDcolor)
 Q(LCDputPixel)
 Q(button)
+Q(deinit)
 Q(ArithmeticError)
 
 Q(ArithmeticError)
@@ -594,6 +595,10 @@ Q(globals)
 Q(hasattr)
 
 Q(hash)
+
+Q(heap_lock)
+
+Q(heap_unlock)
 
 Q(hex)
 

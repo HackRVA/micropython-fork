@@ -20,7 +20,7 @@ build/py/malloc.o: ../../py/malloc.c \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/setjmp.h \
  ../../py/obj.h ../../py/qstr.h build/genhdr/qstrdefs.generated.h \
  ../../py/mpprint.h ../../py/runtime0.h ../../py/objlist.h \
- ../../py/objexcept.h ../../py/objtuple.h
+ ../../py/objexcept.h ../../py/objtuple.h ../../py/gc.h
 ../../py/malloc.c :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stdio.h :
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/stddef.h :
@@ -43,4 +43,4 @@ build/py/malloc.o: ../../py/malloc.c \
  /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/include/setjmp.h :
  ../../py/obj.h ../../py/qstr.h build/genhdr/qstrdefs.generated.h :
  ../../py/mpprint.h ../../py/runtime0.h ../../py/objlist.h :
- ../../py/objexcept.h ../../py/objtuple.h :
+ ../../py/objexcept.h ../../py/objtuple.h ../../py/gc.h :

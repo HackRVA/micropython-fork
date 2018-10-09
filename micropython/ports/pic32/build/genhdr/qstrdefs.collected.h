@@ -394,6 +394,10 @@ Q(hasattr)
 
 Q(hash)
 
+Q(heap_lock)
+
+Q(heap_unlock)
+
 Q(hex)
 
 Q(id)

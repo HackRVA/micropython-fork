@@ -31,4 +31,6 @@ p.FbMoveRelative(-30,10)
 p.FbWriteLine('QRSTUVWXYZ')
 p.FbPushBuffer()
 
+p.deinit()
+
 #END

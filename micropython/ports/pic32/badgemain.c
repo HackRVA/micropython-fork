@@ -95,12 +95,13 @@ void UserInit(void)
 
     timerInit();
 
+    micropython_init();
+
 
 //    int heap_size = 25000; 
 //    char *heap = malloc(heap_size);
 //    gc_init(heap, heap + heap_size);
 
-    mp_init(); // init micropython
 
 
     /* speaker pull down init */
@@ -109,6 +110,32 @@ void UserInit(void)
 //    CNPUAbits.CNPUA9 = 0;    // RA9  pull up == off
 //    CNPDAbits.CNPDA9 = 0;    /* pulldown == off */
 }
+
+
+static char *stack_top;
+static char heap[24*1024];
+
+micropython_init() {
+
+    int stack_dummy;
+    stack_top = (char*)&stack_dummy;
+
+    gc_init(heap, heap + sizeof(heap));
+    mp_init(); // init micropython
+
+
+}
+
+void gc_collect(void) {
+    // WARNING: This gc_collect implementation doesn't try to get root
+    // pointers from CPU registers, and thus may function incorrectly.
+    void *dummy;
+    gc_collect_start();
+    gc_collect_root(&dummy, ((mp_uint_t)stack_top - (mp_uint_t)&dummy) / sizeof(mp_uint_t));
+    gc_collect_end();
+    gc_dump_info();
+}
+
 
 void LCDprint(char *str,int len) {
    FbWriteString(str, len);
