@@ -24,7 +24,7 @@ def readFile(filename):
 #				ser.flush()
 #				print 'sent', lineno, line
 
-			for r in range(6):
+			for r in range(1):
 				data = ser.read(9999)
 				if len(data) > 0:
 					print '						recv:', data

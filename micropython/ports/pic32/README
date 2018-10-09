@@ -18,8 +18,9 @@ use sendbadge.py
    Note- USB serial typed commands don't echo to LCD
    you have to write them and swap/push buffers
 
-   pasting long or multiple lines appears to overwrite 
-   something or swamp to usb buffer
+   maybe fixed
+	pasting long or multiple lines appears to overwrite 
+   	something or swamp to usb buffer
 
 -----------
 

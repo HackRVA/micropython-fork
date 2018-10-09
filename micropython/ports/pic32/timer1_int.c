@@ -40,8 +40,14 @@
 #define LED_TOGGLES		200
 #define T3_TICK       		(SYS_FREQ/LED_TOGGLES)
 
-/* audio timer4*/
+/* 
+	PEB this slows the badge down incredibly
+
 #define AUDIO_TOGGLES		38000
+*/
+
+/* audio timer4*/
+#define AUDIO_TOGGLES		300
 #define T4_TICK       		(SYS_FREQ/AUDIO_TOGGLES)
 
 void doLED_PWM();
