@@ -5,7 +5,8 @@ use prog.sh to pickit3 program without opening mplab
 -----------
 
 most of the code is from badge2018
-	except- reverted to non-harmony plib pin access
+	- exception: reverted to non-harmony plib pin access
+	- p.button(2017) and p.button(2018) access different ports
 
 -----------
 
@@ -13,10 +14,12 @@ font is new, has all chars upper/lower and special
 
 -----------
 
-use sendbadge.py
+use sendbadge.py 
+   requires: pyserial.noarch
 
    Note- USB serial typed commands don't echo to LCD
-   you have to write them and swap/push buffers
+   just the USB connection. you have to write to LCD
+   and then swap/push buffers
 
    maybe fixed
 	pasting long or multiple lines appears to overwrite 
