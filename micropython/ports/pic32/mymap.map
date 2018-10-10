@@ -158,104 +158,102 @@ section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 .text                   0x9d000000        0x18fcc      102348  App's exec code 
 .rodata                 0x9d018fcc         0x1c70        7280  Read-only const 
-.text                   0x9d01ac3c         0x3264       12900  App's exec code 
-.text._vfprintf_cdnopsu 0x9d01dea0          0xb04        2820   
-.text                   0x9d01e9a4         0x3c14       15380  App's exec code 
-.rodata                 0x9d0225b8          0x710        1808  Read-only const 
-.text                   0x9d022cc8          0xe00        3584  App's exec code 
-.rodata                 0x9d023ac8          0x6b4        1716  Read-only const 
-.dinit                  0x9d02417c          0x640        1600   
-.text                   0x9d0247bc         0x17a0        6048  App's exec code 
-.rodata                 0x9d025f5c          0x5b8        1464  Read-only const 
-.text                   0x9d026514          0xb2c        2860  App's exec code 
-.rodata                 0x9d027040          0xac8        2760  Read-only const 
-.text                   0x9d027b08          0x538        1336  App's exec code 
-.rodata                 0x9d028040          0x4d4        1236  Read-only const 
-.text                   0x9d028514          0x4a8        1192  App's exec code 
-.rodata                 0x9d0289bc          0x4a4        1188  Read-only const 
-.text                   0x9d028e60         0x10d4        4308  App's exec code 
-.rodata                 0x9d029f34          0x350         848  Read-only const 
-.text                   0x9d02a284          0x33c         828  App's exec code 
-.rodata                 0x9d02a5c0          0x338         824  Read-only const 
-.text                   0x9d02a8f8          0x318         792  App's exec code 
-.rodata                 0x9d02ac10          0x5f4        1524  Read-only const 
-.text                   0x9d02b204          0x51c        1308  App's exec code 
-.text.fpsubadd          0x9d02b720          0x278         632   
-.rodata                 0x9d02b998          0x23c         572  Read-only const 
-.text.fp32div           0x9d02bbd4          0x230         560   
-.text                   0x9d02be04          0x220         544  App's exec code 
-.rodata                 0x9d02c024          0x20c         524  Read-only const 
-.text                   0x9d02c230          0x208         520  App's exec code 
-.rodata                 0x9d02c438          0x200         512  Read-only const 
-.text                   0x9d02c638          0x72c        1836  App's exec code 
-.rodata                 0x9d02cd64          0x1ac         428  Read-only const 
-.text                   0x9d02cf10          0x4d0        1232  App's exec code 
-.rodata                 0x9d02d3e0          0x190         400  Read-only const 
-.text                   0x9d02d570          0x2d0         720  App's exec code 
-.text.fputc             0x9d02d840          0x15c         348   
-.text                   0x9d02d99c          0x130         304  App's exec code 
-.text._flsbuf           0x9d02dacc          0x12c         300   
-.text                   0x9d02dbf8          0x128         296  App's exec code 
-.rodata                 0x9d02dd20          0x124         292  Read-only const 
-.text                   0x9d02de44          0x35c         860  App's exec code 
-.rodata                 0x9d02e1a0          0x11c         284  Read-only const 
-.text                   0x9d02e2bc          0x118         280  App's exec code 
-.rodata                 0x9d02e3d4          0x108         264  Read-only const 
-.text                   0x9d02e4dc          0x20c         524  App's exec code 
-.rodata                 0x9d02e6e8          0x104         260  Read-only const 
-.text                   0x9d02e7ec           0xf8         248  App's exec code 
-.rodata                 0x9d02e8e4           0xf0         240  Read-only const 
-.text                   0x9d02e9d4          0x1c8         456  App's exec code 
-.text.general_exception 0x9d02eb9c           0xdc         220   
-.rodata                 0x9d02ec78          0x1b0         432  Read-only const 
-.text                   0x9d02ee28           0xd4         212  App's exec code 
-.rodata                 0x9d02eefc          0x4a8        1192  Read-only const 
-.text._mon_putc         0x9d02f3a4           0xb4         180   
-.text                   0x9d02f458           0xa8         168  App's exec code 
-.rodata                 0x9d02f500          0x1e0         480  Read-only const 
-.text.fpcmp             0x9d02f6e0           0x9c         156   
-.text                   0x9d02f77c           0x98         152  App's exec code 
-.text.write             0x9d02f814           0x94         148   
-.text                   0x9d02f8a8           0x8c         140  App's exec code 
-.rodata                 0x9d02f934           0x80         128  Read-only const 
-.text.fptoli            0x9d02f9b4           0x80         128   
-.text._fassert          0x9d02fa34           0x80         128   
-.rodata                 0x9d02fab4           0xf8         248  Read-only const 
-.text.raise             0x9d02fbac           0x7c         124   
-.rodata                 0x9d02fc28           0xe8         232  Read-only const 
-.text.memmove           0x9d02fd10           0x64         100   
-.rodata                 0x9d02fd74           0x60          96  Read-only const 
-.text.sitofp            0x9d02fdd4           0x60          96   
-.rodata                 0x9d02fe34           0xb8         184  Read-only const 
-.text.strncpy           0x9d02feec           0x58          88   
-.text.main_entry        0x9d02ff44           0x4c          76   
-.text                   0x9d02ff90           0x94         148  App's exec code 
-.rodata                 0x9d030024           0x90         144  Read-only const 
-.text._bootstrap_except 0x9d0300b4           0x48          72   
-.text._general_exceptio 0x9d0300fc           0x48          72   
-.rodata                 0x9d030144           0xf0         240  Read-only const 
-.text                   0x9d030234           0x3c          60  App's exec code 
-.rodata                 0x9d030270           0x78         120  Read-only const 
-.text                   0x9d0302e8           0x6c         108  App's exec code 
-.text.INTEnableSystemMu 0x9d030354           0x34          52   
-.text.exit              0x9d030388           0x34          52   
-.text.INTClearFlag      0x9d0303bc           0x2c          44   
-.text._fprintf_cdnopsux 0x9d0303e8           0x2c          44   
-.text.strchr            0x9d030414           0x28          40   
-.text                   0x9d03043c           0x64         100  App's exec code 
-.rodata                 0x9d0304a0           0x5c          92  Read-only const 
-.text.INTRestoreInterru 0x9d0304fc           0x1c          28   
-.rodata                 0x9d030518           0x30          48  Read-only const 
-.text                   0x9d030548           0x18          24  App's exec code 
-.text.abort             0x9d030560           0x18          24   
-.rodata                 0x9d030578           0x24          36  Read-only const 
-.text.ReadCoreTimer     0x9d03059c            0x8           8   
-.text.INTEnableInterrup 0x9d0305a4            0x8           8   
-.text.INTDisableInterru 0x9d0305ac            0x8           8   
-.text._on_reset         0x9d0305b4            0x8           8   
-.text._on_bootstrap     0x9d0305bc            0x8           8   
-.text._cleanup          0x9d0305c4            0x8           8   
-      Total kseg0_program_mem used  :     0x305cc      198092  76.8% of 0x3f000
+.text                   0x9d01ac3c         0x3038       12344  App's exec code 
+.text._vfprintf_cdnopsu 0x9d01dc74          0xb04        2820   
+.text                   0x9d01e778         0x3c14       15380  App's exec code 
+.rodata                 0x9d02238c          0x710        1808  Read-only const 
+.text                   0x9d022a9c          0xe00        3584  App's exec code 
+.rodata                 0x9d02389c          0x6b4        1716  Read-only const 
+.dinit                  0x9d023f50          0x640        1600   
+.text                   0x9d024590         0x17a0        6048  App's exec code 
+.rodata                 0x9d025d30          0x5b8        1464  Read-only const 
+.text                   0x9d0262e8          0xb2c        2860  App's exec code 
+.rodata                 0x9d026e14          0xac8        2760  Read-only const 
+.text                   0x9d0278dc          0x538        1336  App's exec code 
+.rodata                 0x9d027e14          0x4d4        1236  Read-only const 
+.text                   0x9d0282e8          0x958        2392  App's exec code 
+.rodata                 0x9d028c40          0x4a4        1188  Read-only const 
+.text                   0x9d0290e4          0xc50        3152  App's exec code 
+.rodata                 0x9d029d34          0x350         848  Read-only const 
+.text                   0x9d02a084          0x33c         828  App's exec code 
+.rodata                 0x9d02a3c0          0x338         824  Read-only const 
+.text                   0x9d02a6f8          0x318         792  App's exec code 
+.rodata                 0x9d02aa10          0x5f4        1524  Read-only const 
+.text                   0x9d02b004          0x51c        1308  App's exec code 
+.text.fpsubadd          0x9d02b520          0x278         632   
+.rodata                 0x9d02b798          0x23c         572  Read-only const 
+.text.fp32div           0x9d02b9d4          0x230         560   
+.text                   0x9d02bc04          0x220         544  App's exec code 
+.rodata                 0x9d02be24          0x20c         524  Read-only const 
+.text                   0x9d02c030          0x208         520  App's exec code 
+.rodata                 0x9d02c238          0x200         512  Read-only const 
+.text                   0x9d02c438          0x72c        1836  App's exec code 
+.rodata                 0x9d02cb64          0x34c         844  Read-only const 
+.text                   0x9d02ceb0          0x7a0        1952  App's exec code 
+.text.fputc             0x9d02d650          0x15c         348   
+.text                   0x9d02d7ac          0x130         304  App's exec code 
+.text._flsbuf           0x9d02d8dc          0x12c         300   
+.text                   0x9d02da08          0x128         296  App's exec code 
+.rodata                 0x9d02db30          0x124         292  Read-only const 
+.text                   0x9d02dc54          0x35c         860  App's exec code 
+.rodata                 0x9d02dfb0          0x11c         284  Read-only const 
+.text                   0x9d02e0cc          0x118         280  App's exec code 
+.rodata                 0x9d02e1e4          0x108         264  Read-only const 
+.text                   0x9d02e2ec          0x20c         524  App's exec code 
+.rodata                 0x9d02e4f8          0x104         260  Read-only const 
+.text                   0x9d02e5fc           0xf8         248  App's exec code 
+.rodata                 0x9d02e6f4           0xf0         240  Read-only const 
+.text                   0x9d02e7e4          0x1c8         456  App's exec code 
+.text.general_exception 0x9d02e9ac           0xdc         220   
+.rodata                 0x9d02ea88          0x1b0         432  Read-only const 
+.text                   0x9d02ec38           0xd4         212  App's exec code 
+.rodata                 0x9d02ed0c          0x4a8        1192  Read-only const 
+.text._mon_putc         0x9d02f1b4           0xb4         180   
+.text                   0x9d02f268           0xa8         168  App's exec code 
+.rodata                 0x9d02f310          0x1e0         480  Read-only const 
+.text.fpcmp             0x9d02f4f0           0x9c         156   
+.text                   0x9d02f58c           0x98         152  App's exec code 
+.text.write             0x9d02f624           0x94         148   
+.text                   0x9d02f6b8           0x8c         140  App's exec code 
+.rodata                 0x9d02f744           0x80         128  Read-only const 
+.text.fptoli            0x9d02f7c4           0x80         128   
+.text._fassert          0x9d02f844           0x80         128   
+.rodata                 0x9d02f8c4           0xf8         248  Read-only const 
+.text.raise             0x9d02f9bc           0x7c         124   
+.rodata                 0x9d02fa38           0xe8         232  Read-only const 
+.text.memmove           0x9d02fb20           0x64         100   
+.rodata                 0x9d02fb84           0x60          96  Read-only const 
+.text.sitofp            0x9d02fbe4           0x60          96   
+.rodata                 0x9d02fc44           0xb8         184  Read-only const 
+.text.strncpy           0x9d02fcfc           0x58          88   
+.text.main_entry        0x9d02fd54           0x4c          76   
+.text                   0x9d02fda0           0x94         148  App's exec code 
+.rodata                 0x9d02fe34           0x90         144  Read-only const 
+.text._bootstrap_except 0x9d02fec4           0x48          72   
+.text._general_exceptio 0x9d02ff0c           0x48          72   
+.rodata                 0x9d02ff54           0xf0         240  Read-only const 
+.text                   0x9d030044           0x3c          60  App's exec code 
+.rodata                 0x9d030080           0x78         120  Read-only const 
+.text                   0x9d0300f8           0x6c         108  App's exec code 
+.text.INTEnableSystemMu 0x9d030164           0x34          52   
+.text.exit              0x9d030198           0x34          52   
+.text.INTClearFlag      0x9d0301cc           0x2c          44   
+.text._fprintf_cdnopsux 0x9d0301f8           0x2c          44   
+.text.strchr            0x9d030224           0x28          40   
+.text                   0x9d03024c           0x64         100  App's exec code 
+.rodata                 0x9d0302b0           0x5c          92  Read-only const 
+.text.INTRestoreInterru 0x9d03030c           0x1c          28   
+.rodata                 0x9d030328           0x30          48  Read-only const 
+.text                   0x9d030358           0x18          24  App's exec code 
+.text.abort             0x9d030370           0x18          24   
+.rodata                 0x9d030388           0x24          36  Read-only const 
+.text.ReadCoreTimer     0x9d0303ac            0x8           8   
+.text.INTEnableInterrup 0x9d0303b4            0x8           8   
+.text.INTDisableInterru 0x9d0303bc            0x8           8   
+.text._on_reset         0x9d0303c4            0x8           8   
+.text._on_bootstrap     0x9d0303cc            0x8           8   
+.text._cleanup          0x9d0303d4            0x8           8   
+      Total kseg0_program_mem used  :     0x303dc      197596  76.6% of 0x3f000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -266,12 +264,11 @@ Exception-Memory Usage
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 .app_excpt              0x9d03f180           0x10          16  General-Exception 
-.vector_7               0x9d03f2e0            0x8           8  Interrupt Vector 7 
 .vector_8               0x9d03f300            0x8           8  Interrupt Vector 8 
 .vector_12              0x9d03f380            0x8           8  Interrupt Vector 12 
 .vector_16              0x9d03f400            0x8           8  Interrupt Vector 16 
 .vector_30              0x9d03f5c0            0x8           8  Interrupt Vector 30 
-          Total exception_mem used  :        0x38          56  1.4% of 0x1000
+          Total exception_mem used  :        0x30          48  1.2% of 0x1000
 
 kseg1 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -280,7 +277,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
          Total kseg1_boot_mem used  :       0x200         512  43.8% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :     0x30804      198660  75.4% of 0x40490
+         Total Program Memory used  :     0x3060c      198156  75.3% of 0x40490
         --------------------------------------------------------------------------
 
 
@@ -1042,10 +1039,8 @@ LOAD /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
  *(.vector_6)
                 0x00000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_6) <= (_vector_spacing << 0x5))), function at exception vector 6 too large)
 
-.vector_7       0x9d03f2e0        0x8
+.vector_7       0x9d03f2e0        0x0
  *(.vector_7)
- .vector_7      0x9d03f2e0        0x8 build/timer1_int.o
-                0x9d03f2e0                __vector_dispatch_7
                 0x00000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_7) <= (_vector_spacing << 0x5))), function at exception vector 7 too large)
 
 .vector_8       0x9d03f300        0x8
@@ -2739,6 +2734,8 @@ LOAD build/timer1_int.o
 LOAD build/USB/usb_device.o
 LOAD build/USB/usb_function_cdc.o
 LOAD /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a
+LOAD /home/paul/microchip/harmony/v1_09/bin/framework/peripheral/PIC32MX270F256D_peripherals.a
+LOAD /home/paul/microchip/harmony/v1_09/build/framework/peripheral/mplab_pic32.X/dist/default/production/mplab_pic32.X.a
 LOAD /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/libgcc.a
 START GROUP
 LOAD /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a
@@ -3008,875 +3005,870 @@ LOAD data_init
                 0x9d019a6c                mp_qstr_const_pool
  .rodata        0x9d019e18      0xe24 build/py/compile.o
 
-.text           0x9d01ac3c     0x3264
+.text           0x9d01ac3c     0x3038
  .text          0x9d01ac3c      0xdc4 build/py/mpprint.o
                 0x9d01ac5c                mp_print_str
                 0x9d01acb8                mp_print_strn
                 0x9d01afd8                mp_print_mp_int
                 0x9d01b420                mp_vprintf
                 0x9d01b9d8                mp_printf
- .text          0x9d01ba00      0xd7c build/timer1_int.o
-                0x9d01ba00                timerInit
-                0x9d01bc30                Timer2Handler
-                0x9d01c27c                Int1Interrupt
-                0x9d01c31c                Timer4Handler
-                0x9d01c438                no_LED_PWM
-                0x9d01c440                led_brightness
-                0x9d01c448                red
-                0x9d01c460                green
-                0x9d01c478                blue
-                0x9d01c490                flare_leds
-                0x9d01c4a8                doLED_PWM
-                0x9d01c610                Timer3Handler
-                0x9d01c72c                backlight
-                0x9d01c738                led
- .text          0x9d01c77c      0xb9c build/py/binary.o
-                0x9d01c77c                mp_binary_get_size
-                0x9d01cb78                mp_binary_get_val_array
-                0x9d01ce3c                mp_binary_get_int
-                0x9d01cec8                mp_binary_get_val
-                0x9d01d02c                mp_binary_set_int
-                0x9d01d090                mp_binary_set_val
-                0x9d01d1a0                mp_binary_set_val_array_from_int
-                0x9d01d2ac                mp_binary_set_val_array
- .text          0x9d01d318      0xb88 build/py/modbuiltins.o
+ .text          0x9d01ba00      0xb9c build/py/binary.o
+                0x9d01ba00                mp_binary_get_size
+                0x9d01bdfc                mp_binary_get_val_array
+                0x9d01c0c0                mp_binary_get_int
+                0x9d01c14c                mp_binary_get_val
+                0x9d01c2b0                mp_binary_set_int
+                0x9d01c314                mp_binary_set_val
+                0x9d01c424                mp_binary_set_val_array_from_int
+                0x9d01c530                mp_binary_set_val_array
+ .text          0x9d01c59c      0xb88 build/py/modbuiltins.o
+ .text          0x9d01d124      0xb50 build/timer1_int.o
+                0x9d01d124                timerInit
+                0x9d01d270                Timer2Handler
+                0x9d01d8bc                Timer4Handler
+                0x9d01d930                no_LED_PWM
+                0x9d01d938                led_brightness
+                0x9d01d940                red
+                0x9d01d958                green
+                0x9d01d970                blue
+                0x9d01d988                flare_leds
+                0x9d01d9a0                doLED_PWM
+                0x9d01db08                Timer3Handler
+                0x9d01dc24                backlight
+                0x9d01dc30                led
 
 .text._vfprintf_cdnopsuxX
-                0x9d01dea0      0xb04
+                0x9d01dc74      0xb04
  .text._vfprintf_cdnopsuxX
-                0x9d01dea0      0xb04 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(doprnt_cdnopsuxX.eo)
-                0x9d01dea0                _vfprintf_cdnopsuxX
+                0x9d01dc74      0xb04 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(doprnt_cdnopsuxX.eo)
+                0x9d01dc74                _vfprintf_cdnopsuxX
 
-.text           0x9d01e9a4     0x3c14
- .text          0x9d01e9a4      0x9e0 build/assets.o
-                0x9d01e9a4                drawAsset
-                0x9d01e9e4                drawLCD1
-                0x9d01eb2c                drawLCD2
-                0x9d01ed04                drawLCD4
-                0x9d01ee78                drawLCD8
-                0x9d01efc4                setNote
-                0x9d01f030                endNote
-                0x9d01f058                haltPlayback
-                0x9d01f09c                nextNote
-                0x9d01f170                doAudio
-                0x9d01f354                playAsset
- .text          0x9d01f384      0x9d8 build/py/obj.o
-                0x9d01f384                mp_identity
-                0x9d01f38c                mp_obj_get_type
-                0x9d01f3c0                mp_obj_get_type_str
-                0x9d01f3e4                mp_obj_print_helper
-                0x9d01f46c                mp_obj_print
-                0x9d01f498                mp_obj_print_exception
-                0x9d01f5f8                mp_obj_is_callable
-                0x9d01f638                mp_obj_equal
-                0x9d01f784                mp_obj_get_int
-                0x9d01f804                mp_obj_get_int_truncated
-                0x9d01f854                mp_obj_get_int_maybe
-                0x9d01f8ec                mp_obj_get_array
-                0x9d01f950                mp_obj_get_array_fixed_n
-                0x9d01f98c                mp_get_index
-                0x9d01fa4c                mp_obj_id
-                0x9d01fa94                mp_obj_len_maybe
-                0x9d01fb34                mp_obj_len
-                0x9d01fb60                mp_obj_is_true
-                0x9d01fc20                mp_obj_subscr
-                0x9d01fca8                mp_identity_getiter
-                0x9d01fcb0                mp_get_buffer
-                0x9d01fd10                mp_get_buffer_raise
-                0x9d01fd3c                mp_generic_unary_op
- .text          0x9d01fd5c      0x978 build/LCDcolor.o
-                0x9d01fd5c                LCDInitPins
-                0x9d01fe58                LCDDelay
-                0x9d01fe70                LCDReset
-                0x9d01fec8                LCDcolor
-                0x9d01ff40                LCDblack
-                0x9d01ff5c                LCDwhite
-                0x9d01ff78                LCDred
-                0x9d01ff94                LCDgreen
-                0x9d01ffb0                LCDblue
-                0x9d01ffcc                LCDBars
-                0x9d02054c                LCDLogo
-                0x9d020554                LCDputPixel
-                0x9d020594                LCDline
- .text          0x9d0206d4      0x860 build/py/objexcept.o
-                0x9d02079c                mp_obj_exception_make_new
-                0x9d02086c                mp_obj_exception_print
-                0x9d020964                mp_obj_exception_get_value
-                0x9d020984                mp_obj_exception_attr
-                0x9d020a18                mp_obj_new_exception_args
-                0x9d020a68                mp_obj_new_exception_arg1
-                0x9d020a8c                mp_obj_new_exception
-                0x9d020aac                mp_obj_new_exception_msg_varg
-                0x9d020c30                mp_obj_new_exception_msg
-                0x9d020c4c                mp_obj_is_exception_type
-                0x9d020ca4                mp_obj_is_exception_instance
-                0x9d020cc8                mp_obj_exception_match
-                0x9d020d18                mp_obj_exception_clear_traceback
-                0x9d020d80                mp_obj_exception_add_traceback
-                0x9d020e94                mp_obj_exception_get_traceback
- .text          0x9d020f34      0x7a0 build/badgemain.o
-                0x9d020f34                micropython_init
-                0x9d020f6c                UserInit
-                0x9d021120                gc_collect
-                0x9d021160                LCDprint
-                0x9d02117c                button
-                0x9d0211a0                echoUSB
-                0x9d021228                ProcessIO
-                0x9d02148c                BlinkUSBStatus
- .text          0x9d0216d4      0x778 build/py/objint.o
-                0x9d0216d4                mp_obj_int_unary_op
-                0x9d0218b4                mp_int_format_size
-                0x9d021968                mp_obj_int_formatted
-                0x9d021b54                mp_obj_int_print
-                0x9d021bd4                mp_obj_int_sign
-                0x9d021bfc                mp_obj_new_int_from_str_len
-                0x9d021c18                mp_obj_new_int_from_ll
-                0x9d021c34                mp_obj_new_int_from_ull
-                0x9d021c50                mp_obj_new_int_from_uint
-                0x9d021d24                mp_obj_new_int
-                0x9d021d60                mp_obj_int_get_truncated
-                0x9d021d68                mp_obj_int_get_checked
-                0x9d021d70                mp_obj_int_binary_op_extra_cases
-                0x9d021e30                mp_obj_int_binary_op
- .text          0x9d021e4c      0x76c build/py/objtuple.o
-                0x9d021e84                mp_obj_tuple_getiter
-                0x9d021f70                mp_obj_tuple_subscr
-                0x9d021fc8                mp_obj_tuple_unary_op
-                0x9d022094                mp_obj_tuple_print
-                0x9d022160                mp_obj_new_tuple
-                0x9d0222f8                mp_obj_tuple_binary_op
-                0x9d022504                mp_obj_tuple_get
-                0x9d022560                mp_obj_tuple_del
+.text           0x9d01e778     0x3c14
+ .text          0x9d01e778      0x9e0 build/assets.o
+                0x9d01e778                drawAsset
+                0x9d01e7b8                drawLCD1
+                0x9d01e900                drawLCD2
+                0x9d01ead8                drawLCD4
+                0x9d01ec4c                drawLCD8
+                0x9d01ed98                setNote
+                0x9d01ee04                endNote
+                0x9d01ee2c                haltPlayback
+                0x9d01ee70                nextNote
+                0x9d01ef44                doAudio
+                0x9d01f128                playAsset
+ .text          0x9d01f158      0x9d8 build/py/obj.o
+                0x9d01f158                mp_identity
+                0x9d01f160                mp_obj_get_type
+                0x9d01f194                mp_obj_get_type_str
+                0x9d01f1b8                mp_obj_print_helper
+                0x9d01f240                mp_obj_print
+                0x9d01f26c                mp_obj_print_exception
+                0x9d01f3cc                mp_obj_is_callable
+                0x9d01f40c                mp_obj_equal
+                0x9d01f558                mp_obj_get_int
+                0x9d01f5d8                mp_obj_get_int_truncated
+                0x9d01f628                mp_obj_get_int_maybe
+                0x9d01f6c0                mp_obj_get_array
+                0x9d01f724                mp_obj_get_array_fixed_n
+                0x9d01f760                mp_get_index
+                0x9d01f820                mp_obj_id
+                0x9d01f868                mp_obj_len_maybe
+                0x9d01f908                mp_obj_len
+                0x9d01f934                mp_obj_is_true
+                0x9d01f9f4                mp_obj_subscr
+                0x9d01fa7c                mp_identity_getiter
+                0x9d01fa84                mp_get_buffer
+                0x9d01fae4                mp_get_buffer_raise
+                0x9d01fb10                mp_generic_unary_op
+ .text          0x9d01fb30      0x978 build/LCDcolor.o
+                0x9d01fb30                LCDInitPins
+                0x9d01fc2c                LCDDelay
+                0x9d01fc44                LCDReset
+                0x9d01fc9c                LCDcolor
+                0x9d01fd14                LCDblack
+                0x9d01fd30                LCDwhite
+                0x9d01fd4c                LCDred
+                0x9d01fd68                LCDgreen
+                0x9d01fd84                LCDblue
+                0x9d01fda0                LCDBars
+                0x9d020320                LCDLogo
+                0x9d020328                LCDputPixel
+                0x9d020368                LCDline
+ .text          0x9d0204a8      0x860 build/py/objexcept.o
+                0x9d020570                mp_obj_exception_make_new
+                0x9d020640                mp_obj_exception_print
+                0x9d020738                mp_obj_exception_get_value
+                0x9d020758                mp_obj_exception_attr
+                0x9d0207ec                mp_obj_new_exception_args
+                0x9d02083c                mp_obj_new_exception_arg1
+                0x9d020860                mp_obj_new_exception
+                0x9d020880                mp_obj_new_exception_msg_varg
+                0x9d020a04                mp_obj_new_exception_msg
+                0x9d020a20                mp_obj_is_exception_type
+                0x9d020a78                mp_obj_is_exception_instance
+                0x9d020a9c                mp_obj_exception_match
+                0x9d020aec                mp_obj_exception_clear_traceback
+                0x9d020b54                mp_obj_exception_add_traceback
+                0x9d020c68                mp_obj_exception_get_traceback
+ .text          0x9d020d08      0x7a0 build/badgemain.o
+                0x9d020d08                micropython_init
+                0x9d020d40                UserInit
+                0x9d020ef4                gc_collect
+                0x9d020f34                LCDprint
+                0x9d020f50                button
+                0x9d020f74                echoUSB
+                0x9d020ffc                ProcessIO
+                0x9d021260                BlinkUSBStatus
+ .text          0x9d0214a8      0x778 build/py/objint.o
+                0x9d0214a8                mp_obj_int_unary_op
+                0x9d021688                mp_int_format_size
+                0x9d02173c                mp_obj_int_formatted
+                0x9d021928                mp_obj_int_print
+                0x9d0219a8                mp_obj_int_sign
+                0x9d0219d0                mp_obj_new_int_from_str_len
+                0x9d0219ec                mp_obj_new_int_from_ll
+                0x9d021a08                mp_obj_new_int_from_ull
+                0x9d021a24                mp_obj_new_int_from_uint
+                0x9d021af8                mp_obj_new_int
+                0x9d021b34                mp_obj_int_get_truncated
+                0x9d021b3c                mp_obj_int_get_checked
+                0x9d021b44                mp_obj_int_binary_op_extra_cases
+                0x9d021c04                mp_obj_int_binary_op
+ .text          0x9d021c20      0x76c build/py/objtuple.o
+                0x9d021c58                mp_obj_tuple_getiter
+                0x9d021d44                mp_obj_tuple_subscr
+                0x9d021d9c                mp_obj_tuple_unary_op
+                0x9d021e68                mp_obj_tuple_print
+                0x9d021f34                mp_obj_new_tuple
+                0x9d0220cc                mp_obj_tuple_binary_op
+                0x9d0222d8                mp_obj_tuple_get
+                0x9d022334                mp_obj_tuple_del
 
-.rodata         0x9d0225b8      0x710
- .rodata        0x9d0225b8      0x710 build/py/objexcept.o
-                0x9d02263c                mp_const_GeneratorExit_obj
-                0x9d02264c                mp_type_BaseException
-                0x9d022688                mp_type_SystemExit
-                0x9d0226c4                mp_type_KeyboardInterrupt
-                0x9d022700                mp_type_GeneratorExit
-                0x9d02273c                mp_type_Exception
-                0x9d022778                mp_type_StopIteration
-                0x9d0227b4                mp_type_ArithmeticError
-                0x9d0227f0                mp_type_OverflowError
-                0x9d02282c                mp_type_ZeroDivisionError
-                0x9d022868                mp_type_AssertionError
-                0x9d0228a4                mp_type_AttributeError
-                0x9d0228e0                mp_type_EOFError
-                0x9d02291c                mp_type_ImportError
-                0x9d022958                mp_type_LookupError
-                0x9d022994                mp_type_IndexError
-                0x9d0229d0                mp_type_KeyError
-                0x9d022a0c                mp_type_MemoryError
-                0x9d022a48                mp_type_NameError
-                0x9d022a84                mp_type_OSError
-                0x9d022ac0                mp_type_RuntimeError
-                0x9d022afc                mp_type_NotImplementedError
-                0x9d022b38                mp_type_SyntaxError
-                0x9d022b74                mp_type_IndentationError
-                0x9d022bb0                mp_type_TypeError
-                0x9d022bec                mp_type_ValueError
+.rodata         0x9d02238c      0x710
+ .rodata        0x9d02238c      0x710 build/py/objexcept.o
+                0x9d022410                mp_const_GeneratorExit_obj
+                0x9d022420                mp_type_BaseException
+                0x9d02245c                mp_type_SystemExit
+                0x9d022498                mp_type_KeyboardInterrupt
+                0x9d0224d4                mp_type_GeneratorExit
+                0x9d022510                mp_type_Exception
+                0x9d02254c                mp_type_StopIteration
+                0x9d022588                mp_type_ArithmeticError
+                0x9d0225c4                mp_type_OverflowError
+                0x9d022600                mp_type_ZeroDivisionError
+                0x9d02263c                mp_type_AssertionError
+                0x9d022678                mp_type_AttributeError
+                0x9d0226b4                mp_type_EOFError
+                0x9d0226f0                mp_type_ImportError
+                0x9d02272c                mp_type_LookupError
+                0x9d022768                mp_type_IndexError
+                0x9d0227a4                mp_type_KeyError
+                0x9d0227e0                mp_type_MemoryError
+                0x9d02281c                mp_type_NameError
+                0x9d022858                mp_type_OSError
+                0x9d022894                mp_type_RuntimeError
+                0x9d0228d0                mp_type_NotImplementedError
+                0x9d02290c                mp_type_SyntaxError
+                0x9d022948                mp_type_IndentationError
+                0x9d022984                mp_type_TypeError
+                0x9d0229c0                mp_type_ValueError
 
-.text           0x9d022cc8      0xe00
- .text          0x9d022cc8      0x708 build/USB/usb_function_cdc.o
-                0x9d022cc8                USBCheckCDCRequest
-                0x9d022f40                CDCInitEP
-                0x9d022fac                USBCDCEventHandler
-                0x9d023018                getsUSBUSART
-                0x9d0230d8                putUSBUSART
-                0x9d023118                putsUSBUSART
-                0x9d023194                putrsUSBUSART
-                0x9d023210                CDCTxService
- .text          0x9d0233d0      0x6f8 build/S6B33.o
-                0x9d0233d0                S6B33_send_command
-                0x9d023548                S6B33_send_data
-                0x9d023800                S6Delay
-                0x9d023818                S6B33_init_device
-                0x9d023984                S6B33_rect
-                0x9d023a18                S6B33_bias
-                0x9d023a48                S6B33_contrast
-                0x9d023a88                S6B33_pixel
-                0x9d023aa4                S6B33_flip
+.text           0x9d022a9c      0xe00
+ .text          0x9d022a9c      0x708 build/USB/usb_function_cdc.o
+                0x9d022a9c                USBCheckCDCRequest
+                0x9d022d14                CDCInitEP
+                0x9d022d80                USBCDCEventHandler
+                0x9d022dec                getsUSBUSART
+                0x9d022eac                putUSBUSART
+                0x9d022eec                putsUSBUSART
+                0x9d022f68                putrsUSBUSART
+                0x9d022fe4                CDCTxService
+ .text          0x9d0231a4      0x6f8 build/S6B33.o
+                0x9d0231a4                S6B33_send_command
+                0x9d02331c                S6B33_send_data
+                0x9d0235d4                S6Delay
+                0x9d0235ec                S6B33_init_device
+                0x9d023758                S6B33_rect
+                0x9d0237ec                S6B33_bias
+                0x9d02381c                S6B33_contrast
+                0x9d02385c                S6B33_pixel
+                0x9d023878                S6B33_flip
 
-.rodata         0x9d023ac8      0x6b4
- .rodata        0x9d023ac8      0x6b4 build/py/parse.o
+.rodata         0x9d02389c      0x6b4
+ .rodata        0x9d02389c      0x6b4 build/py/parse.o
 
-.dinit          0x9d02417c      0x640
- .dinit         0x9d02417c      0x640 data_init
+.dinit          0x9d023f50      0x640
+ .dinit         0x9d023f50      0x640 data_init
 
-.text           0x9d0247bc     0x17a0
- .text          0x9d0247bc      0x624 build/py/bc.o
-                0x9d0247cc                mp_decode_uint
-                0x9d0247f8                mp_decode_uint_value
-                0x9d024818                mp_decode_uint_skip
-                0x9d024830                mp_setup_code_state
- .text          0x9d024de0      0x600 build/py/vstr.o
-                0x9d024ee0                vstr_add_strn
-                0x9d024f44                vstr_init
-                0x9d024f8c                vstr_init_len
-                0x9d024fc4                vstr_init_fixed_buf
-                0x9d024fe4                vstr_init_print
-                0x9d025024                vstr_clear
-                0x9d02505c                vstr_new
-                0x9d0250a0                vstr_free
-                0x9d0250e4                vstr_extend
-                0x9d025150                vstr_hint_size
-                0x9d02516c                vstr_add_len
-                0x9d0251b0                vstr_null_terminated_str
-                0x9d0251f8                vstr_add_byte
-                0x9d025224                vstr_add_char
-                0x9d025240                vstr_add_str
-                0x9d025284                vstr_ins_byte
-                0x9d0252b0                vstr_ins_char
-                0x9d0252dc                vstr_cut_tail_bytes
-                0x9d0252fc                vstr_cut_out_bytes
-                0x9d02536c                vstr_cut_head_bytes
-                0x9d02538c                vstr_vprintf
-                0x9d0253b8                vstr_printf
- .text          0x9d0253e0      0x5c0 build/py/objfun.o
-                0x9d025844                mp_obj_code_get_name
-                0x9d025868                mp_obj_fun_get_name
-                0x9d025894                mp_obj_new_fun_bc
- .text          0x9d0259a0      0x5bc build/py/qstr.o
-                0x9d0259e4                qstr_compute_hash
-                0x9d025a24                qstr_init
-                0x9d025a40                qstr_find_strn
-                0x9d025b2c                qstr_from_strn
-                0x9d025d78                qstr_from_str
-                0x9d025da8                qstr_hash
-                0x9d025dc8                qstr_len
-                0x9d025de8                qstr_str
-                0x9d025e08                qstr_data
-                0x9d025e38                qstr_pool_info
+.text           0x9d024590     0x17a0
+ .text          0x9d024590      0x624 build/py/bc.o
+                0x9d0245a0                mp_decode_uint
+                0x9d0245cc                mp_decode_uint_value
+                0x9d0245ec                mp_decode_uint_skip
+                0x9d024604                mp_setup_code_state
+ .text          0x9d024bb4      0x600 build/py/vstr.o
+                0x9d024cb4                vstr_add_strn
+                0x9d024d18                vstr_init
+                0x9d024d60                vstr_init_len
+                0x9d024d98                vstr_init_fixed_buf
+                0x9d024db8                vstr_init_print
+                0x9d024df8                vstr_clear
+                0x9d024e30                vstr_new
+                0x9d024e74                vstr_free
+                0x9d024eb8                vstr_extend
+                0x9d024f24                vstr_hint_size
+                0x9d024f40                vstr_add_len
+                0x9d024f84                vstr_null_terminated_str
+                0x9d024fcc                vstr_add_byte
+                0x9d024ff8                vstr_add_char
+                0x9d025014                vstr_add_str
+                0x9d025058                vstr_ins_byte
+                0x9d025084                vstr_ins_char
+                0x9d0250b0                vstr_cut_tail_bytes
+                0x9d0250d0                vstr_cut_out_bytes
+                0x9d025140                vstr_cut_head_bytes
+                0x9d025160                vstr_vprintf
+                0x9d02518c                vstr_printf
+ .text          0x9d0251b4      0x5c0 build/py/objfun.o
+                0x9d025618                mp_obj_code_get_name
+                0x9d02563c                mp_obj_fun_get_name
+                0x9d025668                mp_obj_new_fun_bc
+ .text          0x9d025774      0x5bc build/py/qstr.o
+                0x9d0257b8                qstr_compute_hash
+                0x9d0257f8                qstr_init
+                0x9d025814                qstr_find_strn
+                0x9d025900                qstr_from_strn
+                0x9d025b4c                qstr_from_str
+                0x9d025b7c                qstr_hash
+                0x9d025b9c                qstr_len
+                0x9d025bbc                qstr_str
+                0x9d025bdc                qstr_data
+                0x9d025c0c                qstr_pool_info
 
-.rodata         0x9d025f5c      0x5b8
- .rodata        0x9d025f5c      0x5b8 build/py/objstr.o
-                0x9d026268                str_join_obj
-                0x9d026270                str_split_obj
-                0x9d02627c                str_rsplit_obj
-                0x9d026288                str_find_obj
-                0x9d026294                str_rfind_obj
-                0x9d0262a0                str_index_obj
-                0x9d0262ac                str_rindex_obj
-                0x9d0262b8                str_startswith_obj
-                0x9d0262c4                str_endswith_obj
-                0x9d0262d0                str_strip_obj
-                0x9d0262dc                str_lstrip_obj
-                0x9d0262e8                str_rstrip_obj
-                0x9d0262f4                str_format_obj
-                0x9d026300                str_replace_obj
-                0x9d02630c                str_count_obj
-                0x9d026318                str_lower_obj
-                0x9d026320                str_upper_obj
-                0x9d026328                str_isspace_obj
-                0x9d026330                str_isalpha_obj
-                0x9d026338                str_isdigit_obj
-                0x9d026340                str_isupper_obj
-                0x9d026348                str_islower_obj
-                0x9d026350                mp_type_str
-                0x9d02638c                mp_type_bytes
-                0x9d0263cc                mp_const_empty_bytes_obj
+.rodata         0x9d025d30      0x5b8
+ .rodata        0x9d025d30      0x5b8 build/py/objstr.o
+                0x9d02603c                str_join_obj
+                0x9d026044                str_split_obj
+                0x9d026050                str_rsplit_obj
+                0x9d02605c                str_find_obj
+                0x9d026068                str_rfind_obj
+                0x9d026074                str_index_obj
+                0x9d026080                str_rindex_obj
+                0x9d02608c                str_startswith_obj
+                0x9d026098                str_endswith_obj
+                0x9d0260a4                str_strip_obj
+                0x9d0260b0                str_lstrip_obj
+                0x9d0260bc                str_rstrip_obj
+                0x9d0260c8                str_format_obj
+                0x9d0260d4                str_replace_obj
+                0x9d0260e0                str_count_obj
+                0x9d0260ec                str_lower_obj
+                0x9d0260f4                str_upper_obj
+                0x9d0260fc                str_isspace_obj
+                0x9d026104                str_isalpha_obj
+                0x9d02610c                str_isdigit_obj
+                0x9d026114                str_isupper_obj
+                0x9d02611c                str_islower_obj
+                0x9d026124                mp_type_str
+                0x9d026160                mp_type_bytes
+                0x9d0261a0                mp_const_empty_bytes_obj
 
-.text           0x9d026514      0xb2c
- .text          0x9d026514      0x5b0 build/py/builtinimport.o
-                0x9d026640                mp_builtin___import__
-                0x9d026a9c                mp_obj_is_package
- .text          0x9d026ac4      0x57c build/py/map.o
-                0x9d026ac4                mp_map_init
-                0x9d026b18                mp_map_init_fixed_table
-                0x9d026b3c                mp_map_deinit
-                0x9d026b80                mp_map_clear
-                0x9d026bd0                mp_map_lookup
+.text           0x9d0262e8      0xb2c
+ .text          0x9d0262e8      0x5b0 build/py/builtinimport.o
+                0x9d026414                mp_builtin___import__
+                0x9d026870                mp_obj_is_package
+ .text          0x9d026898      0x57c build/py/map.o
+                0x9d026898                mp_map_init
+                0x9d0268ec                mp_map_init_fixed_table
+                0x9d026910                mp_map_deinit
+                0x9d026954                mp_map_clear
+                0x9d0269a4                mp_map_lookup
 
-.rodata         0x9d027040      0xac8
- .rodata        0x9d027040      0x570 build/py/objtype.o
-                0x9d0273c0                mp_unary_op_method_name
-                0x9d0273cc                mp_binary_op_method_name
-                0x9d0273f0                mp_type_type
-                0x9d02742c                mp_type_super
-                0x9d027468                mp_builtin_issubclass_obj
-                0x9d027470                mp_builtin_isinstance_obj
-                0x9d027478                mp_type_staticmethod
-                0x9d0274b4                mp_type_classmethod
- .rodata        0x9d0275b0      0x558 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_tbl_lib.o)
-                0x9d0275b0                __IntSrcTbl
-                0x9d0278f8                __IntVectorTbl
+.rodata         0x9d026e14      0xac8
+ .rodata        0x9d026e14      0x570 build/py/objtype.o
+                0x9d027194                mp_unary_op_method_name
+                0x9d0271a0                mp_binary_op_method_name
+                0x9d0271c4                mp_type_type
+                0x9d027200                mp_type_super
+                0x9d02723c                mp_builtin_issubclass_obj
+                0x9d027244                mp_builtin_isinstance_obj
+                0x9d02724c                mp_type_staticmethod
+                0x9d027288                mp_type_classmethod
+ .rodata        0x9d027384      0x558 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_tbl_lib.o)
+                0x9d027384                __IntSrcTbl
+                0x9d0276cc                __IntVectorTbl
 
-.text           0x9d027b08      0x538
- .text          0x9d027b08      0x538 build/py/sequence.o
-                0x9d027b08                mp_seq_multiply
-                0x9d027b78                mp_seq_extract_slice
-                0x9d027c74                mp_seq_cmp_bytes
-                0x9d027d58                mp_seq_cmp_objs
-                0x9d027eb4                mp_seq_index_obj
-                0x9d027fb8                mp_seq_count_obj
+.text           0x9d0278dc      0x538
+ .text          0x9d0278dc      0x538 build/py/sequence.o
+                0x9d0278dc                mp_seq_multiply
+                0x9d02794c                mp_seq_extract_slice
+                0x9d027a48                mp_seq_cmp_bytes
+                0x9d027b2c                mp_seq_cmp_objs
+                0x9d027c88                mp_seq_index_obj
+                0x9d027d8c                mp_seq_count_obj
 
-.rodata         0x9d028040      0x4d4
- .rodata        0x9d028040      0x4d4 build/py/objdict.o
-                0x9d02828c                mp_type_dict
+.rodata         0x9d027e14      0x4d4
+ .rodata        0x9d027e14      0x4d4 build/py/objdict.o
+                0x9d028060                mp_type_dict
 
-.text           0x9d028514      0x4a8
- .text          0x9d028514      0x4a8 build/py/objgenerator.o
-                0x9d02864c                mp_obj_gen_resume
+.text           0x9d0282e8      0x958
+ .text          0x9d0282e8      0x4b0 build/pybadge.o
+ .text          0x9d028798      0x4a8 build/py/objgenerator.o
+                0x9d0288d0                mp_obj_gen_resume
 
-.rodata         0x9d0289bc      0x4a4
- .rodata        0x9d0289bc      0x4a4 build/py/modbuiltins.o
-                0x9d028a7c                mp_builtin___build_class___obj
-                0x9d028a88                mp_builtin_abs_obj
-                0x9d028a90                mp_builtin_all_obj
-                0x9d028a98                mp_builtin_any_obj
-                0x9d028aa0                mp_builtin_bin_obj
-                0x9d028aa8                mp_builtin_callable_obj
-                0x9d028ab0                mp_builtin_chr_obj
-                0x9d028ab8                mp_builtin_dir_obj
-                0x9d028ac4                mp_builtin_divmod_obj
-                0x9d028acc                mp_builtin_hash_obj
-                0x9d028ad4                mp_builtin_hex_obj
-                0x9d028adc                mp_builtin_iter_obj
-                0x9d028ae4                mp_builtin_max_obj
-                0x9d028af0                mp_builtin_min_obj
-                0x9d028afc                mp_builtin_next_obj
-                0x9d028b04                mp_builtin_oct_obj
-                0x9d028b0c                mp_builtin_ord_obj
-                0x9d028b14                mp_builtin_pow_obj
-                0x9d028b20                mp_builtin_print_obj
-                0x9d028b2c                mp_builtin___repl_print___obj
-                0x9d028b34                mp_builtin_repr_obj
-                0x9d028b3c                mp_builtin_round_obj
-                0x9d028b48                mp_builtin_sum_obj
-                0x9d028b54                mp_builtin_sorted_obj
-                0x9d028b60                mp_builtin_getattr_obj
-                0x9d028b6c                mp_builtin_setattr_obj
-                0x9d028b74                mp_builtin_hasattr_obj
-                0x9d028b7c                mp_builtin_globals_obj
-                0x9d028b84                mp_builtin_locals_obj
-                0x9d028b8c                mp_builtin_id_obj
-                0x9d028b94                mp_builtin_len_obj
-                0x9d028b9c                mp_module_builtins_globals
-                0x9d028bac                mp_module_builtins
+.rodata         0x9d028c40      0x4a4
+ .rodata        0x9d028c40      0x4a4 build/py/modbuiltins.o
+                0x9d028d00                mp_builtin___build_class___obj
+                0x9d028d0c                mp_builtin_abs_obj
+                0x9d028d14                mp_builtin_all_obj
+                0x9d028d1c                mp_builtin_any_obj
+                0x9d028d24                mp_builtin_bin_obj
+                0x9d028d2c                mp_builtin_callable_obj
+                0x9d028d34                mp_builtin_chr_obj
+                0x9d028d3c                mp_builtin_dir_obj
+                0x9d028d48                mp_builtin_divmod_obj
+                0x9d028d50                mp_builtin_hash_obj
+                0x9d028d58                mp_builtin_hex_obj
+                0x9d028d60                mp_builtin_iter_obj
+                0x9d028d68                mp_builtin_max_obj
+                0x9d028d74                mp_builtin_min_obj
+                0x9d028d80                mp_builtin_next_obj
+                0x9d028d88                mp_builtin_oct_obj
+                0x9d028d90                mp_builtin_ord_obj
+                0x9d028d98                mp_builtin_pow_obj
+                0x9d028da4                mp_builtin_print_obj
+                0x9d028db0                mp_builtin___repl_print___obj
+                0x9d028db8                mp_builtin_repr_obj
+                0x9d028dc0                mp_builtin_round_obj
+                0x9d028dcc                mp_builtin_sum_obj
+                0x9d028dd8                mp_builtin_sorted_obj
+                0x9d028de4                mp_builtin_getattr_obj
+                0x9d028df0                mp_builtin_setattr_obj
+                0x9d028df8                mp_builtin_hasattr_obj
+                0x9d028e00                mp_builtin_globals_obj
+                0x9d028e08                mp_builtin_locals_obj
+                0x9d028e10                mp_builtin_id_obj
+                0x9d028e18                mp_builtin_len_obj
+                0x9d028e20                mp_module_builtins_globals
+                0x9d028e30                mp_module_builtins
 
-.text           0x9d028e60     0x10d4
- .text          0x9d028e60      0x484 build/pybadge.o
- .text          0x9d0292e4      0x45c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/libgcc.a(_udivdi3.o)
-                0x9d0292e4                __udivdi3
- .text          0x9d029740      0x448 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/libgcc.a(_umoddi3.o)
-                0x9d029740                __umoddi3
- .text          0x9d029b88      0x3ac build/py/scope.o
-                0x9d029b88                scope_new
-                0x9d029c74                scope_free
-                0x9d029ca4                scope_find
-                0x9d029cf8                scope_find_or_add_id
-                0x9d029da4                scope_find_global
-                0x9d029dcc                scope_find_local_and_close_over
+.text           0x9d0290e4      0xc50
+ .text          0x9d0290e4      0x45c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/libgcc.a(_udivdi3.o)
+                0x9d0290e4                __udivdi3
+ .text          0x9d029540      0x448 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/libgcc.a(_umoddi3.o)
+                0x9d029540                __umoddi3
+ .text          0x9d029988      0x3ac build/py/scope.o
+                0x9d029988                scope_new
+                0x9d029a74                scope_free
+                0x9d029aa4                scope_find
+                0x9d029af8                scope_find_or_add_id
+                0x9d029ba4                scope_find_global
+                0x9d029bcc                scope_find_local_and_close_over
 
-.rodata         0x9d029f34      0x350
- .rodata        0x9d029f34      0x350 build/py/objfun.o
-                0x9d02a094                mp_type_fun_builtin_0
-                0x9d02a0d0                mp_type_fun_builtin_1
-                0x9d02a10c                mp_type_fun_builtin_2
-                0x9d02a148                mp_type_fun_builtin_3
-                0x9d02a184                mp_type_fun_builtin_var
-                0x9d02a1c0                mp_type_fun_bc
+.rodata         0x9d029d34      0x350
+ .rodata        0x9d029d34      0x350 build/py/objfun.o
+                0x9d029e94                mp_type_fun_builtin_0
+                0x9d029ed0                mp_type_fun_builtin_1
+                0x9d029f0c                mp_type_fun_builtin_2
+                0x9d029f48                mp_type_fun_builtin_3
+                0x9d029f84                mp_type_fun_builtin_var
+                0x9d029fc0                mp_type_fun_bc
 
-.text           0x9d02a284      0x33c
- .text          0x9d02a284      0x33c build/py/objrange.o
+.text           0x9d02a084      0x33c
+ .text          0x9d02a084      0x33c build/py/objrange.o
 
-.rodata         0x9d02a5c0      0x338
- .rodata        0x9d02a5c0      0x338 build/py/emitbc.o
-                0x9d02a7a8                mp_emit_bc_method_table_load_id_ops
-                0x9d02a7b0                mp_emit_bc_method_table_store_id_ops
-                0x9d02a7b8                mp_emit_bc_method_table_delete_id_ops
+.rodata         0x9d02a3c0      0x338
+ .rodata        0x9d02a3c0      0x338 build/py/emitbc.o
+                0x9d02a5a8                mp_emit_bc_method_table_load_id_ops
+                0x9d02a5b0                mp_emit_bc_method_table_store_id_ops
+                0x9d02a5b8                mp_emit_bc_method_table_delete_id_ops
 
-.text           0x9d02a8f8      0x318
- .text          0x9d02a8f8      0x318 build/microchip.o
-                0x9d02a8f8                main
-                0x9d02a984                USBbufferSizeIn
-                0x9d02a98c                USBbufferSizeOut
-                0x9d02a994                USBtransferReady
-                0x9d02a9a0                mchipUSBnotReady
-                0x9d02a9c8                getUSBSuspendControl
-                0x9d02a9d8                USBDeviceStateDETACHED
-                0x9d02a9e4                USBDeviceStateATTACHED
-                0x9d02a9f4                USBDeviceStatePOWERED
-                0x9d02aa04                USBDeviceStateDEFAULT
-                0x9d02aa14                USBDeviceStateADDRESS
-                0x9d02aa24                USBDeviceStateCONFIGURED
-                0x9d02aa34                mySetLineCodingHandler
-                0x9d02aac8                USBCBSuspend
-                0x9d02aad0                USBCBWakeFromSuspend
-                0x9d02aad8                USBCB_SOF_Handler
-                0x9d02aae0                USBCBErrorHandler
-                0x9d02aae8                USBCBCheckOtherReq
-                0x9d02ab04                USBCBStdSetDscHandler
-                0x9d02ab0c                USBCBInitEP
-                0x9d02ab28                USBCBSendResume
-                0x9d02abc4                USER_USB_CALLBACK_EVENT_HANDLER
+.text           0x9d02a6f8      0x318
+ .text          0x9d02a6f8      0x318 build/microchip.o
+                0x9d02a6f8                main
+                0x9d02a784                USBbufferSizeIn
+                0x9d02a78c                USBbufferSizeOut
+                0x9d02a794                USBtransferReady
+                0x9d02a7a0                mchipUSBnotReady
+                0x9d02a7c8                getUSBSuspendControl
+                0x9d02a7d8                USBDeviceStateDETACHED
+                0x9d02a7e4                USBDeviceStateATTACHED
+                0x9d02a7f4                USBDeviceStatePOWERED
+                0x9d02a804                USBDeviceStateDEFAULT
+                0x9d02a814                USBDeviceStateADDRESS
+                0x9d02a824                USBDeviceStateCONFIGURED
+                0x9d02a834                mySetLineCodingHandler
+                0x9d02a8c8                USBCBSuspend
+                0x9d02a8d0                USBCBWakeFromSuspend
+                0x9d02a8d8                USBCB_SOF_Handler
+                0x9d02a8e0                USBCBErrorHandler
+                0x9d02a8e8                USBCBCheckOtherReq
+                0x9d02a904                USBCBStdSetDscHandler
+                0x9d02a90c                USBCBInitEP
+                0x9d02a928                USBCBSendResume
+                0x9d02a9c4                USER_USB_CALLBACK_EVENT_HANDLER
 
-.rodata         0x9d02ac10      0x5f4
- .rodata        0x9d02ac10      0x308 build/py/objlist.o
-                0x9d02ad60                mp_type_list
- .rodata        0x9d02af18      0x2ec build/py/runtime.o
-                0x9d02b1a0                mp_module___main__
+.rodata         0x9d02aa10      0x5f4
+ .rodata        0x9d02aa10      0x308 build/py/objlist.o
+                0x9d02ab60                mp_type_list
+ .rodata        0x9d02ad18      0x2ec build/py/runtime.o
+                0x9d02afa0                mp_module___main__
 
-.text           0x9d02b204      0x51c
- .text          0x9d02b204      0x298 build/py/argcheck.o
-                0x9d02b204                mp_arg_error_terse_mismatch
-                0x9d02b218                mp_arg_parse_all
-                0x9d02b3c8                mp_arg_parse_all_kw_array
-                0x9d02b434                mp_arg_check_num_sig
- .text          0x9d02b49c      0x284 build/py/parsenum.o
-                0x9d02b4d8                mp_parse_num_integer
-                0x9d02b6f8                mp_parse_num_decimal
+.text           0x9d02b004      0x51c
+ .text          0x9d02b004      0x298 build/py/argcheck.o
+                0x9d02b004                mp_arg_error_terse_mismatch
+                0x9d02b018                mp_arg_parse_all
+                0x9d02b1c8                mp_arg_parse_all_kw_array
+                0x9d02b234                mp_arg_check_num_sig
+ .text          0x9d02b29c      0x284 build/py/parsenum.o
+                0x9d02b2d8                mp_parse_num_integer
+                0x9d02b4f8                mp_parse_num_decimal
 
-.text.fpsubadd  0x9d02b720      0x278
+.text.fpsubadd  0x9d02b520      0x278
  .text.fpsubadd
-                0x9d02b720      0x278 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(fp32subadd.o)
-                0x9d02b720                __subsf3
-                0x9d02b720                fpsub
-                0x9d02b728                fpadd
-                0x9d02b728                __addsf3
+                0x9d02b520      0x278 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(fp32subadd.o)
+                0x9d02b520                __subsf3
+                0x9d02b520                fpsub
+                0x9d02b528                fpadd
+                0x9d02b528                __addsf3
 
-.rodata         0x9d02b998      0x23c
- .rodata        0x9d02b998      0x23c build/py/objgenerator.o
-                0x9d02baf4                mp_type_gen_wrap
-                0x9d02bb30                mp_type_gen_instance
+.rodata         0x9d02b798      0x23c
+ .rodata        0x9d02b798      0x23c build/py/objgenerator.o
+                0x9d02b8f4                mp_type_gen_wrap
+                0x9d02b930                mp_type_gen_instance
 
-.text.fp32div   0x9d02bbd4      0x230
- .text.fp32div  0x9d02bbd4      0x230 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(fp32div.o)
-                0x9d02bbd4                __divsf3
-                0x9d02bbd4                fpdiv
+.text.fp32div   0x9d02b9d4      0x230
+ .text.fp32div  0x9d02b9d4      0x230 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(fp32div.o)
+                0x9d02b9d4                __divsf3
+                0x9d02b9d4                fpdiv
 
-.text           0x9d02be04      0x220
- .text          0x9d02be04      0x220 build/py/objmodule.o
-                0x9d02bef4                mp_obj_new_module
-                0x9d02bf88                mp_module_get
-                0x9d02bfe8                mp_module_register
+.text           0x9d02bc04      0x220
+ .text          0x9d02bc04      0x220 build/py/objmodule.o
+                0x9d02bcf4                mp_obj_new_module
+                0x9d02bd88                mp_module_get
+                0x9d02bde8                mp_module_register
 
-.rodata         0x9d02c024      0x20c
- .rodata        0x9d02c024      0x20c build/py/objtuple.o
-                0x9d02c164                mp_type_tuple
-                0x9d02c1a0                mp_const_empty_tuple_obj
+.rodata         0x9d02be24      0x20c
+ .rodata        0x9d02be24      0x20c build/py/objtuple.o
+                0x9d02bf64                mp_type_tuple
+                0x9d02bfa0                mp_const_empty_tuple_obj
 
-.text           0x9d02c230      0x208
- .text          0x9d02c230      0x208 build/badge.o
-                0x9d02c230                pause
-                0x9d02c278                initPIC32
-                0x9d02c3b0                redled
-                0x9d02c3c8                greenled
-                0x9d02c3e0                blueled
-                0x9d02c3f8                badgeled
+.text           0x9d02c030      0x208
+ .text          0x9d02c030      0x208 build/badge.o
+                0x9d02c030                pause
+                0x9d02c078                initPIC32
+                0x9d02c1b0                redled
+                0x9d02c1c8                greenled
+                0x9d02c1e0                blueled
+                0x9d02c1f8                badgeled
 
-.rodata         0x9d02c438      0x200
- .rodata        0x9d02c438      0x200 build/py/lexer.o
+.rodata         0x9d02c238      0x200
+ .rodata        0x9d02c238      0x200 build/py/lexer.o
 
-.text           0x9d02c638      0x72c
- .text          0x9d02c638      0x1dc build/py/emitcommon.o
-                0x9d02c638                mp_emit_common_get_id_for_load
-                0x9d02c688                mp_emit_common_get_id_for_modification
-                0x9d02c6f4                mp_emit_common_id_op
- .text          0x9d02c814      0x1d8 build/py/emitglue.o
-                0x9d02c814                mp_emit_glue_new_raw_code
-                0x9d02c840                mp_emit_glue_assign_bytecode
-                0x9d02c860                mp_make_function_from_raw_code
-                0x9d02c980                mp_make_closure_from_raw_code
- .text          0x9d02c9ec      0x1c8 build/py/unicode.o
-                0x9d02c9ec                unichar_isspace
-                0x9d02ca18                unichar_isalpha
-                0x9d02ca44                unichar_isdigit
-                0x9d02ca70                unichar_isxdigit
-                0x9d02ca9c                unichar_isident
-                0x9d02cadc                unichar_isupper
-                0x9d02cb08                unichar_islower
-                0x9d02cb34                unichar_tolower
-                0x9d02cb64                unichar_toupper
-                0x9d02cb94                unichar_xdigit_value
- .text          0x9d02cbb4      0x1b0 build/py/objmap.o
+.text           0x9d02c438      0x72c
+ .text          0x9d02c438      0x1dc build/py/emitcommon.o
+                0x9d02c438                mp_emit_common_get_id_for_load
+                0x9d02c488                mp_emit_common_get_id_for_modification
+                0x9d02c4f4                mp_emit_common_id_op
+ .text          0x9d02c614      0x1d8 build/py/emitglue.o
+                0x9d02c614                mp_emit_glue_new_raw_code
+                0x9d02c640                mp_emit_glue_assign_bytecode
+                0x9d02c660                mp_make_function_from_raw_code
+                0x9d02c780                mp_make_closure_from_raw_code
+ .text          0x9d02c7ec      0x1c8 build/py/unicode.o
+                0x9d02c7ec                unichar_isspace
+                0x9d02c818                unichar_isalpha
+                0x9d02c844                unichar_isdigit
+                0x9d02c870                unichar_isxdigit
+                0x9d02c89c                unichar_isident
+                0x9d02c8dc                unichar_isupper
+                0x9d02c908                unichar_islower
+                0x9d02c934                unichar_tolower
+                0x9d02c964                unichar_toupper
+                0x9d02c994                unichar_xdigit_value
+ .text          0x9d02c9b4      0x1b0 build/py/objmap.o
 
-.rodata         0x9d02cd64      0x1ac
- .rodata        0x9d02cd64      0x1ac build/py/obj.o
-                0x9d02cef0                mp_identity_obj
+.rodata         0x9d02cb64      0x34c
+ .rodata        0x9d02cb64      0x1ac build/py/obj.o
+                0x9d02ccf0                mp_identity_obj
+ .rodata        0x9d02cd10      0x1a0 build/pybadge.o
+                0x9d02cd10                mp_module_pybadge
 
-.text           0x9d02cf10      0x4d0
- .text          0x9d02cf10      0x19c build/py/objboundmeth.o
-                0x9d02cf10                mp_call_method_self_n_kw
-                0x9d02d064                mp_obj_new_bound_meth
- .text          0x9d02d0ac      0x19c build/py/objzip.o
- .text          0x9d02d248      0x198 build/py/objclosure.o
-                0x9d02d368                mp_obj_new_closure
+.text           0x9d02ceb0      0x7a0
+ .text          0x9d02ceb0      0x19c build/py/objboundmeth.o
+                0x9d02ceb0                mp_call_method_self_n_kw
+                0x9d02d004                mp_obj_new_bound_meth
+ .text          0x9d02d04c      0x19c build/py/objzip.o
+ .text          0x9d02d1e8      0x198 build/py/objclosure.o
+                0x9d02d308                mp_obj_new_closure
+ .text          0x9d02d380      0x168 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(memcpy.o)
+                0x9d02d380                memcpy
+ .text          0x9d02d4e8      0x168 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(strlen.o)
+                0x9d02d4e8                strlen
 
-.rodata         0x9d02d3e0      0x190
- .rodata        0x9d02d3e0      0x190 build/pybadge.o
-                0x9d02d3e0                mp_module_pybadge
+.text.fputc     0x9d02d650      0x15c
+ .text.fputc    0x9d02d650      0x15c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(_fputc_simple.o)
+                0x9d02d650                fputc
 
-.text           0x9d02d570      0x2d0
- .text          0x9d02d570      0x168 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(memcpy.o)
-                0x9d02d570                memcpy
- .text          0x9d02d6d8      0x168 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(strlen.o)
-                0x9d02d6d8                strlen
+.text           0x9d02d7ac      0x130
+ .text          0x9d02d7ac      0x130 build/py/builtinevex.o
 
-.text.fputc     0x9d02d840      0x15c
- .text.fputc    0x9d02d840      0x15c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(_fputc_simple.o)
-                0x9d02d840                fputc
+.text._flsbuf   0x9d02d8dc      0x12c
+ .text._flsbuf  0x9d02d8dc      0x12c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(_flsbuf_simple.o)
+                0x9d02d8dc                _flsbuf
 
-.text           0x9d02d99c      0x130
- .text          0x9d02d99c      0x130 build/py/builtinevex.o
+.text           0x9d02da08      0x128
+ .text          0x9d02da08      0x128 build/py/objfilter.o
 
-.text._flsbuf   0x9d02dacc      0x12c
- .text._flsbuf  0x9d02dacc      0x12c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(_flsbuf_simple.o)
-                0x9d02dacc                _flsbuf
+.rodata         0x9d02db30      0x124
+ .rodata        0x9d02db30      0x124 build/py/gc.o
 
-.text           0x9d02dbf8      0x128
- .text          0x9d02dbf8      0x128 build/py/objfilter.o
+.text           0x9d02dc54      0x35c
+ .text          0x9d02dc54      0x120 build/mp_main.o
+                0x9d02dc54                mp_builtin_open
+                0x9d02dc60                do_str
+                0x9d02dd04                mp_lexer_new_from_file
+                0x9d02dd14                mp_import_stat
+                0x9d02dd1c                nlr_jump_fail
+                0x9d02dd24                __fatal_error
+                0x9d02dd2c                __assert_func
+                0x9d02dd40                _vprintf_0
+                0x9d02dd48                _vsnprintf_0
+                0x9d02dd50                _printf_0
+                0x9d02dd64                putchar
+                0x9d02dd6c                puts
+ .text          0x9d02dd74      0x120 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(strcmp.o)
+                0x9d02dd74                strcmp
+ .text          0x9d02de94      0x11c build/py/opmethods.o
 
-.rodata         0x9d02dd20      0x124
- .rodata        0x9d02dd20      0x124 build/py/gc.o
+.rodata         0x9d02dfb0      0x11c
+ .rodata        0x9d02dfb0      0x11c build/py/vm.o
 
-.text           0x9d02de44      0x35c
- .text          0x9d02de44      0x120 build/mp_main.o
-                0x9d02de44                mp_builtin_open
-                0x9d02de50                do_str
-                0x9d02def4                mp_lexer_new_from_file
-                0x9d02df04                mp_import_stat
-                0x9d02df0c                nlr_jump_fail
-                0x9d02df14                __fatal_error
-                0x9d02df1c                __assert_func
-                0x9d02df30                _vprintf_0
-                0x9d02df38                _vsnprintf_0
-                0x9d02df40                _printf_0
-                0x9d02df54                putchar
-                0x9d02df5c                puts
- .text          0x9d02df64      0x120 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(strcmp.o)
-                0x9d02df64                strcmp
- .text          0x9d02e084      0x11c build/py/opmethods.o
+.text           0x9d02e0cc      0x118
+ .text          0x9d02e0cc      0x118 build/py/parsenumbase.o
+                0x9d02e0cc                mp_parse_num_base
 
-.rodata         0x9d02e1a0      0x11c
- .rodata        0x9d02e1a0      0x11c build/py/vm.o
+.rodata         0x9d02e1e4      0x108
+ .rodata        0x9d02e1e4      0x108 build/py/objint.o
+                0x9d02e24c                mp_type_int
 
-.text           0x9d02e2bc      0x118
- .text          0x9d02e2bc      0x118 build/py/parsenumbase.o
-                0x9d02e2bc                mp_parse_num_base
+.text           0x9d02e2ec      0x20c
+ .text          0x9d02e2ec      0x108 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(setjmp.o)
+                0x9d02e2ec                setjmp
+                0x9d02e324                _setjmp
+                0x9d02e35c                longjmp
+                0x9d02e388                _longjmp
+                0x9d02e3bc                sigsetjmp
+                0x9d02e3cc                siglongjmp
+                0x9d02e3e0                sigprocmask
+ .text          0x9d02e3f4      0x104 build/py/objbool.o
 
-.rodata         0x9d02e3d4      0x108
- .rodata        0x9d02e3d4      0x108 build/py/objint.o
-                0x9d02e43c                mp_type_int
+.rodata         0x9d02e4f8      0x104
+ .rodata        0x9d02e4f8      0x104 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(ctype.o)
+                0x9d02e4f8                _ctype
 
-.text           0x9d02e4dc      0x20c
- .text          0x9d02e4dc      0x108 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(setjmp.o)
-                0x9d02e4dc                setjmp
-                0x9d02e514                _setjmp
-                0x9d02e54c                longjmp
-                0x9d02e578                _longjmp
-                0x9d02e5ac                sigsetjmp
-                0x9d02e5bc                siglongjmp
-                0x9d02e5d0                sigprocmask
- .text          0x9d02e5e4      0x104 build/py/objbool.o
+.text           0x9d02e5fc       0xf8
+ .text          0x9d02e5fc       0xf8 build/py/smallint.o
+                0x9d02e5fc                mp_small_int_mul_overflow
+                0x9d02e684                mp_small_int_modulo
+                0x9d02e6b8                mp_small_int_floor_divide
 
-.rodata         0x9d02e6e8      0x104
- .rodata        0x9d02e6e8      0x104 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(ctype.o)
-                0x9d02e6e8                _ctype
+.rodata         0x9d02e6f4       0xf0
+ .rodata        0x9d02e6f4       0xf0 build/py/emitglue.o
 
-.text           0x9d02e7ec       0xf8
- .text          0x9d02e7ec       0xf8 build/py/smallint.o
-                0x9d02e7ec                mp_small_int_mul_overflow
-                0x9d02e874                mp_small_int_modulo
-                0x9d02e8a8                mp_small_int_floor_divide
-
-.rodata         0x9d02e8e4       0xf0
- .rodata        0x9d02e8e4       0xf0 build/py/emitglue.o
-
-.text           0x9d02e9d4      0x1c8
- .text          0x9d02e9d4       0xe8 build/py/malloc.o
-                0x9d02e9d4                m_malloc
-                0x9d02ea10                m_malloc_maybe
-                0x9d02ea2c                m_malloc0
-                0x9d02ea48                m_realloc
-                0x9d02ea84                m_realloc_maybe
-                0x9d02eaa0                m_free
- .text          0x9d02eabc       0xe0 build/py/reader.o
-                0x9d02eb20                mp_reader_new_mem
+.text           0x9d02e7e4      0x1c8
+ .text          0x9d02e7e4       0xe8 build/py/malloc.o
+                0x9d02e7e4                m_malloc
+                0x9d02e820                m_malloc_maybe
+                0x9d02e83c                m_malloc0
+                0x9d02e858                m_realloc
+                0x9d02e894                m_realloc_maybe
+                0x9d02e8b0                m_free
+ .text          0x9d02e8cc       0xe0 build/py/reader.o
+                0x9d02e930                mp_reader_new_mem
 
 .text.general_exception
-                0x9d02eb9c       0xdc
+                0x9d02e9ac       0xdc
  .text.general_exception
-                0x9d02eb9c       0xdc /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(general-exception.o)
-                0x9d02eb9c                _general_exception_context
+                0x9d02e9ac       0xdc /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(general-exception.o)
+                0x9d02e9ac                _general_exception_context
 
-.rodata         0x9d02ec78      0x1b0
- .rodata        0x9d02ec78       0xd8 build/py/mpprint.o
-                0x9d02ed04                mp_plat_print
- .rodata        0x9d02ed50       0xd8 build/py/bc.o
+.rodata         0x9d02ea88      0x1b0
+ .rodata        0x9d02ea88       0xd8 build/py/mpprint.o
+                0x9d02eb14                mp_plat_print
+ .rodata        0x9d02eb60       0xd8 build/py/bc.o
 
-.text           0x9d02ee28       0xd4
- .text          0x9d02ee28       0xd4 build/py/objgetitemiter.o
-                0x9d02eed0                mp_obj_new_getitem_iter
+.text           0x9d02ec38       0xd4
+ .text          0x9d02ec38       0xd4 build/py/objgetitemiter.o
+                0x9d02ece0                mp_obj_new_getitem_iter
 
-.rodata         0x9d02eefc      0x4a8
- .rodata        0x9d02eefc       0xd4 build/usb_descriptors.o
-                0x9d02eefc                device_dsc
-                0x9d02ef10                configDescriptor1
-                0x9d02ef54                sd000
-                0x9d02ef58                sd001
-                0x9d02ef8c                sd002
-                0x9d02efc0                USB_CD_Ptr
-                0x9d02efc4                USB_SD_Ptr
- .rodata        0x9d02efd0       0xd0 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(doprnt_cdnopsuxX.eo)
- .rodata        0x9d02f0a0       0xcc build/py/scope.o
- .rodata        0x9d02f16c       0xc0 build/py/objfilter.o
-                0x9d02f1e0                mp_type_filter
- .rodata        0x9d02f22c       0xbc build/py/objmap.o
-                0x9d02f29c                mp_type_map
- .rodata        0x9d02f2e8       0xbc build/py/objzip.o
-                0x9d02f358                mp_type_zip
+.rodata         0x9d02ed0c      0x4a8
+ .rodata        0x9d02ed0c       0xd4 build/usb_descriptors.o
+                0x9d02ed0c                device_dsc
+                0x9d02ed20                configDescriptor1
+                0x9d02ed64                sd000
+                0x9d02ed68                sd001
+                0x9d02ed9c                sd002
+                0x9d02edd0                USB_CD_Ptr
+                0x9d02edd4                USB_SD_Ptr
+ .rodata        0x9d02ede0       0xd0 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(doprnt_cdnopsuxX.eo)
+ .rodata        0x9d02eeb0       0xcc build/py/scope.o
+ .rodata        0x9d02ef7c       0xc0 build/py/objfilter.o
+                0x9d02eff0                mp_type_filter
+ .rodata        0x9d02f03c       0xbc build/py/objmap.o
+                0x9d02f0ac                mp_type_map
+ .rodata        0x9d02f0f8       0xbc build/py/objzip.o
+                0x9d02f168                mp_type_zip
 
 .text._mon_putc
-                0x9d02f3a4       0xb4
+                0x9d02f1b4       0xb4
  .text._mon_putc
-                0x9d02f3a4       0xb4 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(_mon_putc.o)
-                0x9d02f3a4                _mon_putc
+                0x9d02f1b4       0xb4 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(_mon_putc.o)
+                0x9d02f1b4                _mon_putc
 
-.text           0x9d02f458       0xa8
- .text          0x9d02f458       0xa8 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(memset.o)
-                0x9d02f458                memset
+.text           0x9d02f268       0xa8
+ .text          0x9d02f268       0xa8 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(memset.o)
+                0x9d02f268                memset
 
-.rodata         0x9d02f500      0x1e0
- .rodata        0x9d02f500       0xa0 build/py/map.o
-                0x9d02f540                mp_const_empty_map
- .rodata        0x9d02f5a0       0xa0 build/py/objrange.o
-                0x9d02f5c8                mp_type_range
- .rodata        0x9d02f640       0xa0 build/py/builtinimport.o
-                0x9d02f6bc                mp_builtin___import___obj
+.rodata         0x9d02f310      0x1e0
+ .rodata        0x9d02f310       0xa0 build/py/map.o
+                0x9d02f350                mp_const_empty_map
+ .rodata        0x9d02f3b0       0xa0 build/py/objrange.o
+                0x9d02f3d8                mp_type_range
+ .rodata        0x9d02f450       0xa0 build/py/builtinimport.o
+                0x9d02f4cc                mp_builtin___import___obj
 
-.text.fpcmp     0x9d02f6e0       0x9c
- .text.fpcmp    0x9d02f6e0       0x9c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(fpcmp.o)
-                0x9d02f6e0                __lesf2
-                0x9d02f6e0                __nesf2
-                0x9d02f6e0                __gtsf2
-                0x9d02f6e0                __eqsf2
-                0x9d02f6e0                __ltsf2
-                0x9d02f6e0                fpcmp
-                0x9d02f6e0                __gesf2
+.text.fpcmp     0x9d02f4f0       0x9c
+ .text.fpcmp    0x9d02f4f0       0x9c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(fpcmp.o)
+                0x9d02f4f0                __lesf2
+                0x9d02f4f0                __nesf2
+                0x9d02f4f0                __gtsf2
+                0x9d02f4f0                __eqsf2
+                0x9d02f4f0                __ltsf2
+                0x9d02f4f0                fpcmp
+                0x9d02f4f0                __gesf2
 
-.text           0x9d02f77c       0x98
- .text          0x9d02f77c       0x98 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(memcmp.o)
-                0x9d02f77c                memcmp
+.text           0x9d02f58c       0x98
+ .text          0x9d02f58c       0x98 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(memcmp.o)
+                0x9d02f58c                memcmp
 
-.text.write     0x9d02f814       0x94
- .text.write    0x9d02f814       0x94 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(write.o)
-                0x9d02f814                write
+.text.write     0x9d02f624       0x94
+ .text.write    0x9d02f624       0x94 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(write.o)
+                0x9d02f624                write
 
-.text           0x9d02f8a8       0x8c
- .text          0x9d02f8a8       0x8c build/py/modmicropython.o
+.text           0x9d02f6b8       0x8c
+ .text          0x9d02f6b8       0x8c build/py/modmicropython.o
 
-.rodata         0x9d02f934       0x80
- .rodata        0x9d02f934       0x80 build/py/unicode.o
+.rodata         0x9d02f744       0x80
+ .rodata        0x9d02f744       0x80 build/py/unicode.o
 
-.text.fptoli    0x9d02f9b4       0x80
- .text.fptoli   0x9d02f9b4       0x80 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(fptoli.o)
-                0x9d02f9b4                __fixsfsi
-                0x9d02f9b4                fptoli
-                0x9d02f9b4                fptosi
+.text.fptoli    0x9d02f7c4       0x80
+ .text.fptoli   0x9d02f7c4       0x80 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(fptoli.o)
+                0x9d02f7c4                __fixsfsi
+                0x9d02f7c4                fptoli
+                0x9d02f7c4                fptosi
 
-.text._fassert  0x9d02fa34       0x80
+.text._fassert  0x9d02f844       0x80
  .text._fassert
-                0x9d02fa34       0x80 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(fassert.o)
-                0x9d02fa34                _fassert
+                0x9d02f844       0x80 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(fassert.o)
+                0x9d02f844                _fassert
 
-.rodata         0x9d02fab4       0xf8
- .rodata        0x9d02fab4       0x7c build/py/emitcommon.o
- .rodata        0x9d02fb30       0x7c build/py/objmodule.o
-                0x9d02fb44                mp_type_module
-                0x9d02fb80                mp_builtin_module_map
+.rodata         0x9d02f8c4       0xf8
+ .rodata        0x9d02f8c4       0x7c build/py/emitcommon.o
+ .rodata        0x9d02f940       0x7c build/py/objmodule.o
+                0x9d02f954                mp_type_module
+                0x9d02f990                mp_builtin_module_map
 
-.text.raise     0x9d02fbac       0x7c
- .text.raise    0x9d02fbac       0x7c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(signal.o)
-                0x9d02fbac                raise
+.text.raise     0x9d02f9bc       0x7c
+ .text.raise    0x9d02f9bc       0x7c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(signal.o)
+                0x9d02f9bc                raise
 
-.rodata         0x9d02fc28       0xe8
- .rodata        0x9d02fc28       0x78 build/py/argcheck.o
- .rodata        0x9d02fca0       0x70 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(fassert.o)
+.rodata         0x9d02fa38       0xe8
+ .rodata        0x9d02fa38       0x78 build/py/argcheck.o
+ .rodata        0x9d02fab0       0x70 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(fassert.o)
 
-.text.memmove   0x9d02fd10       0x64
- .text.memmove  0x9d02fd10       0x64 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(memmove.o)
-                0x9d02fd10                memmove
+.text.memmove   0x9d02fb20       0x64
+ .text.memmove  0x9d02fb20       0x64 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(memmove.o)
+                0x9d02fb20                memmove
 
-.rodata         0x9d02fd74       0x60
- .rodata        0x9d02fd74       0x60 build/py/parsenum.o
+.rodata         0x9d02fb84       0x60
+ .rodata        0x9d02fb84       0x60 build/py/parsenum.o
 
-.text.sitofp    0x9d02fdd4       0x60
- .text.sitofp   0x9d02fdd4       0x60 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(sitofp.o)
-                0x9d02fdd4                sitofp
-                0x9d02fdd4                __floatsisf
-                0x9d02fdd4                litofp
+.text.sitofp    0x9d02fbe4       0x60
+ .text.sitofp   0x9d02fbe4       0x60 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libm.a(sitofp.o)
+                0x9d02fbe4                sitofp
+                0x9d02fbe4                __floatsisf
+                0x9d02fbe4                litofp
 
-.rodata         0x9d02fe34       0xb8
- .rodata        0x9d02fe34       0x5c build/py/objbool.o
-                0x9d02fe44                mp_type_bool
-                0x9d02fe80                mp_const_false_obj
-                0x9d02fe88                mp_const_true_obj
- .rodata        0x9d02fe90       0x5c build/py/modmicropython.o
-                0x9d02fe90                mp_module_micropython
+.rodata         0x9d02fc44       0xb8
+ .rodata        0x9d02fc44       0x5c build/py/objbool.o
+                0x9d02fc54                mp_type_bool
+                0x9d02fc90                mp_const_false_obj
+                0x9d02fc98                mp_const_true_obj
+ .rodata        0x9d02fca0       0x5c build/py/modmicropython.o
+                0x9d02fca0                mp_module_micropython
 
-.text.strncpy   0x9d02feec       0x58
- .text.strncpy  0x9d02feec       0x58 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(strncpy.o)
-                0x9d02feec                strncpy
+.text.strncpy   0x9d02fcfc       0x58
+ .text.strncpy  0x9d02fcfc       0x58 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(strncpy.o)
+                0x9d02fcfc                strncpy
 
 .text.main_entry
-                0x9d02ff44       0x4c
+                0x9d02fd54       0x4c
  .text.main_entry
-                0x9d02ff44       0x4c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/crt0.o
-                0x9d02ff70                __crt0_exit
+                0x9d02fd54       0x4c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/crt0.o
+                0x9d02fd80                __crt0_exit
 
-.text           0x9d02ff90       0x94
- .text          0x9d02ff90       0x4c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/libgcc.a(floatunsisf.o)
-                0x9d02ff90                __floatunsisf
- .text          0x9d02ffdc       0x48 build/py/objcell.o
-                0x9d02ffdc                mp_obj_cell_get
-                0x9d02ffe4                mp_obj_cell_set
-                0x9d02ffec                mp_obj_new_cell
+.text           0x9d02fda0       0x94
+ .text          0x9d02fda0       0x4c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/libgcc.a(floatunsisf.o)
+                0x9d02fda0                __floatunsisf
+ .text          0x9d02fdec       0x48 build/py/objcell.o
+                0x9d02fdec                mp_obj_cell_get
+                0x9d02fdf4                mp_obj_cell_set
+                0x9d02fdfc                mp_obj_new_cell
 
-.rodata         0x9d030024       0x90
- .rodata        0x9d030024       0x48 build/py/objnone.o
-                0x9d03002c                mp_type_NoneType
-                0x9d030068                mp_const_none_obj
- .rodata        0x9d03006c       0x48 build/py/objsingleton.o
-                0x9d030070                mp_type_singleton
-                0x9d0300ac                mp_const_ellipsis_obj
+.rodata         0x9d02fe34       0x90
+ .rodata        0x9d02fe34       0x48 build/py/objnone.o
+                0x9d02fe3c                mp_type_NoneType
+                0x9d02fe78                mp_const_none_obj
+ .rodata        0x9d02fe7c       0x48 build/py/objsingleton.o
+                0x9d02fe80                mp_type_singleton
+                0x9d02febc                mp_const_ellipsis_obj
 
 .text._bootstrap_exception_handler
-                0x9d0300b4       0x48
+                0x9d02fec4       0x48
  .text._bootstrap_exception_handler
-                0x9d0300b4       0x48 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
-                0x9d0300b4                _bootstrap_exception_handler
+                0x9d02fec4       0x48 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+                0x9d02fec4                _bootstrap_exception_handler
 
 .text._general_exception_handler
-                0x9d0300fc       0x48
+                0x9d02ff0c       0x48
  .text._general_exception_handler
-                0x9d0300fc       0x48 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
-                0x9d0300fc                _general_exception_handler
+                0x9d02ff0c       0x48 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+                0x9d02ff0c                _general_exception_handler
 
-.rodata         0x9d030144       0xf0
- .rodata        0x9d030144       0x3c build/py/objboundmeth.o
- .rodata        0x9d030180       0x3c build/py/objcell.o
- .rodata        0x9d0301bc       0x3c build/py/objclosure.o
-                0x9d0301bc                closure_type
- .rodata        0x9d0301f8       0x3c build/py/objgetitemiter.o
+.rodata         0x9d02ff54       0xf0
+ .rodata        0x9d02ff54       0x3c build/py/objboundmeth.o
+ .rodata        0x9d02ff90       0x3c build/py/objcell.o
+ .rodata        0x9d02ffcc       0x3c build/py/objclosure.o
+                0x9d02ffcc                closure_type
+ .rodata        0x9d030008       0x3c build/py/objgetitemiter.o
 
-.text           0x9d030234       0x3c
- .text          0x9d030234       0x3c build/py/objobject.o
+.text           0x9d030044       0x3c
+ .text          0x9d030044       0x3c build/py/objobject.o
 
-.rodata         0x9d030270       0x78
- .rodata        0x9d030270       0x3c build/py/objobject.o
-                0x9d030270                mp_type_object
- .rodata        0x9d0302ac       0x3c build/py/objpolyiter.o
-                0x9d0302ac                mp_type_polymorph_iter
+.rodata         0x9d030080       0x78
+ .rodata        0x9d030080       0x3c build/py/objobject.o
+                0x9d030080                mp_type_object
+ .rodata        0x9d0300bc       0x3c build/py/objpolyiter.o
+                0x9d0300bc                mp_type_polymorph_iter
 
-.text           0x9d0302e8       0x6c
- .text          0x9d0302e8       0x38 build/py/nlrsetjmp.o
-                0x9d0302e8                nlr_jump
- .text          0x9d030320       0x34 build/py/nlr.o
-                0x9d030320                nlr_push_tail
-                0x9d03033c                nlr_pop
+.text           0x9d0300f8       0x6c
+ .text          0x9d0300f8       0x38 build/py/nlrsetjmp.o
+                0x9d0300f8                nlr_jump
+ .text          0x9d030130       0x34 build/py/nlr.o
+                0x9d030130                nlr_push_tail
+                0x9d03014c                nlr_pop
 
 .text.INTEnableSystemMultiVectoredInt
-                0x9d030354       0x34
+                0x9d030164       0x34
  .text.INTEnableSystemMultiVectoredInt
-                0x9d030354       0x34 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_enable_mv_int_lib.o)
-                0x9d030354                INTEnableSystemMultiVectoredInt
+                0x9d030164       0x34 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_enable_mv_int_lib.o)
+                0x9d030164                INTEnableSystemMultiVectoredInt
 
-.text.exit      0x9d030388       0x34
- .text.exit     0x9d030388       0x34 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(exit.o)
-                0x9d030388                exit
+.text.exit      0x9d030198       0x34
+ .text.exit     0x9d030198       0x34 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(exit.o)
+                0x9d030198                exit
 
 .text.INTClearFlag
-                0x9d0303bc       0x2c
+                0x9d0301cc       0x2c
  .text.INTClearFlag
-                0x9d0303bc       0x2c /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_tbl_lib.o)
-                0x9d0303bc                INTClearFlag
+                0x9d0301cc       0x2c /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_tbl_lib.o)
+                0x9d0301cc                INTClearFlag
 
 .text._fprintf_cdnopsuxX
-                0x9d0303e8       0x2c
+                0x9d0301f8       0x2c
  .text._fprintf_cdnopsuxX
-                0x9d0303e8       0x2c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(fprintf_cdnopsuxX.eo)
-                0x9d0303e8                _fprintf_cdnopsuxX
+                0x9d0301f8       0x2c /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(fprintf_cdnopsuxX.eo)
+                0x9d0301f8                _fprintf_cdnopsuxX
 
-.text.strchr    0x9d030414       0x28
- .text.strchr   0x9d030414       0x28 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(strchr.o)
-                0x9d030414                strchr
+.text.strchr    0x9d030224       0x28
+ .text.strchr   0x9d030224       0x28 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(strchr.o)
+                0x9d030224                strchr
 
-.text           0x9d03043c       0x64
- .text          0x9d03043c       0x24 build/py/objsingleton.o
- .text          0x9d030460       0x20 build/py/objpolyiter.o
- .text          0x9d030480       0x20 build/py/objnone.o
+.text           0x9d03024c       0x64
+ .text          0x9d03024c       0x24 build/py/objsingleton.o
+ .text          0x9d030270       0x20 build/py/objpolyiter.o
+ .text          0x9d030290       0x20 build/py/objnone.o
 
-.rodata         0x9d0304a0       0x5c
- .rodata        0x9d0304a0       0x20 build/py/opmethods.o
-                0x9d0304a0                mp_op_getitem_obj
-                0x9d0304a8                mp_op_setitem_obj
-                0x9d0304b0                mp_op_delitem_obj
-                0x9d0304b8                mp_op_contains_obj
- .rodata        0x9d0304c0       0x20 build/mp_main.o
-                0x9d0304d4                mp_builtin_open_obj
- .rodata        0x9d0304e0       0x1c build/assetList.o
-                0x9d0304e0                assetList
+.rodata         0x9d0302b0       0x5c
+ .rodata        0x9d0302b0       0x20 build/py/opmethods.o
+                0x9d0302b0                mp_op_getitem_obj
+                0x9d0302b8                mp_op_setitem_obj
+                0x9d0302c0                mp_op_delitem_obj
+                0x9d0302c8                mp_op_contains_obj
+ .rodata        0x9d0302d0       0x20 build/mp_main.o
+                0x9d0302e4                mp_builtin_open_obj
+ .rodata        0x9d0302f0       0x1c build/assetList.o
+                0x9d0302f0                assetList
 
 .text.INTRestoreInterrupts
-                0x9d0304fc       0x1c
+                0x9d03030c       0x1c
  .text.INTRestoreInterrupts
-                0x9d0304fc       0x1c /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_restore_interrupts_lib.o)
-                0x9d0304fc                INTRestoreInterrupts
+                0x9d03030c       0x1c /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_restore_interrupts_lib.o)
+                0x9d03030c                INTRestoreInterrupts
 
-.rodata         0x9d030518       0x30
- .rodata        0x9d030518       0x18 build/py/sequence.o
- .rodata        0x9d030530       0x18 build/py/builtinevex.o
-                0x9d030530                mp_builtin_eval_obj
-                0x9d03053c                mp_builtin_exec_obj
+.rodata         0x9d030328       0x30
+ .rodata        0x9d030328       0x18 build/py/sequence.o
+ .rodata        0x9d030340       0x18 build/py/builtinevex.o
+                0x9d030340                mp_builtin_eval_obj
+                0x9d03034c                mp_builtin_exec_obj
 
-.text           0x9d030548       0x18
- .text          0x9d030548       0x18 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-nmi-handler.o)
-                0x9d030548                _nmi_handler
+.text           0x9d030358       0x18
+ .text          0x9d030358       0x18 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-nmi-handler.o)
+                0x9d030358                _nmi_handler
 
-.text.abort     0x9d030560       0x18
- .text.abort    0x9d030560       0x18 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(signal.o)
-                0x9d030560                abort
+.text.abort     0x9d030370       0x18
+ .text.abort    0x9d030370       0x18 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(signal.o)
+                0x9d030370                abort
 
-.rodata         0x9d030578       0x24
- .rodata        0x9d030578       0x14 build/assets.o
- .rodata        0x9d03058c       0x10 build/py/binary.o
+.rodata         0x9d030388       0x24
+ .rodata        0x9d030388       0x14 build/assets.o
+ .rodata        0x9d03039c       0x10 build/py/binary.o
 
 .text.ReadCoreTimer
-                0x9d03059c        0x8
+                0x9d0303ac        0x8
  .text.ReadCoreTimer
-                0x9d03059c        0x8 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(read_core_timer_lib.o)
-                0x9d03059c                ReadCoreTimer
+                0x9d0303ac        0x8 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(read_core_timer_lib.o)
+                0x9d0303ac                ReadCoreTimer
 
 .text.INTEnableInterrupts
-                0x9d0305a4        0x8
+                0x9d0303b4        0x8
  .text.INTEnableInterrupts
-                0x9d0305a4        0x8 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_enable_interrupts_lib.o)
-                0x9d0305a4                INTEnableInterrupts
+                0x9d0303b4        0x8 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_enable_interrupts_lib.o)
+                0x9d0303b4                INTEnableInterrupts
 
 .text.INTDisableInterrupts
-                0x9d0305ac        0x8
+                0x9d0303bc        0x8
  .text.INTDisableInterrupts
-                0x9d0305ac        0x8 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_disable_interrupts_lib.o)
-                0x9d0305ac                INTDisableInterrupts
+                0x9d0303bc        0x8 /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_disable_interrupts_lib.o)
+                0x9d0303bc                INTDisableInterrupts
 
 .text._on_reset
-                0x9d0305b4        0x8
+                0x9d0303c4        0x8
  .text._on_reset
-                0x9d0305b4        0x8 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
-                0x9d0305b4                _on_reset
+                0x9d0303c4        0x8 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+                0x9d0303c4                _on_reset
 
 .text._on_bootstrap
-                0x9d0305bc        0x8
+                0x9d0303cc        0x8
  .text._on_bootstrap
-                0x9d0305bc        0x8 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
-                0x9d0305bc                _on_bootstrap
+                0x9d0303cc        0x8 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+                0x9d0303cc                _on_bootstrap
 
-.text._cleanup  0x9d0305c4        0x8
+.text._cleanup  0x9d0303d4        0x8
  .text._cleanup
-                0x9d0305c4        0x8 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(stdclean_simple.o)
-                0x9d0305c4                _cleanup
+                0x9d0303d4        0x8 /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(stdclean_simple.o)
+                0x9d0303d4                _cleanup
 
 Cross Reference Table
 
@@ -3982,7 +3974,6 @@ CDCInitEP                                         build/USB/usb_function_cdc.o
 CDCTxService                                      build/USB/usb_function_cdc.o
                                                   build/badgemain.o
 CFGCON                                            /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
-                                                  build/timer1_int.o
                                                   build/badge.o
                                                   build/badgemain.o
 CM1CON                                            /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
@@ -4030,7 +4021,6 @@ CNPDACLR                                          /opt/microchip/xc32/v1.34/pic3
 CNPDAINV                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 CNPDASET                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 CNPDB                                             /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
-                                                  build/timer1_int.o
                                                   build/badge.o
                                                   build/badgemain.o
                                                   build/LCDcolor.o
@@ -4049,7 +4039,6 @@ CNPUACLR                                          /opt/microchip/xc32/v1.34/pic3
 CNPUAINV                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 CNPUASET                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 CNPUB                                             /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
-                                                  build/timer1_int.o
                                                   build/badge.o
 CNPUBCLR                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 CNPUBINV                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
@@ -4547,7 +4536,6 @@ IEC1SET                                           /opt/microchip/xc32/v1.34/pic3
                                                   build/microchip.o
 IFS0                                              /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
                                                   /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_tbl_lib.o)
-                                                  build/timer1_int.o
 IFS0CLR                                           /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
                                                   build/timer1_int.o
 IFS0INV                                           /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
@@ -4558,12 +4546,10 @@ IFS1CLR                                           /opt/microchip/xc32/v1.34/pic3
 IFS1INV                                           /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 IFS1SET                                           /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 INT1R                                             /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
-                                                  build/timer1_int.o
 INT2R                                             /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 INT3R                                             /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 INT4R                                             /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 INTCON                                            /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
-                                                  build/timer1_int.o
 INTCONCLR                                         /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 INTCONINV                                         /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 INTCONSET                                         /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
@@ -4598,7 +4584,6 @@ IPC0INV                                           /opt/microchip/xc32/v1.34/pic3
 IPC0SET                                           /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 IPC1                                              /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
                                                   /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_tbl_lib.o)
-                                                  build/timer1_int.o
 IPC10                                             /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
                                                   /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a(int_tbl_lib.o)
 IPC10CLR                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
@@ -4675,7 +4660,6 @@ IRpacketsIn                                       build/timer1_int.o
 IRpacketsOut                                      build/timer1_int.o
                                                   build/ir.o
 IRqueueSend                                       build/ir.o
-Int1Interrupt                                     build/timer1_int.o
 LATA                                              /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
                                                   build/badge.o
                                                   build/assets.o
@@ -5032,7 +5016,6 @@ SPI2STATSET                                       /opt/microchip/xc32/v1.34/pic3
 SS1R                                              /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 SS2R                                              /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 SYSKEY                                            /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
-                                                  build/timer1_int.o
 SYSKEYCLR                                         /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 SYSKEYINV                                         /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 SYSKEYSET                                         /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
@@ -5098,7 +5081,6 @@ TRISACLR                                          /opt/microchip/xc32/v1.34/pic3
 TRISAINV                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 TRISASET                                          /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
 TRISB                                             /opt/microchip/xc32/v1.34/pic32mx/lib/proc/32MX270F256D/processor.o
-                                                  build/timer1_int.o
                                                   build/badge.o
                                                   build/badgemain.o
                                                   build/LCDcolor.o
@@ -5440,7 +5422,6 @@ __umoddi3                                         /opt/microchip/xc32/v1.34/bin/
 __vector_dispatch_12                              build/timer1_int.o
 __vector_dispatch_16                              build/timer1_int.o
 __vector_dispatch_30                              build/USB/usb_device.o
-__vector_dispatch_7                               build/timer1_int.o
 __vector_dispatch_8                               build/timer1_int.o
 _appio_putc                                       /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(_mon_putc.o)
 _atexitptr                                        /opt/microchip/xc32/v1.34/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libc.a(stdclean_simple.o)
@@ -5550,6 +5531,7 @@ blue                                              build/timer1_int.o
                                                   build/pybadge.o
 blueled                                           build/badge.o
 button                                            build/badgemain.o
+                                                  build/pybadge.o
 cdc_data_rx                                       build/USB/usb_function_cdc.o
 cdc_data_tx                                       build/USB/usb_function_cdc.o
 cdc_mem_type                                      build/USB/usb_function_cdc.o
@@ -5566,7 +5548,6 @@ control_signal_bitmap                             build/USB/usb_function_cdc.o
 device_dsc                                        build/usb_descriptors.o
                                                   build/USB/usb_device.o
 doAudio                                           build/assets.o
-                                                  build/timer1_int.o
 doLED_PWM                                         build/timer1_int.o
 do_str                                            build/mp_main.o
                                                   build/badgemain.o

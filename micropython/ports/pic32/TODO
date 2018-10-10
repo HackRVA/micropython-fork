@@ -1,6 +1,6 @@
 - slow sending with sendbadge.py because no serial handshake 
   for getting data back after a send. 
-  -> threaded reader would fix it
+  -> threaded reader (linux side) would fix it
 
 - make this work with bootloader (use pins on pgm header for "bootload" button)
 

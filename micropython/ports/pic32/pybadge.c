@@ -52,6 +52,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_2(pybadge_FbLine_obj, pybadge_FbLine);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(pybadge_LCDBars_obj, pybadge_LCDBars);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_LCDcolor_obj, pybadge_LCDcolor);
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(pybadge_LCDputPixel_obj, pybadge_LCDputPixel);
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(pybadge_button_obj, pybadge_button);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(pybadge_deinit_obj, pybadge_deinit);
 
 
@@ -79,6 +80,7 @@ STATIC const mp_map_elem_t pybadge_globals_table[] = {
     { MP_OBJ_NEW_QSTR(MP_QSTR_LCDBars), (mp_obj_t)&(pybadge_LCDBars_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_LCDcolor), &(pybadge_LCDcolor_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_LCDputPixel), &(pybadge_LCDputPixel_obj) },
+    { MP_OBJ_NEW_QSTR(MP_QSTR_button), &(pybadge_button_obj) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_deinit), &(pybadge_deinit_obj) },
 };
 

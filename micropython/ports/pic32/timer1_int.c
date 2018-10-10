@@ -73,6 +73,7 @@ void timerInit(void)
     INTEnableSystemMultiVectoredInt();
 
     IEC0bits.INT1IE=0; // 2015 disable this interrupt
+#ifdef NOTCOMPATIBLE
     TRISBbits.TRISB0 = 1; // 2015 IR IN
     CNPDBbits.CNPDB0 = 0;  // pulldown off
     CNPUBbits.CNPUB0 = 0;  // pullup off
@@ -96,6 +97,7 @@ void timerInit(void)
     IPC1bits.INT1IS=0; // interrupt sub priority
     IEC0bits.INT1IE=1; // enable this interrupt
 
+#endif
     IEC0bits.T2IE=1; // also enable timer2 interupt
 }
 
@@ -112,6 +114,7 @@ unsigned char G_bitCnt = 0;
 unsigned char G_firstHalf = 0;
 unsigned char G_lastHalf = 0;
 unsigned char G_halfCount = 0;
+
 
 /* 
   IR send/receive timer code
@@ -387,6 +390,7 @@ void __ISR(_TIMER_2_VECTOR, IPL5SOFT) Timer2Handler(void)
    return;
 }
 
+#ifdef NOTCOMPATIBLE
 // external IR receive: interrupt level 6 highest
 // input changed on RB0
 void __ISR( _EXTERNAL_1_VECTOR, IPL6SOFT) Int1Interrupt(void)
@@ -403,11 +407,14 @@ void __ISR( _EXTERNAL_1_VECTOR, IPL6SOFT) Int1Interrupt(void)
    }
    IFS0bits.INT1IF = 0;
 }
+#endif
 
 // audio higher than LED
 void __ISR(_TIMER_4_VECTOR, IPL3SOFT) Timer4Handler(void)
 {
+#ifdef NOTCOMPATIBLE
    doAudio();
+#endif
    mT4ClearIntFlag(); // clear the interrupt flag
 }
 

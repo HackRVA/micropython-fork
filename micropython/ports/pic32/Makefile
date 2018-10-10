@@ -32,25 +32,23 @@ BADGE_CFLAGS = $(INC) -x c -c -mprocessor=32MX270F256D -O1 -w
 # ********************
 
 
-LIBS = /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a
+LIBS = /opt/microchip/xc32/v1.34/pic32mx/lib/libmchp_peripheral_32MX270F256D.a \
+	/home/paul/microchip/harmony/v1_09/bin/framework/peripheral/PIC32MX270F256D_peripherals.a \
+	/home/paul/microchip/harmony/v1_09/build/framework/peripheral/mplab_pic32.X/dist/default/production/mplab_pic32.X.a
+
 SRC_S = 
 
 # not bootloader
-#LDFLAGS = -Wl,--defsym=_min_heap_size=25000,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,p32MX270F256D.ld
 LDFLAGS = -Wl,--defsym=_min_heap_size=0x100,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,p32MX270F256D.ld
 
 # bootloader
-#LDFLAGS = -Wl,--defsym=_min_heap_size=25000,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,app_32MX270F256D.ld
+#LDFLAGS = -Wl,--defsym=_min_heap_size=0x100,--defsym=_min_stack_size=0x400,--gc-sections,-Map="mymap.map",--report-mem,--cref,-T,app_32MX270F256D.ld
 
-# not bootloader
 SRC_BADGE_C = mp_main.c pybadge.c pic32config.c LCDcolor.c S6B33.c \
 	badgemain.c fb.c microchip.c assets.c assetList.c \
 	badge.c usb_descriptors.c ir.c timer1_int.c
 
 SRC_USB_C = USB/usb_device.c  USB/usb_function_cdc.c
-
-#bootloader- no pic32config
-#SRC_C = mp_main.c pybadge.c LCDcolor.c S6B33.c badgemain.c fb.c microchip.c assets.c assetList.c badge.c USB/usb_device.c  USB/usb_function_cdc.c usb_descriptors.c
 
 
 OBJ = $(PY_CORE_O) $(addprefix $(BUILD)/, $(SRC_C:.c=.o) $(SRC_S:.s=.o))
