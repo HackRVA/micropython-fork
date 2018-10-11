@@ -20,8 +20,21 @@ void UserInit(void);
 
 int main(void)
 {
+    TRISCbits.TRISC0 = 0;    /* output */
+    CNPDCbits.CNPDC0 = 0;    /* pulldown == off */
+    LATCbits.LATC0 = 1;      /* RED */
+
     InitializeSystem();
+
+    TRISCbits.TRISC1 = 0;    /* output */
+    LATCbits.LATC1 = 1;      /* BLUE */
+    CNPDCbits.CNPDC1 = 0;    /* pulldown == off */
+
     USBDeviceAttach();
+
+    TRISBbits.TRISB3 = 0;    /* output */
+    LATBbits.LATB3 = 1;      /* GREEN */
+    CNPDBbits.CNPDB3 = 0;    /* pulldown == off */
 
     while(1) ProcessIO();
 

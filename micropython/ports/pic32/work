@@ -1,4 +1,5 @@
 make clean
+make V=1
 
 rm build/badge* build/LCD* build/USB/* build/microchip*
 rm build/usb*
@@ -7,14 +8,16 @@ make V=1
 
 rm build/badge.o build/pic32config.o
 
+
 rm build/firmware*
+make V=1
 
 rm build/assets.o build/fb.o build/badgemain.o
  
 rm  build/USB/*
-
-
 make V=1
+
+
 
 
 

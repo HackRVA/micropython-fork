@@ -1,4 +1,4 @@
-#include <p32xxxx.h>
+//#include <p32xxxx.h>
 #include <plib.h>
 #include "colors.h"
 #include "assetList.h"
@@ -96,12 +96,6 @@ void UserInit(void)
     timerInit();
 
     micropython_init();
-
-
-//    int heap_size = 25000; 
-//    char *heap = malloc(heap_size);
-//    gc_init(heap, heap + heap_size);
-
 
 
     /* speaker pull down init */
