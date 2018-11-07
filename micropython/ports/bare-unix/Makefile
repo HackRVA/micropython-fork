@@ -16,7 +16,7 @@ CFLAGS_CORTEX_M4 =
 #CFLAGS = $(INC) -m32 -Wall -Werror -std=c99 -nostdlib $(CFLAGS_CORTEX_M4) $(COPT)
 #CFLAGS = -m32 -D__USE_MISC $(INC) -Wall -std=c99 $(COPT)
 #CFLAGS = -m32 $(INC) -std=c99 $(COPT)
-CFLAGS = $(INC) -std=c99 $(COPT)
+CFLAGS = $(INC) -m32 -std=c99 $(COPT)
 
 
 #Debugging/Optimization
@@ -29,7 +29,7 @@ endif
 
 #LDFLAGS = -g -Map=$@.map --cref -nostdlib 
 #LDFLAGS = -m32 -Wl,-Map=$@.map,--cref
-LDFLAGS = -Wl,-Map=$@.map,--cref
+LDFLAGS = -m32 -Wl,-Map=$@.map,--cref
 LIBS = 
 
 SRC_C = \

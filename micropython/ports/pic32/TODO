@@ -2,19 +2,21 @@
   for getting data back after a send. 
   -> threaded reader (linux side) would fix it
 
-- make this work with bootloader (use pins on pgm header for "bootload" button)
 
 - test IR should work
 
-- test audio should work
+- badgeyear(yyyy) for compatibility?
 
+- audio compatiblitiy issues
+    audio(2017), audio(2018)
+    button(2017) button(2018)
 
-
+X works with older bootloaders (pre-2017) newer harmony/freetos are borked
 X out of memory fixed w/garbage collection
 X seems fixed. USB: fix paste lots of text without weirdness
 X IR
 X audio
 X timer1_int
-X readline editing
+X basic line editing (del)
 X echo to serial not lcd
 X Makefile

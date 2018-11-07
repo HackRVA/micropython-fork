@@ -11,5 +11,7 @@ program "./bootloader_2015.hex"
 quit
 END
 
+#program "./bootloader_2015.hex" 
+# USB_HID_Btl_StarterKit.X.production.hex
 $mplab/mdb.sh /tmp/prog.x
 

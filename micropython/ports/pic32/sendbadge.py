@@ -16,19 +16,12 @@ def readFile(filename):
 			lineno += 1
 
 			ser.write(line)
-			ser.flush()
+#			ser.flush()
 			print 'sent', lineno, line
 
-#			if len(line) > 0 and line[-1] == '\n':
-#				ser.write(line)
-#				ser.flush()
-#				print 'sent', lineno, line
-
-			for r in range(1):
-				data = ser.read(9999)
-				if len(data) > 0:
-					print '						recv:', data
-
+			data = ser.read(9999)
+			if len(data) > 0:
+				print '						recv:', data
 
 	ser.close()
 	return

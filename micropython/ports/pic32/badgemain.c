@@ -107,7 +107,7 @@ void UserInit(void)
 
 
 static char *stack_top;
-static char heap[25*1024];
+static char heap[22*1024];
 
 micropython_init() {
 

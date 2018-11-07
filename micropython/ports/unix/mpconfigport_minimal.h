@@ -102,6 +102,8 @@ extern const struct _mp_obj_module_t mp_module_os;
 
 #define MICROPY_PORT_ROOT_POINTERS \
 
+typedef unsigned int uint;
+
 //////////////////////////////////////////
 // Do not change anything beyond this line
 //////////////////////////////////////////

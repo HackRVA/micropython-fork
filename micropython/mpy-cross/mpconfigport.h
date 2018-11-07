@@ -88,6 +88,7 @@
 // type definitions for the specific machine
 
 #ifdef __LP64__
+typedef unsigned int uint; // must be pointer size
 typedef long mp_int_t; // must be pointer size
 typedef unsigned long mp_uint_t; // must be pointer size
 #elif defined ( __MINGW32__ ) && defined( _WIN64 )

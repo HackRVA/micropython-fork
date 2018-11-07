@@ -1,6 +1,6 @@
 #include <plib.h>
 //#include "string.h"
-//#include "colors.h"
+#include "colors.h"
 //#include "flash.h"
 #include "ir.h"
 //#include "debug.h"
